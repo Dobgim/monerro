@@ -1,0 +1,74 @@
+/*
+ * Small additions on top of original.css (the untouched theme/plugin CSS).
+ * Only covers states that jQuery plugins used to toggle, plus the newsletter
+ * form that replaces the third-party Klaviyo embed.
+ */
+
+/* WooCommerce "added to cart" toast under the header cart icon */
+.w-cart .w-cart-notification.shown {
+  display: block;
+  animation: cb-fade-in 0.25s ease-out;
+}
+@keyframes cb-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* hero slider: the viewport clips the sliding track; keep images crisp while moving */
+#metaslider_699484 .slides img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+#metaslider_699484 .slides > li {
+  backface-visibility: hidden;
+}
+
+/* mega menu product carousels scroll horizontally without a visible scrollbar */
+.wp-block-woocommerce-product-collection .is-product-collection-layout-carousel {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.wp-block-woocommerce-product-collection .is-product-collection-layout-carousel::-webkit-scrollbar {
+  display: none;
+}
+.wp-block-woocommerce-product-collection .is-product-collection-layout-carousel > li {
+  scroll-snap-align: start;
+}
+.wc-block-next-previous-buttons__button[aria-disabled='true'] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* newsletter sign-up (footer band) */
+.cb-newsletter {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  max-width: 32rem;
+  margin-left: auto;
+}
+.cb-newsletter input[type='email'] {
+  flex: 1;
+  min-width: 0;
+  height: 2.8rem;
+  padding: 0 1rem;
+  border: 1px solid rgba(61, 54, 50, 0.2);
+  border-radius: 2rem;
+  background: #fff;
+  font-size: 1rem;
+}
+.cb-newsletter .w-btn {
+  flex-shrink: 0;
+}
+.cb-newsletter-thanks {
+  text-align: right;
+  color: #ef742a;
+}
+@media (max-width: 767px) {
+  .cb-newsletter {
+    margin: 1rem 0 0;
+  }
+  .cb-newsletter-thanks {
+    text-align: left;
+  }
+}
