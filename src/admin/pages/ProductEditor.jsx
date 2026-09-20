@@ -6,7 +6,7 @@ import { Button, ConfirmDialog, FormRow, FormTable, Postbox, useSave } from '../
 
 const EMPTY = {
   name: '',
-  href: 'https://cannabuddy.com/shop/',
+  href: 'https://cannabuddyhub.com/shop/',
   image: '',
   imageAlt: '',
   rating: null,

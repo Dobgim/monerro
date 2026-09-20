@@ -66,62 +66,62 @@ export default function Footer() {
                           <div className="wpb_text_column us_custom_4cfb87d6">
                             <div className="wpb_wrapper">
                               <p style={{ textAlign: "center" }}>
-                                <a href="https://cannabuddy.com//">
+                                <a href="https://cannabuddyhub.com//">
                                   Home
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/shop/">
+                                <a href="https://cannabuddyhub.com/shop/">
                                   Shop
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/about-us/">
+                                <a href="https://cannabuddyhub.com/about-us/">
                                   About
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/wholesale/">
+                                <a href="https://cannabuddyhub.com/wholesale/">
                                   Wholesale
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/blog/">
+                                <a href="https://cannabuddyhub.com/blog/">
                                   Cannabis Blog
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/contact-us/">
+                                <a href="https://cannabuddyhub.com/contact-us/">
                                   Contact
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/charlotte/">
+                                <a href="https://cannabuddyhub.com/charlotte/">
                                   Dispensary
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/my-account/">
+                                <a href="https://cannabuddyhub.com/my-account/">
                                   My Account
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/cart/">
+                                <a href="https://cannabuddyhub.com/cart/">
                                   Cart
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/privacy-policy/">
+                                <a href="https://cannabuddyhub.com/privacy-policy/">
                                   Privacy Policy
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/terms-and-conditions/">
+                                <a href="https://cannabuddyhub.com/terms-and-conditions/">
                                   Terms and Conditions
                                 </a>
                                 <br />
                                 {" "}
-                                <a href="https://cannabuddy.com/html-sitemap/">
+                                <a href="https://cannabuddyhub.com/html-sitemap/">
                                   Sitemap
                                 </a>
                               </p>
@@ -169,10 +169,7 @@ export default function Footer() {
                           <div className="site-logo" style={{ textAlign: "center", color: "#fff", fontSize: "1.5rem" }}>
                             <LogoMark />
                             <div className="logo-text logo-text-cannabuddy">
-                              CannaBuddy
-                              <span>
-                                ™
-                              </span>
+                              CannaBuddy<span className="logo-hub">Hub</span>
                             </div>
                             <div className="logo-text logo-text-dispensary">
                               Cannabis Dispensary
@@ -183,7 +180,7 @@ export default function Footer() {
                             <div className="wpb_wrapper">
                               <p style={{ textAlign: "center" }}>
                                 <span style={{ color: "#e5e1d7" }}>
-                                  Our mission is to serve the highest quality cannabis products online. Shop CBD, CBC, CBG, CBN, Delta 8 THC, Delta 9 THC, Delta 10 THC, and High-THCa products with confidence. Customer Satisfaction is of the highest importance. Please don’t hesitate to reach out. Thanks for shopping CannaBuddy!
+                                  Our mission is to serve the highest quality cannabis products online. Shop CBD, CBC, CBG, CBN, Delta 8 THC, Delta 9 THC, Delta 10 THC, and High-THCa products with confidence. Customer Satisfaction is of the highest importance. Please don’t hesitate to reach out. Thanks for shopping CannaBuddyHub!
                                 </span>
                               </p>
                             </div>
@@ -209,9 +206,9 @@ export default function Footer() {
                           <div className="wpb_text_column">
                             <div className="wpb_wrapper">
                               <div style={{ color: "#e5e1d7" }}>
-                                <a href="https://cannabuddy.com/locations/charlotte/">
+                                <a href="https://cannabuddyhub.com/locations/charlotte/">
                                   <strong style={{ fontSize: "1.1em" }}>
-                                    CannaBuddy Cannabis Dispensary – Charlotte
+                                    CannaBuddyHub Cannabis Dispensary – Charlotte
                                   </strong>
                                 </a>
                                 <br />
@@ -254,8 +251,8 @@ export default function Footer() {
                                   <strong style={{ fontSize: "1.1em" }}>
                                     {"Email: "}
                                   </strong>
-                                  <a href="mailto:hellocharlotte@cannabuddy.com">
-                                    hellocharlotte@cannabuddy.com
+                                  <a href="mailto:hellocharlotte@cannabuddyhub.com">
+                                    hellocharlotte@cannabuddyhub.com
                                   </a>
                                 </span>
                                 <br />
@@ -273,9 +270,9 @@ export default function Footer() {
                           <div className="wpb_text_column">
                             <div className="wpb_wrapper">
                               <div style={{ color: "#e5e1d7" }}>
-                                <a href="https://cannabuddy.com/locations/matthews/">
+                                <a href="https://cannabuddyhub.com/locations/matthews/">
                                   <strong style={{ fontSize: "1.1em" }}>
-                                    CannaBuddy Cannabis Dispensary – Matthews
+                                    CannaBuddyHub Cannabis Dispensary – Matthews
                                   </strong>
                                 </a>
                                 <br />
@@ -319,8 +316,8 @@ export default function Footer() {
                                   <strong style={{ fontSize: "1.1em" }}>
                                     {"Email: "}
                                   </strong>
-                                  <a href="mailto:helloamesstreet@cannabuddy.com">
-                                    helloamesstreet@cannabuddy.com
+                                  <a href="mailto:helloamesstreet@cannabuddyhub.com">
+                                    helloamesstreet@cannabuddyhub.com
                                   </a>
                                 </span>
                                 <br />
@@ -347,7 +344,7 @@ export default function Footer() {
                           <div className="wpb_text_column">
                             <div className="wpb_wrapper">
                               <p style={{ textAlign: "justify", color: "#e5e1d7" }}>
-                                Disclaimer: CannaBuddy will not be held responsible for any claims or testimonials regarding medical efficacy of any of our products. The FDA (Food and Drug Administration) has not evaluated any of these statements, nor have the claims been confirmed by FDA-acknowledged research. Neither our staff nor our products are intended to diagnose, cure, prevent, or treat any disease or medical condition. Please consult your physician before including any of our products in your wellness plan.
+                                Disclaimer: CannaBuddyHub will not be held responsible for any claims or testimonials regarding medical efficacy of any of our products. The FDA (Food and Drug Administration) has not evaluated any of these statements, nor have the claims been confirmed by FDA-acknowledged research. Neither our staff nor our products are intended to diagnose, cure, prevent, or treat any disease or medical condition. Please consult your physician before including any of our products in your wellness plan.
                               </p>
                             </div>
                           </div>
@@ -381,7 +378,7 @@ export default function Footer() {
                           <div className="wpb_text_column us_custom_4792172e has_text_color">
                             <div className="wpb_wrapper">
                               <p style={{ textAlign: "center" }}>
-                                {"CannaBuddy "}
+                                {"CannaBuddyHub "}
                                 <span className="copyright">©</span> {new Date().getFullYear()}
                                 . All Rights Reserved.
                               </p>

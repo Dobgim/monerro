@@ -18,69 +18,69 @@ export default function MegaMenuCbd() {
             <div className="wp-block-column is-vertically-aligned-top cb-cat-children-section is-layout-flow wp-container-core-column-is-layout-f342ef54 wp-block-column-is-layout-flow" style={{ flexBasis: "50%" }}>
               <div className="wp-block-group is-style-background-blur is-content-justification-left is-layout-flex wp-container-core-group-is-layout-e0d92547 wp-block-group-is-layout-flex" style={{ fontStyle: "normal", fontWeight: "500" }}>
                 <figure className="wp-block-image size-us_200_200_crop has-custom-border is-style-default">
-                  <a href="https://cannabuddy.com/product-category/cbd/">
+                  <a href="https://cannabuddyhub.com/product-category/cbd/">
                     <img width="200" height="200" src="/assets/images/2026/02/1-MainImage-3.webp" alt="" className="wp-image-724676" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "0px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "0px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                   </a>
                 </figure>
                 <div className="wp-block-group u-flex-1 is-layout-constrained wp-container-core-group-is-layout-ee2332cf wp-block-group-is-layout-constrained">
                   <ul style={{ lineHeight: "2" }} className="wp-block-list is-style-grid-layout cb-product-category-links">
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-candies/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-candies/">
                         {"CBD Candies "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-capsules/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-capsules/">
                         {"CBD Capsules & Tablets "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-vape-cartridges/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-vape-cartridges/">
                         {"CBD Carts "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd-for-dogs/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd-for-dogs/">
                         CBD for Dogs
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-edibles/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-edibles/">
                         {"CBD Edibles "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-hemp-flowers-pre-rolls/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-hemp-flowers-pre-rolls/">
                         {"CBD Flower "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-gummies/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-gummies/">
                         {"CBD Gummies "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-honey/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-honey/">
                         {"CBD Honey "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-teas-coffee/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-teas-coffee/">
                         {"CBD Tea "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-tinctures-oils-sublinguals/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-tinctures-oils-sublinguals/">
                         {"CBD Tincture "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-category/cbd/cbd-topicals/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/cbd-topicals/">
                         CBD Topicals
                       </a>
                     </li>
                     <li>
-                      <a href="https://cannabuddy.com/product-tag/thc-free/">
+                      <a href="https://cannabuddyhub.com/product-tag/thc-free/">
                         THC Free CBD
                       </a>
                     </li>
@@ -97,7 +97,7 @@ export default function MegaMenuCbd() {
                       <img width="150" height="150" src="/assets/images/2026/02/1-PetWellnessAndCBD.webp" alt="" className="wp-image-724677" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/pet-wellness-and-cbd/">
+                      <a href="https://cannabuddyhub.com/pet-wellness-and-cbd/">
                         Pet Wellness and CBD
                       </a>
                     </p>
@@ -107,7 +107,7 @@ export default function MegaMenuCbd() {
                       <img width="150" height="150" src="/assets/images/2026/02/2-D9vsCBDForSleepWhichIsBetter.webp" alt="" className="wp-image-724678" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/delta-9-vs-cbd-for-sleep-which-is-better/">
+                      <a href="https://cannabuddyhub.com/delta-9-vs-cbd-for-sleep-which-is-better/">
                         D9 vs. CBD for Sleep
                       </a>
                     </p>
@@ -117,7 +117,7 @@ export default function MegaMenuCbd() {
                       <img width="150" height="150" src="/assets/images/2026/02/3-CBDD8D9-for-pain-mgmt.webp" alt="" className="wp-image-724679" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/cbd-delta-8-and-delta-9-for-pain-management/">
+                      <a href="https://cannabuddyhub.com/cbd-delta-8-and-delta-9-for-pain-management/">
                         CBD, Delta 8, Delta 9 for Pain Management
                       </a>
                     </p>

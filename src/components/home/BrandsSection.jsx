@@ -43,7 +43,7 @@ export default function BrandsSection() {
         <Separator size="medium" />
         <CenteredText heading="Featured Cannabis Brands">
           <h6 style={{ textAlign: 'center' }}>
-            CannaBuddy Cannabis Dispensary is proud to partner with some of the most trusted names in the cannabis industry.
+            CannaBuddyHub Cannabis Dispensary is proud to partner with some of the most trusted names in the cannabis industry.
             We only collaborate with cannabis brands that believe in the therapeutic and beneficial properties of all
             cannabinoids. Each one ensures quality, potency, and efficacy through rigorous third-party testing. This
             dedication to quality is why we are excited to offer these cannabis brands as part of our online cannabis

@@ -106,7 +106,7 @@ export default function Settings() {
 
   const exportJson = () => {
     const { admin: _admin, ...data } = getState()
-    downloadFile(`cannabuddy-backup-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(data, null, 2), 'application/json')
+    downloadFile(`cannabuddyhub-backup-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(data, null, 2), 'application/json')
   }
 
   const importJson = async (f) => {
@@ -117,7 +117,7 @@ export default function Settings() {
       const { admin: _ignored, ...rest } = data
       save(importState({ ...rest, admin: getState().admin }), 'Backup restored.')
     } catch {
-      notice('That file is not a CannaBuddy backup.', 'error')
+      notice('That file is not a CannaBuddyHub backup.', 'error')
     } finally {
       file.current.value = ''
     }

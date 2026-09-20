@@ -12,7 +12,7 @@ export default function Subscribers() {
 
   const exportCsv = () => {
     const rows = [['email', 'subscribed_at'], ...subscribers.map((s) => [s.email, s.at])]
-    downloadFile('cannabuddy-subscribers.csv', rows.map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n'), 'text/csv')
+    downloadFile('cannabuddyhub-subscribers.csv', rows.map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n'), 'text/csv')
   }
 
   return (

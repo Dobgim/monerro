@@ -18,33 +18,33 @@ export default function MegaMenuThca() {
             <div className="wp-block-column is-vertically-aligned-top cb-cat-children-section is-layout-flow wp-container-core-column-is-layout-f342ef54 wp-block-column-is-layout-flow" style={{ flexBasis: "50%" }}>
               <div className="wp-block-group is-style-background-blur is-content-justification-left is-layout-flex wp-container-core-group-is-layout-7a576a65 wp-block-group-is-layout-flex" style={{ fontStyle: "normal", fontWeight: "500" }}>
                 <figure className="wp-block-image size-us_200_200_crop has-custom-border is-style-default">
-                  <a href="https://cannabuddy.com/product-category/thca/">
+                  <a href="https://cannabuddyhub.com/product-category/thca/">
                     <img width="200" height="200" src="/assets/images/2026/02/1-MainImage-2.webp" alt="" className="wp-image-724672" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "0px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "0px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                   </a>
                 </figure>
                 <ul style={{ lineHeight: "2" }} className="wp-block-list is-style-grid-layout">
                   <li>
-                    <a href="https://cannabuddy.com/product-category/thca/thca-vapes/">
+                    <a href="https://cannabuddyhub.com/product-category/thca/thca-vapes/">
                       THCa Carts
                     </a>
                   </li>
                   <li>
-                    <a href="https://cannabuddy.com/product-category/thca/thca-concentrates/">
+                    <a href="https://cannabuddyhub.com/product-category/thca/thca-concentrates/">
                       THCa Dabs
                     </a>
                   </li>
                   <li>
-                    <a href="https://cannabuddy.com/product-category/thca/thca-diamonds/">
+                    <a href="https://cannabuddyhub.com/product-category/thca/thca-diamonds/">
                       THCa Diamonds
                     </a>
                   </li>
                   <li>
-                    <a href="https://cannabuddy.com/product-category/thca/thca-flowers-pre-rolls/">
+                    <a href="https://cannabuddyhub.com/product-category/thca/thca-flowers-pre-rolls/">
                       THCa Flower
                     </a>
                   </li>
                   <li>
-                    <a href="https://cannabuddy.com/product-category/thca/thca-snow-caps/">
+                    <a href="https://cannabuddyhub.com/product-category/thca/thca-snow-caps/">
                       THCa Snow Caps
                     </a>
                   </li>
@@ -60,7 +60,7 @@ export default function MegaMenuThca() {
                       <img width="150" height="150" src="/assets/images/2026/02/1-THCVSTHCA.webp" alt="" className="wp-image-724673" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/what-is-the-difference-between-thc-vs-thca/">
+                      <a href="https://cannabuddyhub.com/what-is-the-difference-between-thc-vs-thca/">
                         Difference Between THC and THCa
                       </a>
                     </p>
@@ -70,7 +70,7 @@ export default function MegaMenuThca() {
                       <img width="150" height="150" src="/assets/images/2026/02/2-BenefitsOfVapingTHCCarts.webp" alt="" className="wp-image-724674" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/benefits-of-vaping-thca-carts/">
+                      <a href="https://cannabuddyhub.com/benefits-of-vaping-thca-carts/">
                         Benefits of Vaping THCa Carts
                       </a>
                     </p>
@@ -80,7 +80,7 @@ export default function MegaMenuThca() {
                       <img width="150" height="150" src="/assets/images/2026/02/3-BestWayToSmokeTHCaDiamonds.webp" alt="" className="wp-image-724675" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/best-ways-to-smoke-thca-diamonds/">
+                      <a href="https://cannabuddyhub.com/best-ways-to-smoke-thca-diamonds/">
                         Best Ways to Smoke THCa Diamonds
                       </a>
                     </p>

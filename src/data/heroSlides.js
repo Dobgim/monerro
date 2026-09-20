@@ -3,7 +3,7 @@ const heroSlides = [
   {
     "id": 699488,
     "className": "slide-699488 ms-image cb-first-slide",
-    "href": "https://cannabuddy.com/shop/",
+    "href": "https://cannabuddyhub.com/shop/",
     "ariaLabel": "Shop All Products",
     "image": "/assets/images/2026/02/BannerImage-UPDATE.webp",
     "alt": "A photo of a variety of cannabis products",
@@ -18,7 +18,7 @@ const heroSlides = [
   {
     "id": 699666,
     "className": "slide-699666 ms-image",
-    "href": "https://cannabuddy.com/product-category/delta-9-thc/delta-9-thc-beverages-drink-enhancers/",
+    "href": "https://cannabuddyhub.com/product-category/delta-9-thc/delta-9-thc-beverages-drink-enhancers/",
     "ariaLabel": "THC Seltzer Drinks",
     "image": "/assets/images/2025/12/HeroBannerSlide2V2.webp",
     "alt": "Three cans of CannaBuddy THC Seltzers",
@@ -31,7 +31,7 @@ const heroSlides = [
   {
     "id": 699668,
     "className": "slide-699668 ms-image",
-    "href": "https://cannabuddy.com/product-category/cbd/",
+    "href": "https://cannabuddyhub.com/product-category/cbd/",
     "ariaLabel": "CBD Products for Seniors",
     "image": "/assets/images/2025/11/Slide_3_CBD_For_Seniors.webp",
     "alt": "An image of an elderly hippy man with glasses featuring CBD Products for Seniors",
@@ -46,7 +46,7 @@ const heroSlides = [
   {
     "id": 699670,
     "className": "slide-699670 ms-image",
-    "href": "https://cannabuddy.com/cbd-and-cannabinoids-how-they-interact-with-the-endocannabinoid-system/",
+    "href": "https://cannabuddyhub.com/cbd-and-cannabinoids-how-they-interact-with-the-endocannabinoid-system/",
     "ariaLabel": "Endocannabinoid System",
     "image": "/assets/images/2025/11/Endocannabinoid-System-Blog-Banner_1600.png.webp",
     "alt": "Image of the Endocannabinoid System visualized as artwork",

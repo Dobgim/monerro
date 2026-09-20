@@ -4,7 +4,7 @@ import Icon from '../components/Icon'
 import ImageField from '../components/ImageField'
 import { Button, ConfirmDialog, EmptyRow, FormRow, FormTable, Modal, PageHeader, RowAction, Toggle, useSave } from '../components/ui'
 
-const EMPTY = { image: '', alt: '', title: '', caption: '', captionMobile: [], href: 'https://cannabuddy.com/shop/', ariaLabel: '', visible: true, width: 1600, height: 680 }
+const EMPTY = { image: '', alt: '', title: '', caption: '', captionMobile: [], href: 'https://cannabuddyhub.com/shop/', ariaLabel: '', visible: true, width: 1600, height: 680 }
 
 function SlideDialog({ slide, onClose }) {
   const save = useSave()

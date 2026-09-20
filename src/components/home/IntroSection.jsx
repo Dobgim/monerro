@@ -14,14 +14,14 @@ export default function IntroSection() {
             <div className="wpb_wrapper">
               <div className="wpb_text_column">
                 <div className="wpb_wrapper">
-                  <h1 style={{ textAlign: 'center' }}>CannaBuddy Cannabis Dispensary</h1>
+                  <h1 style={{ textAlign: 'center' }}>CannaBuddyHub Cannabis Dispensary</h1>
                 </div>
               </div>
               <Separator />
               <div className="wpb_text_column font-style-head">
                 <div className="wpb_wrapper">
                   <h6 style={{ textAlign: 'center' }}>
-                    Each person walks their own path to wellness. CannaBuddy is passionate about ensuring customers make positive
+                    Each person walks their own path to wellness. CannaBuddyHub is passionate about ensuring customers make positive
                     choices for their health and wellness. As a premium cannabis dispensary, we specialize in promoting a balanced
                     lifestyle and overall sense of well-being. Our team is dedicated to providing potent, tested, and high-quality
                     cannabis products containing cannabinoids such as Delta 8, Delta 9, Delta 10, HHC, THCa, and THCP. We

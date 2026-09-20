@@ -6,7 +6,7 @@ export default function SiteLogo() {
       <a href="/" className="logo-link" style={{ textDecoration: 'none', color: 'inherit' }} rel="home">
         <LogoMark />
         <div className="logo-text logo-text-cannabuddy">
-          CannaBuddy<span>™</span>
+          CannaBuddy<span className="logo-hub">Hub</span>
         </div>
         <div className="logo-text logo-text-dispensary">Cannabis Dispensary</div>
       </a>

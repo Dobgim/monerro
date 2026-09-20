@@ -47,7 +47,7 @@ export function CenteredText({ heading, as: Heading = 'h2', children, topSeparat
 export function ShopAllButton() {
   return (
     <div className="w-btn-wrapper align_center">
-      <a className="w-btn us-btn-style_1 icon_atleft" href="https://cannabuddy.com/shop/">
+      <a className="w-btn us-btn-style_1 icon_atleft" href="https://cannabuddyhub.com/shop/">
         <i className="fas fa-shopping-cart" />
         <span className="w-btn-label">Shop all products</span>
       </a>

@@ -28,7 +28,7 @@ export default function Layout() {
           <li>
             <a className="ab-item" href="/" target="_blank" rel="noreferrer">
               <Icon name="home" size={16} />
-              <span>CannaBuddy</span>
+              <span>CannaBuddyHub</span>
             </a>
           </li>
           <li className="hide-on-phone">
@@ -96,7 +96,7 @@ export default function Layout() {
         </div>
         <div id="wpfooter">
           <p>
-            Thank you for creating with <a href="/">CannaBuddy</a>.
+            Thank you for creating with <a href="/">CannaBuddyHub</a>.
           </p>
           <p className="alignright">{state.updatedAt ? `Last saved ${new Date(state.updatedAt).toLocaleString()}` : 'No changes yet'}</p>
         </div>

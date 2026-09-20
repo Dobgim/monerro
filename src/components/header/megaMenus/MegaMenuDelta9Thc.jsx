@@ -18,33 +18,33 @@ export default function MegaMenuDelta9Thc() {
             <div className="wp-block-column is-vertically-aligned-top cb-cat-children-section is-layout-flow wp-container-core-column-is-layout-f342ef54 wp-block-column-is-layout-flow" style={{ flexBasis: "50%" }}>
               <div className="wp-block-group is-style-background-blur is-content-justification-left is-layout-flex wp-container-core-group-is-layout-7a576a65 wp-block-group-is-layout-flex" style={{ fontStyle: "normal", fontWeight: "500" }}>
                 <figure className="wp-block-image size-us_200_200_crop has-custom-border is-style-default">
-                  <a href="https://cannabuddy.com/product-category/delta-9-thc/">
+                  <a href="https://cannabuddyhub.com/product-category/delta-9-thc/">
                     <img width="200" height="200" src="/assets/images/2026/02/1-MainImage-1.webp" alt="" className="wp-image-724668" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "0px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "0px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                   </a>
                 </figure>
                 <ul style={{ lineHeight: "2" }} className="wp-block-list is-style-grid-layout">
                   <li>
-                    <a href="https://cannabuddy.com/product-category/delta-9-thc/delta-9-thc-candies/">
+                    <a href="https://cannabuddyhub.com/product-category/delta-9-thc/delta-9-thc-candies/">
                       Delta 9 Candies
                     </a>
                   </li>
                   <li>
-                    <a href="https://cannabuddy.com/product-category/delta-9-thc/delta-9-thc-beverages-drink-enhancers/">
+                    <a href="https://cannabuddyhub.com/product-category/delta-9-thc/delta-9-thc-beverages-drink-enhancers/">
                       Delta 9 Drinks
                     </a>
                   </li>
                   <li>
-                    <a href="https://cannabuddy.com/product-category/delta-9-thc/delta-9-thc-cookies-brownies-cereal-treats/">
+                    <a href="https://cannabuddyhub.com/product-category/delta-9-thc/delta-9-thc-cookies-brownies-cereal-treats/">
                       Delta 9 Edibles
                     </a>
                   </li>
                   <li>
-                    <a href="https://cannabuddy.com/product-category/delta-9-thc/delta-9-thc-gummies/">
+                    <a href="https://cannabuddyhub.com/product-category/delta-9-thc/delta-9-thc-gummies/">
                       Delta 9 Gummies
                     </a>
                   </li>
                   <li>
-                    <a href="https://cannabuddy.com/product-category/delta-9-thc/delta-9-thc-tinctures-oils-sublinguals/">
+                    <a href="https://cannabuddyhub.com/product-category/delta-9-thc/delta-9-thc-tinctures-oils-sublinguals/">
                       Delta 9 Tincture
                     </a>
                   </li>
@@ -60,7 +60,7 @@ export default function MegaMenuDelta9Thc() {
                       <img width="150" height="150" src="/assets/images/2026/02/2-HowLongDoesD9THCGummiesLast.webp" alt="" className="wp-image-724669" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/how-long-do-delta-9-gummies-last/">
+                      <a href="https://cannabuddyhub.com/how-long-do-delta-9-gummies-last/">
                         How Long Do Delta 9 Gummies Last?
                       </a>
                     </p>
@@ -70,7 +70,7 @@ export default function MegaMenuDelta9Thc() {
                       <img width="150" height="150" src="/assets/images/2026/02/3-TipsForFlyingWithD9.webp" alt="" className="wp-image-724670" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/potential-health-benefits-of-delta-8-delta-9-and-delta-10/">
+                      <a href="https://cannabuddyhub.com/potential-health-benefits-of-delta-8-delta-9-and-delta-10/">
                         Potential Health Benefits of Delta 8, Delta 9, and Delta 10
                       </a>
                     </p>
@@ -80,7 +80,7 @@ export default function MegaMenuDelta9Thc() {
                       <img width="150" height="150" src="/assets/images/2026/02/4-D9TheFutureOfWellness.webp" alt="" className="wp-image-724671" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/delta-9-edibles-the-future-of-wellness/">
+                      <a href="https://cannabuddyhub.com/delta-9-edibles-the-future-of-wellness/">
                         D9: The Future of Wellness
                       </a>
                     </p>

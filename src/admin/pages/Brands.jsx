@@ -4,7 +4,7 @@ import Icon from '../components/Icon'
 import ImageField from '../components/ImageField'
 import { Button, ConfirmDialog, EmptyRow, FormRow, FormTable, Modal, PageHeader, RowAction, SearchBox, Toggle, useSave } from '../components/ui'
 
-const EMPTY = { name: '', href: 'https://cannabuddy.com/cannabis-brands/', image: '', visible: true, width: 300, height: 300, valign: 'valign_top' }
+const EMPTY = { name: '', href: 'https://cannabuddyhub.com/cannabis-brands/', image: '', visible: true, width: 300, height: 300, valign: 'valign_top' }
 
 function BrandDialog({ brand, onClose }) {
   const save = useSave()

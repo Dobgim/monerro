@@ -22,8 +22,8 @@ export default function Login() {
     <div className="wp-login">
       <h1 className="wp-login__logo">
         <a href="/">
-          <img src="/assets/images/2025/10/CannaBuddy-Logomark.svg" alt="CannaBuddy" width="64" height="58" />
-          <span>CannaBuddy</span>
+          <img src="/assets/brand/logo.svg" alt="CannaBuddyHub" width="64" height="58" />
+          <span>CannaBuddyHub</span>
         </a>
       </h1>
 
@@ -56,7 +56,7 @@ export default function Login() {
       </form>
 
       <p className="wp-login__nav">
-        <a href="/">← Go to CannaBuddy</a>
+        <a href="/">← Go to CannaBuddyHub</a>
       </p>
     </div>
   )

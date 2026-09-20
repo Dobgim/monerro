@@ -41,7 +41,7 @@ export default function PremiumSection() {
           We’re excited to be a trusted real-world and online resource for premium cannabis products and expert advice. We
           want every consumer to make confident informed decisions about their health. Our friendly, passionate staff are
           happy to accommodate and answer any questions you may have about cannabis products. The best way to get in touch is
-          through our <a href="https://cannabuddy.com/contact-us/">Contact Us</a> page.
+          through our <a href="https://cannabuddyhub.com/contact-us/">Contact Us</a> page.
         </h6>
       </CenteredText>
       <Separator size="medium" />

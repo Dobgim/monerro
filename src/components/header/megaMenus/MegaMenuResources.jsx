@@ -10,7 +10,7 @@ export default function MegaMenuResources() {
         <div className="wp-block-cover__inner-container is-layout-constrained wp-container-core-cover-is-layout-b4b20876 wp-block-cover-is-layout-constrained">
           <BlockSearch id="wp-block-search__input-14" placeholder="Search all products..." buttonClassName="wp-block-search__button has-icon wp-element-button" wrapperStyle={{ width: "100%" }} />
           <h3 className="wp-block-heading" id="h-cannabuddy-resources" style={{ paddingTop: "0", paddingBottom: "0", lineHeight: "1" }}>
-            Cannabuddy Resources
+            CannaBuddyHub Resources
           </h3>
           <div className="wp-block-group cb-type-row is-style-default is-layout-grid wp-container-core-group-is-layout-733d2e90 wp-block-group-is-layout-grid" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", fontStyle: "normal", fontWeight: "500" }}>
             <div className="wp-block-group cb-has-abs-link is-style-background-blur is-vertical is-content-justification-center is-layout-flex wp-container-core-group-is-layout-39fbabe5 wp-block-group-is-layout-flex" style={{ paddingTop: "var(--wp--preset--spacing--20)", paddingRight: "var(--wp--preset--spacing--20)", paddingBottom: "var(--wp--preset--spacing--20)", paddingLeft: "var(--wp--preset--spacing--20)" }}>
@@ -33,7 +33,7 @@ export default function MegaMenuResources() {
                 </div>
               </div>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/order-faqs/">
+                <a href="https://cannabuddyhub.com/order-faqs/">
                   Order FAQs
                 </a>
               </p>
@@ -48,7 +48,7 @@ export default function MegaMenuResources() {
                 </div>
               </div>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/about-us/">
+                <a href="https://cannabuddyhub.com/about-us/">
                   Our Story
                 </a>
               </p>
@@ -65,7 +65,7 @@ export default function MegaMenuResources() {
                 </div>
               </div>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/blog/">
+                <a href="https://cannabuddyhub.com/blog/">
                   Cannabis Blog
                 </a>
               </p>
@@ -80,7 +80,7 @@ export default function MegaMenuResources() {
                 </div>
               </div>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/locations">
+                <a href="https://cannabuddyhub.com/locations">
                   Locations
                 </a>
               </p>
@@ -96,7 +96,7 @@ export default function MegaMenuResources() {
                 </div>
               </div>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/faqs/">
+                <a href="https://cannabuddyhub.com/faqs/">
                   Cannabinoid Info
                 </a>
               </p>
@@ -120,7 +120,7 @@ export default function MegaMenuResources() {
                 </div>
               </div>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/lab-results/">
+                <a href="https://cannabuddyhub.com/lab-results/">
                   Lab Results
                 </a>
               </p>

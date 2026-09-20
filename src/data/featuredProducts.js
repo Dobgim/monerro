@@ -6,7 +6,7 @@ const featuredProducts = [
       {
         "id": 474032,
         "name": "THCa Flower Sex Panther",
-        "href": "https://cannabuddy.com/product/high-thca-flower-sex-panther/",
+        "href": "https://cannabuddyhub.com/product/high-thca-flower-sex-panther/",
         "image": "/assets/images/2023/01/High-THCa-Sex-Panther-Bud-1-scaled.webp",
         "imageAlt": "THCa Flower Sex Panther - Bud",
         "rating": 4.89,
@@ -21,7 +21,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Select options",
-          "href": "https://cannabuddy.com/product/high-thca-flower-sex-panther/",
+          "href": "https://cannabuddyhub.com/product/high-thca-flower-sex-panther/",
           "className": "button product_type_variable add_to_cart_button",
           "ajax": false,
           "ariaLabel": "Select options for “THCa Flower Sex Panther”"
@@ -31,7 +31,7 @@ const featuredProducts = [
       {
         "id": 542011,
         "name": "THCa Flower Amnesia Haze",
-        "href": "https://cannabuddy.com/product/high-thca-flower-amnesia-haze/",
+        "href": "https://cannabuddyhub.com/product/high-thca-flower-amnesia-haze/",
         "image": "/assets/images/2024/01/THCa-Flower-Amnesia-Haze-Bud-.webp",
         "imageAlt": "THCa Flower Amnesia Haze - Bud",
         "rating": 5.0,
@@ -46,7 +46,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Select options",
-          "href": "https://cannabuddy.com/product/high-thca-flower-amnesia-haze/",
+          "href": "https://cannabuddyhub.com/product/high-thca-flower-amnesia-haze/",
           "className": "button product_type_variable add_to_cart_button",
           "ajax": false,
           "ariaLabel": "Select options for “THCa Flower Amnesia Haze”"
@@ -56,7 +56,7 @@ const featuredProducts = [
       {
         "id": 675887,
         "name": "THCa Flower Green Crack",
-        "href": "https://cannabuddy.com/product/thca-flower-green-crack/",
+        "href": "https://cannabuddyhub.com/product/thca-flower-green-crack/",
         "image": "/assets/images/2025/08/THCa-Flower-Green-Crack-Bud.webp",
         "imageAlt": "THCa Flower Green Crack - Bud",
         "rating": 4.83,
@@ -71,7 +71,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Select options",
-          "href": "https://cannabuddy.com/product/thca-flower-green-crack/",
+          "href": "https://cannabuddyhub.com/product/thca-flower-green-crack/",
           "className": "button product_type_variable add_to_cart_button",
           "ajax": false,
           "ariaLabel": "Select options for “THCa Flower Green Crack”"
@@ -86,7 +86,7 @@ const featuredProducts = [
       {
         "id": 573038,
         "name": "CannaBuddy THCa Crumble – Pineapple Express (1 gram)",
-        "href": "https://cannabuddy.com/product/cannabuddy-thca-crumble-pineapple-express-1-gram/",
+        "href": "https://cannabuddyhub.com/product/cannabuddy-thca-crumble-pineapple-express-1-gram/",
         "image": "/assets/images/2024/03/CannaBuddy-THCa-Crumble-Pineapple-Express-1-gram-Jar-Front.webp",
         "imageAlt": "CannaBuddy THCa Crumble - Pineapple Express (1 gram) - Jar Front",
         "rating": 5.0,
@@ -100,7 +100,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=573038",
+          "href": "https://cannabuddyhub.com/?add-to-cart=573038",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “CannaBuddy THCa Crumble - Pineapple Express (1 gram)”"
@@ -110,7 +110,7 @@ const featuredProducts = [
       {
         "id": 576569,
         "name": "CannaBuddy THCa Crumble – Trainwreck (1 gram)",
-        "href": "https://cannabuddy.com/product/cannabuddy-thca-crumble-trainwreck-1-gram/",
+        "href": "https://cannabuddyhub.com/product/cannabuddy-thca-crumble-trainwreck-1-gram/",
         "image": "/assets/images/2024/04/CannaBuddy-THCa-Crumble-Trainwreck-1-gram-Jar-Front.webp",
         "imageAlt": "CannaBuddy THCa Crumble - Trainwreck (1 gram) - Jar Front",
         "rating": 5.0,
@@ -124,7 +124,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=576569",
+          "href": "https://cannabuddyhub.com/?add-to-cart=576569",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “CannaBuddy THCa Crumble - Trainwreck (1 gram)”"
@@ -134,7 +134,7 @@ const featuredProducts = [
       {
         "id": 612260,
         "name": "CannaBuddy Natural Hemp Rolling Papers 1 1/4″ (32 count)",
-        "href": "https://cannabuddy.com/product/cannabuddy-natural-hemp-rolling-papers-1-1-4-32-count/",
+        "href": "https://cannabuddyhub.com/product/cannabuddy-natural-hemp-rolling-papers-1-1-4-32-count/",
         "image": "/assets/images/2024/09/Cannabuddy-Rolling-Papers-Pack.webp",
         "imageAlt": "CannaBuddy Natural Hemp Rolling Papers 1 1/4\" (32 count) - Pack",
         "rating": null,
@@ -148,7 +148,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=612260",
+          "href": "https://cannabuddyhub.com/?add-to-cart=612260",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “CannaBuddy Natural Hemp Rolling Papers 1 1/4\" (32 count)”"
@@ -163,7 +163,7 @@ const featuredProducts = [
       {
         "id": 644610,
         "name": "PharmaTHC THCa Live Resin Crumble – Blueberry Muffin (2 grams)",
-        "href": "https://cannabuddy.com/product/pharmathc-thca-live-resin-crumble-blueberry-muffin-2-grams/",
+        "href": "https://cannabuddyhub.com/product/pharmathc-thca-live-resin-crumble-blueberry-muffin-2-grams/",
         "image": "/assets/images/2025/02/PharmaTHC-THCa-Crumble-Blueberry-Muffin-2-grams-combo-scaled.webp",
         "imageAlt": "PharmaTHC THCa Crumble - Blueberry Muffin (2 grams) - Combo",
         "rating": null,
@@ -177,7 +177,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=644610",
+          "href": "https://cannabuddyhub.com/?add-to-cart=644610",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “PharmaTHC THCa Live Resin Crumble - Blueberry Muffin (2 grams)”"
@@ -187,7 +187,7 @@ const featuredProducts = [
       {
         "id": 734619,
         "name": "THCa Flower Dogwalker Pre-Rolls Nerd Runtz (6 Count)",
-        "href": "https://cannabuddy.com/product/thca-flower-dogwalker-pre-rolls-nerd-runtz-6-count/",
+        "href": "https://cannabuddyhub.com/product/thca-flower-dogwalker-pre-rolls-nerd-runtz-6-count/",
         "image": "/assets/images/2026/04/THCa-Flower-Dogwalker-Pre-Rolls-Nerd-Runtz-jar.webp",
         "imageAlt": "THCa Flower Dogwalker Pre-Rolls Nerd Runtz jar",
         "rating": null,
@@ -201,7 +201,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=734619",
+          "href": "https://cannabuddyhub.com/?add-to-cart=734619",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “THCa Flower Dogwalker Pre-Rolls Nerd Runtz (6 Count)”"
@@ -211,7 +211,7 @@ const featuredProducts = [
       {
         "id": 672239,
         "name": "Erth Wellness Delta 9 THC Live Resin Gummies – Granddaddy Purple",
-        "href": "https://cannabuddy.com/product/erth-wellness-thc-live-resin-gummies-granddaddy-purple/",
+        "href": "https://cannabuddyhub.com/product/erth-wellness-thc-live-resin-gummies-granddaddy-purple/",
         "image": "/assets/images/2025/06/Erth-Wellness-THC-Live-Resin-Gummies-Granddaddy-Purple-Combo.webp",
         "imageAlt": "Erth Wellness THC Live Resin Gummies - Granddaddy Purple - Combo",
         "rating": null,
@@ -225,7 +225,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=672239",
+          "href": "https://cannabuddyhub.com/?add-to-cart=672239",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “Erth Wellness Delta 9 THC Live Resin Gummies - Granddaddy Purple”"
@@ -235,7 +235,7 @@ const featuredProducts = [
       {
         "id": 627431,
         "name": "Mellow Fellow Wellness Softgel Capsules – Focus Blend (600 mg Total Cannabinoids)",
-        "href": "https://cannabuddy.com/product/mellow-fellow-wellness-softgel-capsules-illuminate-blend-600-mg-total-cannabinoids/",
+        "href": "https://cannabuddyhub.com/product/mellow-fellow-wellness-softgel-capsules-illuminate-blend-600-mg-total-cannabinoids/",
         "image": "/assets/images/2024/11/Mellow-Fellow-Wellness-Softgel-Capsules-Illuminate-Blend-600-mg-Total-Cannabinoids-Combo.webp",
         "imageAlt": "Mellow Fellow Wellness Softgel Capsules - Focus Blend (600 mg Total Cannabinoids) - Combo",
         "rating": null,
@@ -249,7 +249,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=627431",
+          "href": "https://cannabuddyhub.com/?add-to-cart=627431",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “Mellow Fellow Wellness Softgel Capsules - Focus Blend (600 mg Total Cannabinoids)”"
@@ -259,7 +259,7 @@ const featuredProducts = [
       {
         "id": 253314,
         "name": "3Chi Delta 8 THC Vape Cartridge with Botanical Derived Terpenes – Granddaddy Purple",
-        "href": "https://cannabuddy.com/product/3chi-granddaddy-purple-delta-8-thc-vape-cartridge-with-botanical-derived-terpenes/",
+        "href": "https://cannabuddyhub.com/product/3chi-granddaddy-purple-delta-8-thc-vape-cartridge-with-botanical-derived-terpenes/",
         "image": "/assets/images/2021/08/3Chi-Granddaddy-Purple-Delta-8-THC-Vape-Cartridge-with-Botanical-Derived-Terpenes.webp",
         "imageAlt": "3Chi Granddaddy Purple Delta-8-THC Vape Cartridge with Botanical Derived Terpenes",
         "rating": 4.83,
@@ -273,7 +273,7 @@ const featuredProducts = [
         "stock": "outofstock",
         "button": {
           "label": "Read more",
-          "href": "https://cannabuddy.com/product/3chi-granddaddy-purple-delta-8-thc-vape-cartridge-with-botanical-derived-terpenes/",
+          "href": "https://cannabuddyhub.com/product/3chi-granddaddy-purple-delta-8-thc-vape-cartridge-with-botanical-derived-terpenes/",
           "className": "button product_type_simple",
           "ajax": false,
           "ariaLabel": "Read more about “3Chi Delta 8 THC Vape Cartridge with Botanical Derived Terpenes - Granddaddy Purple”"
@@ -283,7 +283,7 @@ const featuredProducts = [
       {
         "id": 510087,
         "name": "PharmaTHC Delta 10 THC Gummies – Blackberry Lemonade (250 mg Total Delta 10 THC)",
-        "href": "https://cannabuddy.com/product/pharmathc-delta-10-thc-gummies-blackberry-lemonade-250-mg-total-delta-10-thc/",
+        "href": "https://cannabuddyhub.com/product/pharmathc-delta-10-thc-gummies-blackberry-lemonade-250-mg-total-delta-10-thc/",
         "image": "/assets/images/2023/07/PharmaTHC-Delta-10-THC-Gummies-Blackberry-Lemonade-250-mg-Total-Delta-10-THC-combo.webp",
         "imageAlt": "PharmaTHC Delta 10 THC Gummies - Blackberry Lemonade (250 mg Total Delta 10 THC) - combo",
         "rating": 5.0,
@@ -297,7 +297,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=510087",
+          "href": "https://cannabuddyhub.com/?add-to-cart=510087",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “PharmaTHC Delta 10 THC Gummies - Blackberry Lemonade (250 mg Total Delta 10 THC)”"
@@ -307,7 +307,7 @@ const featuredProducts = [
       {
         "id": 404607,
         "name": "HolistaPet CBD Calming Soft Chews for Dogs (300 mg Total CBD)",
-        "href": "https://cannabuddy.com/product/holistapet-cbd-calming-soft-chews-for-dogs-300-mg-total-cbd/",
+        "href": "https://cannabuddyhub.com/product/holistapet-cbd-calming-soft-chews-for-dogs-300-mg-total-cbd/",
         "image": "/assets/images/2021/12/HolistaPet-CBD-Calming-Soft-Chews-for-Dogs-300-mg-Total-CBD-Combo-1.webp",
         "imageAlt": "HolistaPet CBD Calming Soft Chews for Dogs (300 mg Total CBD) - Combo",
         "rating": 4.4,
@@ -321,7 +321,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=404607",
+          "href": "https://cannabuddyhub.com/?add-to-cart=404607",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “HolistaPet CBD Calming Soft Chews for Dogs (300 mg Total CBD)”"
@@ -331,7 +331,7 @@ const featuredProducts = [
       {
         "id": 689507,
         "name": "The Get Cozy Collection",
-        "href": "https://cannabuddy.com/product/the-get-cozy-collection/",
+        "href": "https://cannabuddyhub.com/product/the-get-cozy-collection/",
         "image": "/assets/images/2025/09/Fall-Wellness-Bundle-transborder-scaled.webp",
         "imageAlt": "The Get Cozy Collection - Combo",
         "rating": null,
@@ -346,7 +346,7 @@ const featuredProducts = [
         "stock": "outofstock",
         "button": {
           "label": "Read more",
-          "href": "https://cannabuddy.com/product/the-get-cozy-collection/",
+          "href": "https://cannabuddyhub.com/product/the-get-cozy-collection/",
           "className": "button product_type_bundle product_type_bundle_input_required",
           "ajax": false,
           "ariaLabel": "Read more about “The Get Cozy Collection”"
@@ -356,7 +356,7 @@ const featuredProducts = [
       {
         "id": 481076,
         "name": "Hemplucid Stress Mushroom Gummies – Watermelon (750 mg Total CBD + 75 mg Total Delta 9 THC)",
-        "href": "https://cannabuddy.com/product/hemplucid-stress-mushroom-gummies-watermelon-750-mg-total-cbd-75-mg-total-delta-9-thc/",
+        "href": "https://cannabuddyhub.com/product/hemplucid-stress-mushroom-gummies-watermelon-750-mg-total-cbd-75-mg-total-delta-9-thc/",
         "image": "/assets/images/2023/05/Hemplucid-Stress-Mushroom-Gummies---Watermelon-750-mg-Total-CBD-75-mg-Total-Delta-9-THC-combo.webp",
         "imageAlt": "Hemplucid Stress Mushroom Gummies – Watermelon (750 mg Total CBD + 75 mg Total Delta 9 THC) - combo",
         "rating": 4.5,
@@ -370,7 +370,7 @@ const featuredProducts = [
         "stock": "outofstock",
         "button": {
           "label": "Read more",
-          "href": "https://cannabuddy.com/product/hemplucid-stress-mushroom-gummies-watermelon-750-mg-total-cbd-75-mg-total-delta-9-thc/",
+          "href": "https://cannabuddyhub.com/product/hemplucid-stress-mushroom-gummies-watermelon-750-mg-total-cbd-75-mg-total-delta-9-thc/",
           "className": "button product_type_simple",
           "ajax": false,
           "ariaLabel": "Read more about “Hemplucid Stress Mushroom Gummies - Watermelon (750 mg Total CBD + 75 mg Total Delta 9 THC)”"
@@ -380,7 +380,7 @@ const featuredProducts = [
       {
         "id": 651039,
         "name": "Cheeba Chews Delta 9 and CBC and CBD Salted Caramel Chews – Joint Relief (50 mg Total Cannabinoids)",
-        "href": "https://cannabuddy.com/product/cheeba-chews-delta-9-and-cbc-and-cbd-salted-caramel-chews-joint-relief-50-mg-total-cannabinoids/",
+        "href": "https://cannabuddyhub.com/product/cheeba-chews-delta-9-and-cbc-and-cbd-salted-caramel-chews-joint-relief-50-mg-total-cannabinoids/",
         "image": "/assets/images/2025/03/Cheeba-Chews-Delta-9-and-CBC-and-CBD-Salted-Caramel-Chews-Joint-Relief-50-mg-Total-Cannabinoids-combo.webp",
         "imageAlt": "Cheeba Chews Delta 9 and CBC and CBD Salted Caramel Chews - Joint Relief (50 mg Total Cannabinoids) - Combo",
         "rating": 5.0,
@@ -394,7 +394,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=651039",
+          "href": "https://cannabuddyhub.com/?add-to-cart=651039",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “Cheeba Chews Delta 9 and CBC and CBD Salted Caramel Chews - Joint Relief (50 mg Total Cannabinoids)”"
@@ -404,7 +404,7 @@ const featuredProducts = [
       {
         "id": 211375,
         "name": "PharmaTHC Delta 8 THC Vape Cartridge – Trainwreck",
-        "href": "https://cannabuddy.com/product/pharmacbd-trainwreck-delta-8-thc-vape-cartridge/",
+        "href": "https://cannabuddyhub.com/product/pharmacbd-trainwreck-delta-8-thc-vape-cartridge/",
         "image": "/assets/images/2021/03/PharmaTHC-Delta-8-THC-Vape-Cartridge-Trainwreck-Combo.webp",
         "imageAlt": "PharmaTHC Delta 8 THC Vape Cartridge - Trainwreck - Combo",
         "rating": 4.5,
@@ -418,7 +418,7 @@ const featuredProducts = [
         "stock": "outofstock",
         "button": {
           "label": "Read more",
-          "href": "https://cannabuddy.com/product/pharmacbd-trainwreck-delta-8-thc-vape-cartridge/",
+          "href": "https://cannabuddyhub.com/product/pharmacbd-trainwreck-delta-8-thc-vape-cartridge/",
           "className": "button product_type_simple",
           "ajax": false,
           "ariaLabel": "Read more about “PharmaTHC Delta 8 THC Vape Cartridge - Trainwreck”"
@@ -428,7 +428,7 @@ const featuredProducts = [
       {
         "id": 477167,
         "name": "Kush Kube Delta 9 + CBD Gummies – Pina Kolada",
-        "href": "https://cannabuddy.com/product/kush-kube-delta-9-cbd-gummies-pina-kolada-150-mg-total-delta-9-thc-150-mg-total-cbd/",
+        "href": "https://cannabuddyhub.com/product/kush-kube-delta-9-cbd-gummies-pina-kolada-150-mg-total-delta-9-thc-150-mg-total-cbd/",
         "image": "/assets/images/2023/02/Kush-Kube-Delta-9-_-CBD-Gummies-Pina-Colada-Combo.webp",
         "imageAlt": "Kush Kube - Delta 9 _ CBD Gummies - Pina Colada - Combo",
         "rating": null,
@@ -442,7 +442,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=477167",
+          "href": "https://cannabuddyhub.com/?add-to-cart=477167",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “Kush Kube Delta 9 + CBD Gummies - Pina Kolada”"
@@ -452,7 +452,7 @@ const featuredProducts = [
       {
         "id": 411113,
         "name": "3Chi THCV Gummies (200 mg Total Delta 8 THC, 100 mg Total THCV)",
-        "href": "https://cannabuddy.com/product/3chi-thcv-gummies-200-mg-total-delta-8-thc-100-mg-total-thcv/",
+        "href": "https://cannabuddyhub.com/product/3chi-thcv-gummies-200-mg-total-delta-8-thc-100-mg-total-thcv/",
         "image": "/assets/images/2022/01/3Chi-THCV-Gummies-200-mg-Total-Delta-8-THC-100-mg-Total-THCV-Combo.webp",
         "imageAlt": "3Chi THCV Gummies (200 mg Total Delta-8-THC, 100 mg Total THCV) - Combo",
         "rating": 4.64,
@@ -466,7 +466,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=411113",
+          "href": "https://cannabuddyhub.com/?add-to-cart=411113",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “3Chi THCV Gummies (200 mg Total Delta 8 THC, 100 mg Total THCV)”"
@@ -476,7 +476,7 @@ const featuredProducts = [
       {
         "id": 734616,
         "name": "THCa Flower Dogwalker Pre-Rolls Jet Fuel (6 Count)",
-        "href": "https://cannabuddy.com/product/thca-flower-dogwalker-pre-rolls-jet-fuel-6-count/",
+        "href": "https://cannabuddyhub.com/product/thca-flower-dogwalker-pre-rolls-jet-fuel-6-count/",
         "image": "/assets/images/2026/04/THCa-Flower-Dogwalker-Pre-Rolls-Jet-Fuel-jar.webp",
         "imageAlt": "THCa Flower Dogwalker Pre-Rolls Jet Fuel jar",
         "rating": null,
@@ -490,7 +490,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=734616",
+          "href": "https://cannabuddyhub.com/?add-to-cart=734616",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “THCa Flower Dogwalker Pre-Rolls Jet Fuel (6 Count)”"
@@ -500,7 +500,7 @@ const featuredProducts = [
       {
         "id": 529770,
         "name": "Mellow Fellow Desire Blend Live Resin Disposable Vape – Cali Gas",
-        "href": "https://cannabuddy.com/product/mellow-fellow-2-gram-desire-blend-live-resin-disposable-vape-cali-gas/",
+        "href": "https://cannabuddyhub.com/product/mellow-fellow-2-gram-desire-blend-live-resin-disposable-vape-cali-gas/",
         "image": "/assets/images/2023/10/Mellow-Fellow-2-gram-Desire-Blend-Live-Resin-Disposable-Vape-Cali-Gas-Combo.webp",
         "imageAlt": "Mellow Fellow 2 gram Desire Blend Live Resin Disposable Vape - Cali Gas - Combo",
         "rating": null,
@@ -515,7 +515,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=529770",
+          "href": "https://cannabuddyhub.com/?add-to-cart=529770",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “Mellow Fellow Desire Blend Live Resin Disposable Vape - Cali Gas”"
@@ -525,7 +525,7 @@ const featuredProducts = [
       {
         "id": 643147,
         "name": "Camino Delta 9 THC Excite Gummies – Wild Cherry",
-        "href": "https://cannabuddy.com/product/camino-delta-9-excite-gummies-wild-cherry-100-mg-delta-9-thc-total/",
+        "href": "https://cannabuddyhub.com/product/camino-delta-9-excite-gummies-wild-cherry-100-mg-delta-9-thc-total/",
         "image": "/assets/images/2025/01/Camino-Delta-9-Excite-Gummies-Wild-Cherry-100-mg-Delta-9-THC-Total-Combo.webp",
         "imageAlt": "Camino Delta 9 THC Excite Gummies - Wild Cherry - Combo",
         "rating": null,
@@ -540,7 +540,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=643147",
+          "href": "https://cannabuddyhub.com/?add-to-cart=643147",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “Camino Delta 9 THC Excite Gummies - Wild Cherry”"
@@ -550,7 +550,7 @@ const featuredProducts = [
       {
         "id": 689469,
         "name": "Simply the Best Collection",
-        "href": "https://cannabuddy.com/product/simply-the-best-collection/",
+        "href": "https://cannabuddyhub.com/product/simply-the-best-collection/",
         "image": "/assets/images/2025/09/Simply-the-Best-Bundle-Update-1024-x-1024-2.webp",
         "imageAlt": "Simply the Best Collection",
         "rating": null,
@@ -564,7 +564,7 @@ const featuredProducts = [
         "stock": "outofstock",
         "button": {
           "label": "Read more",
-          "href": "https://cannabuddy.com/product/simply-the-best-collection/",
+          "href": "https://cannabuddyhub.com/product/simply-the-best-collection/",
           "className": "button product_type_bundle product_type_bundle_input_required",
           "ajax": false,
           "ariaLabel": "Read more about “Simply the Best Collection”"
@@ -574,7 +574,7 @@ const featuredProducts = [
       {
         "id": 446748,
         "name": "Ooze Slim Twist Pen 2.0 Vape Battery – Rasta",
-        "href": "https://cannabuddy.com/product/ooze-slim-twist-pen-2-0-vape-battery-rasta/",
+        "href": "https://cannabuddyhub.com/product/ooze-slim-twist-pen-2-0-vape-battery-rasta/",
         "image": "/assets/images/2022/08/Ooze-Slim-Twist-Pen-2.0-Vape-Battery---Rasta-Product.webp",
         "imageAlt": "Ooze Slim Twist Pen 2.0 Vape Battery – Rasta - Product",
         "rating": 5.0,
@@ -588,7 +588,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=446748",
+          "href": "https://cannabuddyhub.com/?add-to-cart=446748",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “Ooze Slim Twist Pen 2.0 Vape Battery - Rasta”"
@@ -598,7 +598,7 @@ const featuredProducts = [
       {
         "id": 627133,
         "name": "Wyld Delta 9 / CBG Refresh Gummies – Pear – 10 Count (100 mg Delta 9 THC + 100 mg CBG Total)",
-        "href": "https://cannabuddy.com/product/wyld-delta-9-cbg-refresh-gummies-pear-10-count-100-mg-delta-9-thc-100-mg-cbg-total/",
+        "href": "https://cannabuddyhub.com/product/wyld-delta-9-cbg-refresh-gummies-pear-10-count-100-mg-delta-9-thc-100-mg-cbg-total/",
         "image": "/assets/images/2024/12/Wyld-Delta-9-CBG-Refresh-Gummies-Pear-10-Count-100-mg-Delta-9-THC-100-mg-CBG-Total-Combo.webp",
         "imageAlt": "Wyld Delta 9 CBG Refresh Gummies - Pear - 10 Count (100 mg Delta 9 THC + 100 mg CBG Total) - Combo",
         "rating": null,
@@ -612,7 +612,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=627133",
+          "href": "https://cannabuddyhub.com/?add-to-cart=627133",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “Wyld Delta 9 / CBG Refresh Gummies - Pear - 10 Count (100 mg Delta 9 THC + 100 mg CBG Total)”"
@@ -622,7 +622,7 @@ const featuredProducts = [
       {
         "id": 744691,
         "name": "THCa Flower Pre-Roll Jealousy",
-        "href": "https://cannabuddy.com/product/thca-flower-pre-roll-jealousy/",
+        "href": "https://cannabuddyhub.com/product/thca-flower-pre-roll-jealousy/",
         "image": "/assets/images/2026/07/THCa-Flower-Pre-Roll-Jealousy-preroll-combo.webp",
         "imageAlt": "THCa Flower Pre-Roll Jealousy - preroll combo",
         "rating": null,
@@ -636,7 +636,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=744691",
+          "href": "https://cannabuddyhub.com/?add-to-cart=744691",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “THCa Flower Pre-Roll Jealousy”"
@@ -646,7 +646,7 @@ const featuredProducts = [
       {
         "id": 627129,
         "name": "Wyld Delta 9 / CBN Sleep Gummies – Elderberry – 10 Count (100 mg Delta 9 THC + 50 mg CBN Total)",
-        "href": "https://cannabuddy.com/product/wyld-delta-9-cbn-sleep-gummies-elderberry-10-count-100-mg-delta-9-thc-50-mg-cbn-total/",
+        "href": "https://cannabuddyhub.com/product/wyld-delta-9-cbn-sleep-gummies-elderberry-10-count-100-mg-delta-9-thc-50-mg-cbn-total/",
         "image": "/assets/images/2024/12/Wyld-Delta-9-CBN-Sleep-Gummies-Elderberry-10-Count-100-mg-Delta-9-THC-50-mg-CBN-Total-Combo.webp",
         "imageAlt": "Wyld Delta 9 CBN Sleep Gummies - Elderberry - 10 Count (100 mg Delta 9 THC + 50 mg CBN Total) - Combo",
         "rating": null,
@@ -660,7 +660,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=627129",
+          "href": "https://cannabuddyhub.com/?add-to-cart=627129",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “Wyld Delta 9 / CBN Sleep Gummies - Elderberry - 10 Count (100 mg Delta 9 THC + 50 mg CBN Total)”"
@@ -670,7 +670,7 @@ const featuredProducts = [
       {
         "id": 684795,
         "name": "VIIA Delta 9 and CBD Cloud 9 Relief Gummies – 10 mg THC",
-        "href": "https://cannabuddy.com/product/viia-delta-9-and-cbd-cloud-9-relief-gummies-10-mg-thc/",
+        "href": "https://cannabuddyhub.com/product/viia-delta-9-and-cbd-cloud-9-relief-gummies-10-mg-thc/",
         "image": "/assets/images/2025/08/Viia-Delta-9-and-CBD-Cloud-9-Relief-Gummies-10-mg-THC-Combo.webp",
         "imageAlt": "VIIA Delta 9 and CBD Cloud 9 Relief Gummies - 10 mg THC - Combo",
         "rating": null,
@@ -684,7 +684,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Add to cart",
-          "href": "https://cannabuddy.com/?add-to-cart=684795",
+          "href": "https://cannabuddyhub.com/?add-to-cart=684795",
           "className": "button product_type_simple add_to_cart_button ajax_add_to_cart",
           "ajax": true,
           "ariaLabel": "Add to cart: “VIIA Delta 9 and CBD Cloud 9 Relief Gummies - 10 mg THC”"
@@ -694,7 +694,7 @@ const featuredProducts = [
       {
         "id": 674029,
         "name": "CannaBuddy Delta 9 THC Seltzer – Hazy Sunrise",
-        "href": "https://cannabuddy.com/product/cannabuddy-delta-9-thc-seltzer-hazy-sunrise/",
+        "href": "https://cannabuddyhub.com/product/cannabuddy-delta-9-thc-seltzer-hazy-sunrise/",
         "image": "/assets/images/2025/08/CannaBuddy-Delta-9-THC-Seltzer-6-Pack-Hazy-Sunrise-Combo.jpg.webp",
         "imageAlt": "CannaBuddy Delta 9 THC Seltzer 6 Pack - Hazy Sunrise - Combo.jpg",
         "rating": null,
@@ -709,7 +709,7 @@ const featuredProducts = [
         "stock": "instock",
         "button": {
           "label": "Select options",
-          "href": "https://cannabuddy.com/product/cannabuddy-delta-9-thc-seltzer-hazy-sunrise/",
+          "href": "https://cannabuddyhub.com/product/cannabuddy-delta-9-thc-seltzer-hazy-sunrise/",
           "className": "button product_type_variable add_to_cart_button",
           "ajax": false,
           "ariaLabel": "Select options for “CannaBuddy Delta 9 THC Seltzer - Hazy Sunrise”"
@@ -719,7 +719,7 @@ const featuredProducts = [
       {
         "id": 210379,
         "name": "Yocan UNI Pro Universal Portable Box Mod Battery – Black",
-        "href": "https://cannabuddy.com/product/yocan-uni-pro-universal-portable-box-mod-battery-black/",
+        "href": "https://cannabuddyhub.com/product/yocan-uni-pro-universal-portable-box-mod-battery-black/",
         "image": "/assets/images/2020/09/Yocan-UNI-Pro-Universal-Portable-Box-Mod-Battery---Black-product-2.webp",
         "imageAlt": "Yocan UNI Pro Universal Portable Box Mod Battery – Black - product 2",
         "rating": null,
@@ -733,7 +733,7 @@ const featuredProducts = [
         "stock": "outofstock",
         "button": {
           "label": "Read more",
-          "href": "https://cannabuddy.com/product/yocan-uni-pro-universal-portable-box-mod-battery-black/",
+          "href": "https://cannabuddyhub.com/product/yocan-uni-pro-universal-portable-box-mod-battery-black/",
           "className": "button product_type_simple",
           "ajax": false,
           "ariaLabel": "Read more about “Yocan UNI Pro Universal Portable Box Mod Battery - Black”"

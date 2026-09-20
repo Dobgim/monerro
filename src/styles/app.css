@@ -4,6 +4,11 @@
  * form that replaces the third-party Klaviyo embed.
  */
 
+/* CannaBuddyHub wordmark: "Hub" picks up the brand orange */
+.site-logo .logo-hub {
+  color: #ef742a;
+}
+
 /* WooCommerce "added to cart" toast under the header cart icon */
 .w-cart .w-cart-notification.shown {
   display: block;

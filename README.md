@@ -1,6 +1,11 @@
-# CannaBuddy home page — React rebuild
+# CannaBuddyHub — React storefront + admin dashboard
 
-A React (Vite) rebuild of the saved `cannabuddy.com` home page in `../cannabuddy.com`, with the same design and the same images, served in higher resolution.
+The shop front end for **cannabuddyhub.com**, built in React (Vite), with a WordPress-style admin
+dashboard at `/admin`.
+
+> **Branding note.** The layout, product photos and several banner images in this repo came from
+> cannabuddy.com, a different company. The site name, logo, links and email addresses are now
+> CannaBuddyHub, but the artwork is not yet original — see "Still to replace" at the bottom.
 
 ## Run
 
@@ -22,7 +27,7 @@ Sign in at http://localhost:5190/admin with:
 | -------- | --------------- |
 | `admin`  | `cannabuddy123` |
 
-(The email address `admin@cannabuddy.com` also works as the username.) Change both under
+(The email address `admin@cannabuddyhub.com` also works as the username.) Change both under
 **Settings → Your login** after the first sign-in.
 
 ### Adding a product (what the client does)
@@ -105,3 +110,15 @@ Every image is stored locally under `public/assets/images/`. The saved page used
 
 - Links still point to the real `cannabuddy.com` pages. Only the home page is rebuilt here.
 - The third-party widgets (AgeChecker age gate, Klaviyo sign-up, analytics) are not included. A simple sign-up form takes Klaviyo's place.
+
+## Still to replace (brand assets)
+
+The words, links and logo are CannaBuddyHub, but some artwork still belongs to the other company
+and should be swapped before the site goes live:
+
+- **Hero banner slides** — the current photos show CannaBuddy-branded cans and their award graphics.
+- **House-brand product photos and names** — e.g. "CannaBuddy THCa Crumble", "CannaBuddy Delta 9 THC Seltzer",
+  "CannaBuddy Natural Hemp Rolling Papers". Rename them and replace the photos in Products → Edit.
+- **The "CannaBuddy" tile in Brands** — remove it, or replace it with your own supplier list.
+- **Shop addresses in the footer** — the Charlotte and Matthews addresses, phone numbers and email
+  addresses are still the other company's. Only the customer support number is yours.

@@ -29,7 +29,7 @@ export default function HeaderSearch() {
         <i className="fas fa-search" />
       </a>
       <div className="w-search-form">
-        <form className="w-form-row for_text" role="search" action="https://cannabuddy.com/" method="get">
+        <form className="w-form-row for_text" role="search" action="https://cannabuddyhub.com/" method="get">
           <div className="w-form-row-field">
             <input ref={input} type="text" name="s" placeholder="Search" aria-label="Search" onBlur={(e) => !e.target.value && setActive(false)} />
           </div>

@@ -51,7 +51,7 @@ function buildDefaults() {
     announcement: {
       enabled: true,
       text: '💙 Buy one Blue Dream 1/8th, get one free September 17–20 with code “bluebogo” at Cart. 💙',
-      href: 'https://cannabuddy.com/product/high-thca-flower-blue-dream/',
+      href: 'https://cannabuddyhub.com/product/high-thca-flower-blue-dream/',
     },
     products: featuredProducts.flatMap((g) =>
       g.products.map((p) => ({ ...p, visible: true, buttonKind: buttonKindOf(p.button) })),
@@ -67,7 +67,7 @@ function buildDefaults() {
     cartEvents: [],
     admin: {
       username: 'admin',
-      email: 'admin@cannabuddy.com',
+      email: 'admin@cannabuddyhub.com',
       // SHA-256 of the default password "cannabuddy123" — change it in Settings
       passwordHash: '3c2b93bca2df4c1e16b4e40cb0638078cfd921ebb033293e3ade19153fa43d16',
     },

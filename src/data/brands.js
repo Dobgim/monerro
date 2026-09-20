@@ -3,7 +3,7 @@ const brands = [
   {
     "name": "1906 brand logo",
     "ariaLabel": "1906 brand logo",
-    "href": "https://cannabuddy.com/product-brands/1906/",
+    "href": "https://cannabuddyhub.com/product-brands/1906/",
     "title": "view all 1906 products",
     "image": "/assets/images/2025/10/1906_bp-logo.webp",
     "activeImage": "/assets/images/2025/10/1906_bp-logo.webp",
@@ -14,7 +14,7 @@ const brands = [
   {
     "name": "3Chi Brand Page Logo",
     "ariaLabel": "3chi_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/3chi/",
+    "href": "https://cannabuddyhub.com/product-brands/3chi/",
     "title": "view all 3Chi products",
     "image": "/assets/images/2024/03/3chi_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/3chi_bp-logo.webp",
@@ -25,7 +25,7 @@ const brands = [
   {
     "name": "Asheville Dispensary Brand Page Logo",
     "ariaLabel": "asheville-dispensary_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/asheville-dispensary/",
+    "href": "https://cannabuddyhub.com/product-brands/asheville-dispensary/",
     "title": "view all Asheville Dispensary products",
     "image": "/assets/images/2024/03/asheville-dispensary_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/asheville-dispensary_bp-logo.webp",
@@ -36,7 +36,7 @@ const brands = [
   {
     "name": "Baked Bags Brand Page Logo",
     "ariaLabel": "baked-bags_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/baked-bags/",
+    "href": "https://cannabuddyhub.com/product-brands/baked-bags/",
     "title": "view all Baked Bags products",
     "image": "/assets/images/2024/09/baked-bags_bp-logo.webp",
     "activeImage": "/assets/images/2024/09/baked-bags_bp-logo.webp",
@@ -47,7 +47,7 @@ const brands = [
   {
     "name": "Boveda logo",
     "ariaLabel": "Boveda logo",
-    "href": "https://cannabuddy.com/product-brands/boveda/",
+    "href": "https://cannabuddyhub.com/product-brands/boveda/",
     "title": "view all Boveda products",
     "image": "/assets/images/2025/04/Boveda_bp-logo.webp",
     "activeImage": "/assets/images/2025/04/Boveda_bp-logo.webp",
@@ -58,7 +58,7 @@ const brands = [
   {
     "name": "Budpop Brand Page Logo",
     "ariaLabel": "Budpop logo",
-    "href": "https://cannabuddy.com/product-brands/budpop/",
+    "href": "https://cannabuddyhub.com/product-brands/budpop/",
     "title": "view all Budpop products",
     "image": "/assets/images/2024/07/budpop_bp-logo.webp",
     "activeImage": "/assets/images/2024/07/budpop_bp-logo.webp",
@@ -69,7 +69,7 @@ const brands = [
   {
     "name": "Camino logo",
     "ariaLabel": "Camino logo",
-    "href": "https://cannabuddy.com/product-brands/camino/",
+    "href": "https://cannabuddyhub.com/product-brands/camino/",
     "title": "view all Camino products",
     "image": "/assets/images/2025/02/Camino_bp-logo.webp",
     "activeImage": "/assets/images/2025/02/Camino_bp-logo.webp",
@@ -80,7 +80,7 @@ const brands = [
   {
     "name": "CannaBuddy Brand Page Logo",
     "ariaLabel": "cannabuddy_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/cannabuddy/",
+    "href": "https://cannabuddyhub.com/product-brands/cannabuddy/",
     "title": "view all CannaBuddy products",
     "image": "/assets/images/2024/03/cannabuddy_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/cannabuddy_bp-logo.webp",
@@ -91,7 +91,7 @@ const brands = [
   {
     "name": "Canna Hemp Brand Page Logo",
     "ariaLabel": "canna-hemp_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/canna-hemp/",
+    "href": "https://cannabuddyhub.com/product-brands/canna-hemp/",
     "title": "view all Canna Hemp products",
     "image": "/assets/images/2024/03/canna-hemp_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/canna-hemp_bp-logo.webp",
@@ -102,7 +102,7 @@ const brands = [
   {
     "name": "CCELL Brand Page Logo",
     "ariaLabel": "ccell_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/ccell/",
+    "href": "https://cannabuddyhub.com/product-brands/ccell/",
     "title": "view all CCELL products",
     "image": "/assets/images/2024/03/ccell_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/ccell_bp-logo.webp",
@@ -113,7 +113,7 @@ const brands = [
   {
     "name": "Cheeba Chews logo",
     "ariaLabel": "Cheeba Chews logo",
-    "href": "https://cannabuddy.com/product-brands/cheeba-chews/",
+    "href": "https://cannabuddyhub.com/product-brands/cheeba-chews/",
     "title": "view all Cheeba Chews products",
     "image": "/assets/images/2025/04/cheeba-chews_bp-logo.webp",
     "activeImage": "/assets/images/2025/04/cheeba-chews_bp-logo.webp",
@@ -124,7 +124,7 @@ const brands = [
   {
     "name": "Cheef Botanicals Brand Page Logo",
     "ariaLabel": "Cheef Botanicals Logo",
-    "href": "https://cannabuddy.com/product-brands/cheef-botanicals/",
+    "href": "https://cannabuddyhub.com/product-brands/cheef-botanicals/",
     "title": "view all Cheef Botanicals products",
     "image": "/assets/images/2024/07/cheef-botanicals_bp-logo.webp",
     "activeImage": "/assets/images/2024/07/cheef-botanicals_bp-logo.webp",
@@ -135,7 +135,7 @@ const brands = [
   {
     "name": "Chewbies brand logo",
     "ariaLabel": "Chewbies brand logo",
-    "href": "https://cannabuddy.com/product-brands/chewbies/",
+    "href": "https://cannabuddyhub.com/product-brands/chewbies/",
     "title": "view all Chewbies products",
     "image": "/assets/images/2025/12/chewbies_bp-logo.webp",
     "activeImage": "/assets/images/2025/12/chewbies_bp-logo.webp",
@@ -146,7 +146,7 @@ const brands = [
   {
     "name": "Cycling Frog Brand Page Logo",
     "ariaLabel": "cycling-frog_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/cycling-frog/",
+    "href": "https://cannabuddyhub.com/product-brands/cycling-frog/",
     "title": "view all Cycling Frog products",
     "image": "/assets/images/2024/03/cycling-frog_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/cycling-frog_bp-logo.webp",
@@ -157,7 +157,7 @@ const brands = [
   {
     "name": "deVINE Brand Page Logo",
     "ariaLabel": "deVINE Brand Page Logo",
-    "href": "https://cannabuddy.com/product-brands/devine-naturals/",
+    "href": "https://cannabuddyhub.com/product-brands/devine-naturals/",
     "title": "view all deVINE Naturals products",
     "image": "/assets/images/2025/05/deVINE_bp-logo.webp",
     "activeImage": "/assets/images/2025/05/deVINE_bp-logo.webp",
@@ -168,7 +168,7 @@ const brands = [
   {
     "name": "Dreamer Shrooms brand page logo",
     "ariaLabel": "dreamer-shrooms_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/dreamer-shrooms/",
+    "href": "https://cannabuddyhub.com/product-brands/dreamer-shrooms/",
     "title": "view all Dreamer Shrooms products",
     "image": "/assets/images/2024/10/dreamer-shrooms_bp-logo.webp",
     "activeImage": "/assets/images/2024/10/dreamer-shrooms_bp-logo.webp",
@@ -179,7 +179,7 @@ const brands = [
   {
     "name": "Erth Wellness brand logo",
     "ariaLabel": "Erth Wellness brand logo",
-    "href": "https://cannabuddy.com/product-brands/erth-wellness/",
+    "href": "https://cannabuddyhub.com/product-brands/erth-wellness/",
     "title": "view all Erth Wellness products",
     "image": "/assets/images/2025/07/erth-wellness_bp-logo.webp",
     "activeImage": "/assets/images/2025/07/erth-wellness_bp-logo.webp",
@@ -190,7 +190,7 @@ const brands = [
   {
     "name": "Exhale Wellness Brand Page Logo",
     "ariaLabel": "exhale-wellness_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/exhale/",
+    "href": "https://cannabuddyhub.com/product-brands/exhale/",
     "title": "view all Exhale products",
     "image": "/assets/images/2024/08/exhale-wellness_bp-logo.webp",
     "activeImage": "/assets/images/2024/08/exhale-wellness_bp-logo.webp",
@@ -201,7 +201,7 @@ const brands = [
   {
     "name": "Futurola Brand Logo",
     "ariaLabel": "Futurola Brand Logo",
-    "href": "https://cannabuddy.com/product-brands/futurola/",
+    "href": "https://cannabuddyhub.com/product-brands/futurola/",
     "title": "view all Futurola products",
     "image": "/assets/images/2025/07/futurola_bp-logo.webp",
     "activeImage": "/assets/images/2025/07/futurola_bp-logo.webp",
@@ -212,7 +212,7 @@ const brands = [
   {
     "name": "Galaxy Treats Brand Page Logo",
     "ariaLabel": "galaxy-treats_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/galaxy-treats/",
+    "href": "https://cannabuddyhub.com/product-brands/galaxy-treats/",
     "title": "view all Galaxy Treats products",
     "image": "/assets/images/2024/03/galaxy-treats_bp-logo-e1710541123310.webp",
     "activeImage": "/assets/images/2024/03/galaxy-treats_bp-logo-e1710541123310.webp",
@@ -223,7 +223,7 @@ const brands = [
   {
     "name": "Gold Standard Brand Page Logo",
     "ariaLabel": "gold-standard_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/gold-standard-cbd/",
+    "href": "https://cannabuddyhub.com/product-brands/gold-standard-cbd/",
     "title": "view all Gold Standard CBD products",
     "image": "/assets/images/2024/03/gold-standard_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/gold-standard_bp-logo.webp",
@@ -234,7 +234,7 @@ const brands = [
   {
     "name": "Goodies Brand Page Logo",
     "ariaLabel": "goodies_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/goodies/",
+    "href": "https://cannabuddyhub.com/product-brands/goodies/",
     "title": "view all Goodies products",
     "image": "/assets/images/2024/03/goodies_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/goodies_bp-logo.webp",
@@ -245,7 +245,7 @@ const brands = [
   {
     "name": "Haygood Market Brand Page Logo",
     "ariaLabel": "haygood-market_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/haygood/",
+    "href": "https://cannabuddyhub.com/product-brands/haygood/",
     "title": "view all Haygood Market products",
     "image": "/assets/images/2024/03/haygood-market_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/haygood-market_bp-logo.webp",
@@ -256,7 +256,7 @@ const brands = [
   {
     "name": "Hemp Lucid Brand Page Logo",
     "ariaLabel": "hemp-lucid_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/hemplucid/",
+    "href": "https://cannabuddyhub.com/product-brands/hemplucid/",
     "title": "view all HempLucid products",
     "image": "/assets/images/2024/03/hemp-lucid_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/hemp-lucid_bp-logo.webp",
@@ -267,7 +267,7 @@ const brands = [
   {
     "name": "Holistapet Brand Page Logo",
     "ariaLabel": "holistapet_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/holistapet/",
+    "href": "https://cannabuddyhub.com/product-brands/holistapet/",
     "title": "view all Holistapet products",
     "image": "/assets/images/2024/03/holistapet_bp-logo-e1710540113942.webp",
     "activeImage": "/assets/images/2024/03/holistapet_bp-logo-e1710540113942.webp",
@@ -278,7 +278,7 @@ const brands = [
   {
     "name": "Kind Oasis brand logo",
     "ariaLabel": "Kind Oasis brand logo",
-    "href": "https://cannabuddy.com/product-brands/kind-oasis/",
+    "href": "https://cannabuddyhub.com/product-brands/kind-oasis/",
     "title": "view all Kind Oasis products",
     "image": "/assets/images/2025/08/Kind-Oasis_bp-logo-1.webp",
     "activeImage": "/assets/images/2025/08/Kind-Oasis_bp-logo-1.webp",
@@ -289,7 +289,7 @@ const brands = [
   {
     "name": "Kush Kube Brand Page Logo",
     "ariaLabel": "kush-kube_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/kush-kube/",
+    "href": "https://cannabuddyhub.com/product-brands/kush-kube/",
     "title": "view all Kush Kube products",
     "image": "/assets/images/2024/03/kush-kube_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/kush-kube_bp-logo.webp",
@@ -300,7 +300,7 @@ const brands = [
   {
     "name": "Mellow Fellow Brand Page Logo",
     "ariaLabel": "mellow-fellow_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/mellow-fellow/",
+    "href": "https://cannabuddyhub.com/product-brands/mellow-fellow/",
     "title": "view all Mellow Fellow products",
     "image": "/assets/images/2024/03/mellow-fellow_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/mellow-fellow_bp-logo.webp",
@@ -311,7 +311,7 @@ const brands = [
   {
     "name": "Ooze Brand Page Logo",
     "ariaLabel": "ooze_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/ooze/",
+    "href": "https://cannabuddyhub.com/product-brands/ooze/",
     "title": "view all Ooze products",
     "image": "/assets/images/2024/03/ooze_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/ooze_bp-logo.webp",
@@ -322,7 +322,7 @@ const brands = [
   {
     "name": "Pharma Brand Page Logo",
     "ariaLabel": "pharma_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/pharmacbd/",
+    "href": "https://cannabuddyhub.com/product-brands/pharmacbd/",
     "title": "view all Pharma products",
     "image": "/assets/images/2024/03/pharma_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/pharma_bp-logo.webp",
@@ -333,7 +333,7 @@ const brands = [
   {
     "name": "Pure Roots Botanicals logo",
     "ariaLabel": "Pure Roots Botanicals logo",
-    "href": "https://cannabuddy.com/product-brands/pure-roots-botanicals/",
+    "href": "https://cannabuddyhub.com/product-brands/pure-roots-botanicals/",
     "title": "view all Pure Roots Botanicals products",
     "image": "/assets/images/2025/04/pure-roots-botanicals_bp-logo.webp",
     "activeImage": "/assets/images/2025/04/pure-roots-botanicals_bp-logo.webp",
@@ -344,7 +344,7 @@ const brands = [
   {
     "name": "Rebel Rabbit Logo",
     "ariaLabel": "Rebel Rabbit Logo",
-    "href": "https://cannabuddy.com/product-brands/rebel-rabbit/",
+    "href": "https://cannabuddyhub.com/product-brands/rebel-rabbit/",
     "title": "view all Rebel Rabbit products",
     "image": "/assets/images/2025/01/rebel-rabbit_bp-logo.webp",
     "activeImage": "/assets/images/2025/01/rebel-rabbit_bp-logo.webp",
@@ -355,7 +355,7 @@ const brands = [
   {
     "name": "Snapdragon Brand Page Logo",
     "ariaLabel": "snapdragon-hemp_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/snapdragon/",
+    "href": "https://cannabuddyhub.com/product-brands/snapdragon/",
     "title": "view all Snapdragon Hemp products",
     "image": "/assets/images/2024/03/snapdragon-hemp_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/snapdragon-hemp_bp-logo.webp",
@@ -366,7 +366,7 @@ const brands = [
   {
     "name": "Uncle Biggs Botanicals Brand Page Logo",
     "ariaLabel": "uncle-biggs-botanicals2_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/uncle-biggs-botanicals/",
+    "href": "https://cannabuddyhub.com/product-brands/uncle-biggs-botanicals/",
     "title": "view all Uncle Biggs Botanicals products",
     "image": "/assets/images/2024/03/uncle-biggs-botanicals2_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/uncle-biggs-botanicals2_bp-logo.webp",
@@ -377,7 +377,7 @@ const brands = [
   {
     "name": "New Urb logo",
     "ariaLabel": "urb_bp-logo2",
-    "href": "https://cannabuddy.com/product-brands/urb/",
+    "href": "https://cannabuddyhub.com/product-brands/urb/",
     "title": "view all Urb products",
     "image": "/assets/images/2025/01/urb_bp-logo2.webp",
     "activeImage": "/assets/images/2025/01/urb_bp-logo2.webp",
@@ -388,7 +388,7 @@ const brands = [
   {
     "name": "VIAA Hemp brand logo",
     "ariaLabel": "VIAA Hemp brand logo",
-    "href": "https://cannabuddy.com/product-brands/viia-hemp/",
+    "href": "https://cannabuddyhub.com/product-brands/viia-hemp/",
     "title": "view all VIIA Hemp products",
     "image": "/assets/images/2025/08/viia-hemp_bp-logo-1.webp",
     "activeImage": "/assets/images/2025/08/viia-hemp_bp-logo-1.webp",
@@ -399,7 +399,7 @@ const brands = [
   {
     "name": "Wana brand logo",
     "ariaLabel": "Wana brand logo",
-    "href": "https://cannabuddy.com/product-brands/wana/",
+    "href": "https://cannabuddyhub.com/product-brands/wana/",
     "title": "view all Wana products",
     "image": "/assets/images/2025/03/wana_bp-logo.webp",
     "activeImage": "/assets/images/2025/03/wana_bp-logo.webp",
@@ -410,7 +410,7 @@ const brands = [
   {
     "name": "wnc",
     "ariaLabel": "wnc",
-    "href": "https://cannabuddy.com/product-brands/wnc-cbd/",
+    "href": "https://cannabuddyhub.com/product-brands/wnc-cbd/",
     "title": "view all Yocan products",
     "image": "/assets/images/2026/07/wnc.webp",
     "activeImage": "/assets/images/2026/07/wnc.webp",
@@ -421,7 +421,7 @@ const brands = [
   {
     "name": "Wyld brand logo",
     "ariaLabel": "Wyld brand logo",
-    "href": "https://cannabuddy.com/product-brands/wyld/",
+    "href": "https://cannabuddyhub.com/product-brands/wyld/",
     "title": "view all Wyld products",
     "image": "/assets/images/2024/12/wyld_bp-logo.webp",
     "activeImage": "/assets/images/2024/12/wyld_bp-logo.webp",
@@ -432,7 +432,7 @@ const brands = [
   {
     "name": "Yocan Brand Page Logo",
     "ariaLabel": "yocan_bp-logo",
-    "href": "https://cannabuddy.com/product-brands/yocan/",
+    "href": "https://cannabuddyhub.com/product-brands/yocan/",
     "title": "view all Yocan products",
     "image": "/assets/images/2024/03/yocan_bp-logo.webp",
     "activeImage": "/assets/images/2024/03/yocan_bp-logo.webp",

@@ -19,7 +19,7 @@ export default function MegaMenuShopByEffect() {
                   <img width="200" height="200" src="/assets/images/2026/02/1-SleepMainImage.webp" alt="" className="wp-image-724692" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px" }} loading="lazy" />
                 </figure>
                 <p className="wp-block-paragraph" style={{ lineHeight: "1.5" }}>
-                  <a href="https://cannabuddy.com/shop-by-effect/sleep/">
+                  <a href="https://cannabuddyhub.com/shop-by-effect/sleep/">
                     Sleep
                   </a>
                 </p>
@@ -34,7 +34,7 @@ export default function MegaMenuShopByEffect() {
                       <img width="150" height="150" src="/assets/images/2026/02/1SLEEP.webp" alt="" className="wp-image-724697" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/guide-to-delta-8-delta-9-and-cbd-for-better-sleep/">
+                      <a href="https://cannabuddyhub.com/guide-to-delta-8-delta-9-and-cbd-for-better-sleep/">
                         Better Sleep
                       </a>
                     </p>
@@ -44,7 +44,7 @@ export default function MegaMenuShopByEffect() {
                       <img width="150" height="150" src="/assets/images/2026/02/2SLEEP.webp" alt="" className="wp-image-724698" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/delta-9-vs-cbd-for-sleep-which-is-better/">
+                      <a href="https://cannabuddyhub.com/delta-9-vs-cbd-for-sleep-which-is-better/">
                         Delta 9 vs CBD
                       </a>
                     </p>
@@ -58,7 +58,7 @@ export default function MegaMenuShopByEffect() {
                   <img width="200" height="200" src="/assets/images/2026/02/2-EnergyMainImage.webp" alt="" className="wp-image-724693" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px" }} loading="lazy" />
                 </figure>
                 <p className="wp-block-paragraph" style={{ lineHeight: "1.5" }}>
-                  <a href="https://cannabuddy.com/shop-by-effect/energy-focus/">
+                  <a href="https://cannabuddyhub.com/shop-by-effect/energy-focus/">
                     Energy & Focus
                   </a>
                 </p>
@@ -73,7 +73,7 @@ export default function MegaMenuShopByEffect() {
                       <img width="150" height="150" src="/assets/images/2026/02/1ENERGY.webp" alt="" className="wp-image-724690" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/boost-creativity-with-delta-8-thc/">
+                      <a href="https://cannabuddyhub.com/boost-creativity-with-delta-8-thc/">
                         For Creativity
                       </a>
                     </p>
@@ -83,7 +83,7 @@ export default function MegaMenuShopByEffect() {
                       <img width="150" height="150" src="/assets/images/2026/02/2ENERGY.webp" alt="" className="wp-image-724691" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/delta-8-delta-9-cbd-and-working-out/">
+                      <a href="https://cannabuddyhub.com/delta-8-delta-9-cbd-and-working-out/">
                         For Exercise
                       </a>
                     </p>
@@ -97,7 +97,7 @@ export default function MegaMenuShopByEffect() {
                   <img width="200" height="200" src="/assets/images/2026/02/3-ReliefMainImage.webp" alt="" className="wp-image-724694" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px" }} loading="lazy" />
                 </figure>
                 <p className="wp-block-paragraph" style={{ lineHeight: "1.5" }}>
-                  <a href="https://cannabuddy.com/shop-by-effect/relief/">
+                  <a href="https://cannabuddyhub.com/shop-by-effect/relief/">
                     Relief
                   </a>
                 </p>
@@ -112,7 +112,7 @@ export default function MegaMenuShopByEffect() {
                       <img width="150" height="150" src="/assets/images/2026/02/1RELIEF.webp" alt="" className="wp-image-724695" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/cbd-delta-8-and-delta-9-for-pain-management/">
+                      <a href="https://cannabuddyhub.com/cbd-delta-8-and-delta-9-for-pain-management/">
                         Pain Relief
                       </a>
                     </p>
@@ -122,7 +122,7 @@ export default function MegaMenuShopByEffect() {
                       <img width="150" height="150" src="/assets/images/2026/02/2RELIEF.webp" alt="" className="wp-image-724696" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                     </figure>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/athletes-guide-to-cbd-and-delta-8-for-recovery/">
+                      <a href="https://cannabuddyhub.com/athletes-guide-to-cbd-and-delta-8-for-recovery/">
                         Recovery
                       </a>
                     </p>

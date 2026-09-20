@@ -20,7 +20,7 @@ export default function AdminApp() {
   useEffect(() => {
     document.body.classList.add('adm-body')
     const prevTitle = document.title
-    document.title = 'Dashboard ‹ CannaBuddy — Admin'
+    document.title = 'Dashboard ‹ CannaBuddyHub — Admin'
     return () => {
       document.body.classList.remove('adm-body')
       document.title = prevTitle

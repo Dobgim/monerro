@@ -15,33 +15,33 @@ export default function MegaMenuShop() {
             <div className="wp-block-column is-vertically-aligned-top cb-cat-children-section is-layout-flow wp-container-core-column-is-layout-f342ef54 wp-block-column-is-layout-flow" style={{ flexBasis: "50%" }}>
               <div className="wp-block-group is-style-background-blur is-content-justification-left is-layout-flex wp-container-core-group-is-layout-7a576a65 wp-block-group-is-layout-flex" style={{ fontStyle: "normal", fontWeight: "500" }}>
                 <figure className="wp-block-image size-us_200_200_crop has-custom-border is-style-default">
-                  <a href="https://cannabuddy.com/shop">
+                  <a href="https://cannabuddyhub.com/shop">
                     <img width="200" height="200" src="/assets/images/2026/02/1-MainImage.webp" alt="" className="wp-image-724666" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "0px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "0px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
                   </a>
                 </figure>
                 <div className="wp-block-group wp-container-content-9cfa9a5a is-vertical is-content-justification-left is-layout-flex wp-container-core-group-is-layout-139a8c71 wp-block-group-is-layout-flex" style={{ lineHeight: "2" }}>
                   <p className="wp-block-paragraph">
-                    <a href="https://cannabuddy.com/shop/">
+                    <a href="https://cannabuddyhub.com/shop/">
                       Shop All
                     </a>
                   </p>
                   <p className="wp-block-paragraph">
-                    <a href="https://cannabuddy.com/product-category/on-sale/">
+                    <a href="https://cannabuddyhub.com/product-category/on-sale/">
                       Sales & Deals
                     </a>
                   </p>
                   <p className="wp-block-paragraph">
-                    <a href="https://cannabuddy.com/whats-new-at-cannabuddy/">
+                    <a href="https://cannabuddyhub.com/whats-new-at-cannabuddy/">
                       What’s New
                     </a>
                   </p>
                   <p className="wp-block-paragraph">
-                    <a href="https://cannabuddy.com/product-category/bundles/">
+                    <a href="https://cannabuddyhub.com/product-category/bundles/">
                       Product Bundles
                     </a>
                   </p>
                   <p className="wp-block-paragraph">
-                    <a href="https://cannabuddy.com/cannabis-brands/">
+                    <a href="https://cannabuddyhub.com/cannabis-brands/">
                       Shop by Cannabis Brands
                     </a>
                   </p>
@@ -57,77 +57,77 @@ export default function MegaMenuShop() {
                   </figure>
                   <div className="wp-block-group wp-container-content-e0b89f81 is-layout-grid wp-container-core-group-is-layout-9f4cb285 wp-block-group-is-layout-grid" style={{ minHeight: "0px", lineHeight: "2" }}>
                     <p className="wp-container-content-9f6a57ee wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/cbc/">
+                      <a href="https://cannabuddyhub.com/product-category/cbc/">
                         CBC
                       </a>
                     </p>
                     <p className="wp-block-paragraph" style={{ fontStyle: "normal", fontWeight: "600" }}>
-                      <a href="https://cannabuddy.com/product-category/cbd/">
+                      <a href="https://cannabuddyhub.com/product-category/cbd/">
                         CBD
                       </a>
                     </p>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/cbg/">
+                      <a href="https://cannabuddyhub.com/product-category/cbg/">
                         CBG
                       </a>
                     </p>
                     <p className="wp-container-content-9f6a57ee wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/cbn/">
+                      <a href="https://cannabuddyhub.com/product-category/cbn/">
                         CBN
                       </a>
                     </p>
                     <p className="wp-container-content-9f6a57ee wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/delta-8-thc/">
+                      <a href="https://cannabuddyhub.com/product-category/delta-8-thc/">
                         Delta8
                       </a>
                     </p>
                     <p className="wp-block-paragraph" style={{ fontSize: "em", fontStyle: "normal", fontWeight: "600" }}>
-                      <a href="https://cannabuddy.com/product-category/delta-9-thc/">
+                      <a href="https://cannabuddyhub.com/product-category/delta-9-thc/">
                         Delta 9
                       </a>
                     </p>
                     <p className="wp-container-content-9f6a57ee wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/delta-10-thc/">
+                      <a href="https://cannabuddyhub.com/product-category/delta-10-thc/">
                         Delta 10
                       </a>
                     </p>
                     <p className="wp-container-content-9f6a57ee wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/delta-11-thc/">
+                      <a href="https://cannabuddyhub.com/product-category/delta-11-thc/">
                         Delta 11
                       </a>
                     </p>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/h4cbd/">
+                      <a href="https://cannabuddyhub.com/product-category/h4cbd/">
                         H4CBD
                       </a>
                     </p>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/hhc/">
+                      <a href="https://cannabuddyhub.com/product-category/hhc/">
                         HHC
                       </a>
                     </p>
                     <p className="wp-container-content-9f6a57ee wp-block-paragraph" style={{ fontStyle: "normal", fontWeight: "600" }}>
-                      <a href="https://cannabuddy.com/product-category/thca/">
+                      <a href="https://cannabuddyhub.com/product-category/thca/">
                         THCa
                       </a>
                     </p>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/thcb/">
+                      <a href="https://cannabuddyhub.com/product-category/thcb/">
                         THCB
                       </a>
                     </p>
                     <p className="wp-container-content-9f6a57ee wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/thch/">
+                      <a href="https://cannabuddyhub.com/product-category/thch/">
                         THCH
                       </a>
                     </p>
                     <p className="wp-container-content-9f6a57ee wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/thcp/">
+                      <a href="https://cannabuddyhub.com/product-category/thcp/">
                         THCP
                       </a>
                     </p>
                     <p className="wp-block-paragraph">
-                      <a href="https://cannabuddy.com/product-category/thcv/">
+                      <a href="https://cannabuddyhub.com/product-category/thcv/">
                         THCv
                       </a>
                     </p>

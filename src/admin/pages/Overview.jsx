@@ -50,7 +50,7 @@ export default function Overview() {
       <h1>Dashboard</h1>
 
       <div className="welcome-panel">
-        <h2>Welcome to CannaBuddy!</h2>
+        <h2>Welcome to CannaBuddyHub!</h2>
         <p className="about-description">Here’s how to look after your shop.</p>
         <div className="welcome-panel-column-container">
           <div className="welcome-panel-column">

@@ -1,7 +1,7 @@
 // WordPress search block (icon button outside the field) used in mega menus and the mobile menu
 export default function BlockSearch({ id, placeholder, buttonClassName, wrapperStyle }) {
   return (
-    <form role="search" method="get" action="https://cannabuddy.com/" className="wp-block-search__button-outside wp-block-search__icon-button wp-block-search">
+    <form role="search" method="get" action="https://cannabuddyhub.com/" className="wp-block-search__button-outside wp-block-search__icon-button wp-block-search">
       <label className="wp-block-search__label screen-reader-text" htmlFor={id}>
         Search
       </label>

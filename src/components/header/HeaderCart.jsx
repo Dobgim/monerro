@@ -5,7 +5,7 @@ export default function HeaderCart() {
 
   return (
     <div className={`w-cart ush_cart_1 height_full hide_content${count ? '' : ' empty'}`}>
-      <a className="w-cart-link" href="https://cannabuddy.com/cart/" aria-label="Cart">
+      <a className="w-cart-link" href="https://cannabuddyhub.com/cart/" aria-label="Cart">
         <span className="w-cart-icon">
           <i className="fas fa-shopping-cart" />
           <span className="w-cart-quantity" style={{ background: '#ef742a', color: '#ffffff' }}>

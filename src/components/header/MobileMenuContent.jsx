@@ -7,8 +7,8 @@ export default function MobileMenuContent() {
     <>
       <div className="wp-block-group is-layout-flow wp-container-core-group-is-layout-06258d62 wp-block-group-is-layout-flow" style={{ paddingTop: "var(--wp--preset--spacing--10)", paddingRight: "var(--wp--preset--spacing--10)", paddingBottom: "var(--wp--preset--spacing--10)", paddingLeft: "var(--wp--preset--spacing--10)" }}>
         <div className="aligncenter wp-block-site-logo">
-          <a href="https://cannabuddy.com/" className="custom-logo-link" rel="home" aria-current="page">
-            <img width="54" height="49" src="/assets/images/2025/10/CannaBuddy-Logomark.svg" className="custom-logo" alt="CannaBuddy" loading="lazy" />
+          <a href="https://cannabuddyhub.com/" className="custom-logo-link" rel="home" aria-current="page">
+            <img width="54" height="49" src="/assets/brand/logo.svg" className="custom-logo" alt="CannaBuddyHub" loading="lazy" />
           </a>
         </div>
         <div className="wp-block-group is-layout-grid wp-container-core-group-is-layout-de879071 wp-block-group-is-layout-grid">
@@ -17,7 +17,7 @@ export default function MobileMenuContent() {
               <img width="150" height="150" src="/assets/images/2026/02/2-EnergyMainImage.webp" alt="" className="has-border-color has-border-light-border-color wp-image-724693" style={{ borderWidth: "1px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px" }} loading="lazy" />
             </figure>
             <p className="wp-block-paragraph">
-              <a href="https://cannabuddy.com/product-category/delta-9-thc/">
+              <a href="https://cannabuddyhub.com/product-category/delta-9-thc/">
                 Delta 9 THC
               </a>
             </p>
@@ -27,7 +27,7 @@ export default function MobileMenuContent() {
               <img width="150" height="150" src="/assets/images/2026/02/Thcapick.webp" alt="" className="has-border-color has-border-light-border-color wp-image-724755" style={{ borderWidth: "1px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px" }} loading="lazy" />
             </figure>
             <p className="wp-block-paragraph">
-              <a href="https://cannabuddy.com/product-category/thca/">
+              <a href="https://cannabuddyhub.com/product-category/thca/">
                 THCa
               </a>
             </p>
@@ -37,7 +37,7 @@ export default function MobileMenuContent() {
               <img width="150" height="150" src="/assets/images/2026/02/3-ReliefMainImage.webp" alt="" className="has-border-color has-border-light-border-color wp-image-724694" style={{ borderWidth: "1px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px" }} loading="lazy" />
             </figure>
             <p className="wp-block-paragraph">
-              <a href="https://cannabuddy.com/product-category/cbd/">
+              <a href="https://cannabuddyhub.com/product-category/cbd/">
                 CBD
               </a>
             </p>
@@ -49,35 +49,35 @@ export default function MobileMenuContent() {
           <ul className="wp-block-navigation__container has-medium-font-size is-vertical no-wrap wp-block-navigation">
             <MobileSubmenu label="Shop">
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop/">
                   <span className="wp-block-navigation-item__label">
                     All Products
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/on-sale/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/on-sale/">
                   <span className="wp-block-navigation-item__label">
                     Sales & Deals
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/whats-new-at-cannabuddy/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/whats-new-at-cannabuddy/">
                   <span className="wp-block-navigation-item__label">
                     What's New
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/bundles/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/bundles/">
                   <span className="wp-block-navigation-item__label">
                     Product Bundles
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/cannabis-brands/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/cannabis-brands/">
                   <span className="wp-block-navigation-item__label">
                     Shop by Cannabis Brand
                   </span>
@@ -85,105 +85,105 @@ export default function MobileMenuContent() {
               </li>
               <MobileSubmenu label="Shop by Cannabinoid">
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/cbc/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/cbc/">
                     <span className="wp-block-navigation-item__label">
                       CBC
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/cbd/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/cbd/">
                     <span className="wp-block-navigation-item__label">
                       CBD
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/cbg/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/cbg/">
                     <span className="wp-block-navigation-item__label">
                       CBG
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/cbn/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/cbn/">
                     <span className="wp-block-navigation-item__label">
                       CBN
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/delta-8-thc/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/delta-8-thc/">
                     <span className="wp-block-navigation-item__label">
                       Delta 8
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/delta-9-thc/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/delta-9-thc/">
                     <span className="wp-block-navigation-item__label">
                       Delta 9
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/delta-10-thc/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/delta-10-thc/">
                     <span className="wp-block-navigation-item__label">
                       Delta 10
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/delta-11-thc/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/delta-11-thc/">
                     <span className="wp-block-navigation-item__label">
                       Delta 11
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/h4cbd/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/h4cbd/">
                     <span className="wp-block-navigation-item__label">
                       H4CBD
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/hhc/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/hhc/">
                     <span className="wp-block-navigation-item__label">
                       HHC
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/thca/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/thca/">
                     <span className="wp-block-navigation-item__label">
                       THCa
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/thcb/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/thcb/">
                     <span className="wp-block-navigation-item__label">
                       THCB
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/thch/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/thch/">
                     <span className="wp-block-navigation-item__label">
                       THCH
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/thcp/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/thcp/">
                     <span className="wp-block-navigation-item__label">
                       THCP
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/product-category/thcv/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/product-category/thcv/">
                     <span className="wp-block-navigation-item__label">
                       THCv
                     </span>
@@ -193,70 +193,70 @@ export default function MobileMenuContent() {
             </MobileSubmenu>
             <MobileSubmenu label="Shop by Type">
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/concentrates/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/concentrates/">
                   <span className="wp-block-navigation-item__label">
                     Concentrates
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/drinks/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/drinks/">
                   <span className="wp-block-navigation-item__label">
                     Drinks
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/edibles/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/edibles/">
                   <span className="wp-block-navigation-item__label">
                     Edibles
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/flower/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/flower/">
                   <span className="wp-block-navigation-item__label">
                     Flower
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/gummies/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/gummies/">
                   <span className="wp-block-navigation-item__label">
                     Gummies
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/live-resin/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/live-resin/">
                   <span className="wp-block-navigation-item__label">
                     Live Resin
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/pre-roll/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/pre-roll/">
                   <span className="wp-block-navigation-item__label">
                     Pre-Rolls
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/supplements/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/supplements/">
                   <span className="wp-block-navigation-item__label">
                     Supplements
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/topicals/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/topicals/">
                   <span className="wp-block-navigation-item__label">
                     Topicals
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-type/vapes/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-type/vapes/">
                   <span className="wp-block-navigation-item__label">
                     Vapes
                   </span>
@@ -265,21 +265,21 @@ export default function MobileMenuContent() {
             </MobileSubmenu>
             <MobileSubmenu label="Shop by Effect">
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-effect/sleep/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-effect/sleep/">
                   <span className="wp-block-navigation-item__label">
                     Sleep
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-effect/energy-focus/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-effect/energy-focus/">
                   <span className="wp-block-navigation-item__label">
                     Energy & Focus
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/shop-by-effect/relief/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/shop-by-effect/relief/">
                   <span className="wp-block-navigation-item__label">
                     Relief
                   </span>
@@ -288,42 +288,42 @@ export default function MobileMenuContent() {
             </MobileSubmenu>
             <MobileSubmenu label="Resources">
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/order-faqs/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/order-faqs/">
                   <span className="wp-block-navigation-item__label">
                     Order FAQs
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/about-us/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/about-us/">
                   <span className="wp-block-navigation-item__label">
                     Our Story
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/blog/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/blog/">
                   <span className="wp-block-navigation-item__label">
                     Cannabis Blog
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/locations">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/locations">
                   <span className="wp-block-navigation-item__label">
                     Locations
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/faqs/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/faqs/">
                   <span className="wp-block-navigation-item__label">
                     Cannabinoid Info
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/lab-results/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/lab-results/">
                   <span className="wp-block-navigation-item__label">
                     Lab Results
                   </span>
@@ -337,7 +337,7 @@ export default function MobileMenuContent() {
           <nav className="has-medium-font-size items-justified-center is-vertical wp-block-navigation is-content-justification-center is-layout-flex wp-container-core-navigation-is-layout-09ff8851 wp-block-navigation-is-layout-flex" aria-label="Main Nav Upper">
             <ul className="wp-block-navigation__container has-medium-font-size items-justified-center is-vertical wp-block-navigation">
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/wholesale/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/wholesale/">
                   <span className="wp-block-navigation-item__label">
                     Wholesale
                   </span>
@@ -345,14 +345,14 @@ export default function MobileMenuContent() {
               </li>
               <MobileSubmenu label="Locations">
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/locations/charlotte/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/locations/charlotte/">
                     <span className="wp-block-navigation-item__label">
                       Charlotte
                     </span>
                   </a>
                 </li>
                 <li className="wp-block-navigation-item wp-block-navigation-link">
-                  <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/locations/matthews/">
+                  <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/locations/matthews/">
                     <span className="wp-block-navigation-item__label">
                       Matthews
                     </span>
@@ -360,14 +360,14 @@ export default function MobileMenuContent() {
                 </li>
               </MobileSubmenu>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/contact-us/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/contact-us/">
                   <span className="wp-block-navigation-item__label">
                     Contact Us
                   </span>
                 </a>
               </li>
               <li className="wp-block-navigation-item wp-block-navigation-link">
-                <a className="wp-block-navigation-item__content" href="https://cannabuddy.com/my-account/">
+                <a className="wp-block-navigation-item__content" href="https://cannabuddyhub.com/my-account/">
                   <span className="wp-block-navigation-item__label">
                     My Account
                   </span>

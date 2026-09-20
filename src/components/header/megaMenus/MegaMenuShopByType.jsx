@@ -18,7 +18,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/1-Concentrates.webp" alt="" className="wp-image-724680" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph" style={{ fontStyle: "normal", fontWeight: "500" }}>
-                <a href="https://cannabuddy.com/shop-by-type/concentrates/">
+                <a href="https://cannabuddyhub.com/shop-by-type/concentrates/">
                   Concentrates
                 </a>
               </p>
@@ -28,7 +28,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/2-Drinks.webp" alt="" className="wp-image-724681" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/shop-by-type/drinks/">
+                <a href="https://cannabuddyhub.com/shop-by-type/drinks/">
                   Drinks
                 </a>
               </p>
@@ -38,7 +38,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/3-Edibles.webp" alt="" className="wp-image-724682" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/shop-by-type/edibles/">
+                <a href="https://cannabuddyhub.com/shop-by-type/edibles/">
                   Edibles
                 </a>
               </p>
@@ -48,7 +48,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/4-Flower.webp" alt="" className="wp-image-724683" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/shop-by-type/flower/">
+                <a href="https://cannabuddyhub.com/shop-by-type/flower/">
                   Flower
                 </a>
               </p>
@@ -58,7 +58,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/5-Gummies.webp" alt="" className="wp-image-724684" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/shop-by-type/gummies/">
+                <a href="https://cannabuddyhub.com/shop-by-type/gummies/">
                   Gummies
                 </a>
               </p>
@@ -68,7 +68,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/6-LiveResin.webp" alt="" className="wp-image-724685" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/shop-by-type/live-resin/">
+                <a href="https://cannabuddyhub.com/shop-by-type/live-resin/">
                   Live Resin
                 </a>
               </p>
@@ -78,7 +78,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/7-PreRolls.webp" alt="" className="wp-image-724686" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/shop-by-type/pre-roll/">
+                <a href="https://cannabuddyhub.com/shop-by-type/pre-roll/">
                   Pre-Rolls
                 </a>
               </p>
@@ -88,7 +88,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/8-Supplements.webp" alt="" className="wp-image-724687" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/shop-by-type/supplements/">
+                <a href="https://cannabuddyhub.com/shop-by-type/supplements/">
                   Supplements
                 </a>
               </p>
@@ -98,7 +98,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/9-Topicals.webp" alt="" className="wp-image-724688" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/shop-by-type/topicals/">
+                <a href="https://cannabuddyhub.com/shop-by-type/topicals/">
                   Topicals
                 </a>
               </p>
@@ -108,7 +108,7 @@ export default function MegaMenuShopByType() {
                 <img width="150" height="150" src="/assets/images/2026/02/10-Vapes.webp" alt="" className="wp-image-724689" style={{ borderTopLeftRadius: "8px", borderTopRightRadius: "8px", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", aspectRatio: "1", objectFit: "cover" }} loading="lazy" />
               </figure>
               <p className="wp-block-paragraph">
-                <a href="https://cannabuddy.com/shop-by-type/vapes/">
+                <a href="https://cannabuddyhub.com/shop-by-type/vapes/">
                   Vapes
                 </a>
               </p>

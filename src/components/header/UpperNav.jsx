@@ -1,19 +1,19 @@
 import { useState } from 'react'
 
 const items = [
-  { id: 724650, label: 'Wholesale', href: 'https://cannabuddy.com/wholesale/', type: 'post_type menu-item-object-page' },
+  { id: 724650, label: 'Wholesale', href: 'https://cannabuddyhub.com/wholesale/', type: 'post_type menu-item-object-page' },
   {
     id: 724651,
     label: 'Locations',
-    href: 'https://cannabuddy.com/locations/',
+    href: 'https://cannabuddyhub.com/locations/',
     type: 'custom menu-item-object-custom',
     children: [
-      { id: 724653, label: 'Charlotte', href: 'https://cannabuddy.com/locations/charlotte/' },
-      { id: 724652, label: 'Matthews', href: 'https://cannabuddy.com/locations/matthews/' },
+      { id: 724653, label: 'Charlotte', href: 'https://cannabuddyhub.com/locations/charlotte/' },
+      { id: 724652, label: 'Matthews', href: 'https://cannabuddyhub.com/locations/matthews/' },
     ],
   },
-  { id: 724654, label: 'Contact Us', href: 'https://cannabuddy.com/contact-us/', type: 'post_type menu-item-object-page' },
-  { id: 724655, label: 'My Account', href: 'https://cannabuddy.com/my-account/', type: 'post_type menu-item-object-page' },
+  { id: 724654, label: 'Contact Us', href: 'https://cannabuddyhub.com/contact-us/', type: 'post_type menu-item-object-page' },
+  { id: 724655, label: 'My Account', href: 'https://cannabuddyhub.com/my-account/', type: 'post_type menu-item-object-page' },
 ]
 
 function NavItem({ item }) {
