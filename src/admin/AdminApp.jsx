@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './admin.css'
 import { useSession } from './auth'
 import Layout from './components/Layout'
-import { ToastProvider } from './components/ui'
+import { NoticeProvider } from './components/ui'
 import Login from './pages/Login'
 import Overview from './pages/Overview'
 import Products from './pages/Products'
@@ -20,7 +20,7 @@ export default function AdminApp() {
   useEffect(() => {
     document.body.classList.add('adm-body')
     const prevTitle = document.title
-    document.title = 'Admin · CannaBuddy'
+    document.title = 'Dashboard ‹ CannaBuddy — Admin'
     return () => {
       document.body.classList.remove('adm-body')
       document.title = prevTitle
@@ -28,7 +28,7 @@ export default function AdminApp() {
   }, [])
 
   return (
-    <ToastProvider>
+    <NoticeProvider>
       {session ? (
         <Routes>
           <Route element={<Layout />}>
@@ -47,6 +47,6 @@ export default function AdminApp() {
       ) : (
         <Login />
       )}
-    </ToastProvider>
+    </NoticeProvider>
   )
 }

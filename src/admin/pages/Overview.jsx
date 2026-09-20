@@ -3,23 +3,9 @@ import { Link } from 'react-router-dom'
 import { useSiteState } from '../../store/siteStore'
 import ActivityChart from '../components/ActivityChart'
 import Icon from '../components/Icon'
-import { Card, EmptyState, PageHeader } from '../components/ui'
 import { timeAgo } from '../format'
 
 const DAYS = 14
-
-function StatTile({ label, value, detail, to, icon }) {
-  return (
-    <Link to={to} className="adm-stat">
-      <span className="adm-stat__icon">
-        <Icon name={icon} size={18} />
-      </span>
-      <span className="adm-stat__label">{label}</span>
-      <strong className="adm-stat__value">{value.toLocaleString()}</strong>
-      {detail && <span className="adm-stat__detail">{detail}</span>}
-    </Link>
-  )
-}
 
 export default function Overview() {
   const { products, slides, brands, subscribers, cartEvents } = useSiteState()
@@ -56,83 +42,153 @@ export default function Overview() {
       .map(([id, count]) => ({ product: products.find((p) => String(p.id) === id), name: cartEvents.findLast((e) => String(e.productId) === id)?.name, count }))
   }, [cartEvents, products])
 
-  const visible = products.filter((p) => p.visible)
-  const onSale = products.filter((p) => p.onSale || p.price?.type === 'sale')
-  const outOfStock = products.filter((p) => p.stock === 'outofstock')
-  const topMax = topProducts[0]?.count || 1
+  const visible = products.filter((p) => p.visible).length
+  const outOfStock = products.filter((p) => p.stock === 'outofstock').length
 
   return (
     <>
-      <PageHeader title="Overview" description="Everything on the CannaBuddy home page, at a glance." />
+      <h1>Dashboard</h1>
 
-      <div className="adm-stats">
-        <StatTile label="Products on home page" value={visible.length} detail={`of ${products.length} in catalog`} to="/admin/products" icon="products" />
-        <StatTile label="On sale" value={onSale.length} detail="showing a Sale badge" to="/admin/products?filter=sale" icon="tag" />
-        <StatTile label="Out of stock" value={outOfStock.length} detail={outOfStock.length ? 'needs attention' : 'all in stock'} to="/admin/products?filter=outofstock" icon="alert" />
-        <StatTile label="Newsletter subscribers" value={subscribers.length} detail={subscribers[0] ? `latest ${timeAgo(subscribers[0].at)}` : 'none yet'} to="/admin/subscribers" icon="mail" />
-      </div>
-
-      <div className="adm-grid-2">
-        <Card title="Add-to-cart activity">
-          <ActivityChart data={daily} />
-        </Card>
-        <Card title="Most added products">
-          {topProducts.length ? (
-            <ol className="adm-toplist">
-              {topProducts.map(({ product, name, count }) => (
-                <li key={product?.id || name}>
-                  {product?.image ? <img src={product.image} alt="" /> : <span className="adm-thumb-ph" />}
-                  <div>
-                    <span className="adm-toplist__name">{product?.name || name}</span>
-                    <span className="adm-toplist__meter" aria-hidden="true">
-                      <span style={{ width: `${(count / topMax) * 100}%` }} />
-                    </span>
-                  </div>
-                  <strong>{count}</strong>
-                </li>
-              ))}
-            </ol>
-          ) : (
-            <EmptyState icon="cart" title="No cart activity yet">
-              When shoppers click “Add to cart” on the storefront, it shows up here.
-            </EmptyState>
-          )}
-        </Card>
-      </div>
-
-      <div className="adm-grid-3">
-        <Card title="Home page content">
-          <ul className="adm-checklist">
-            <li>
-              <Icon name="slides" /> {slides.filter((s) => s.visible).length} of {slides.length} hero slides showing
-              <Link to="/admin/slides">Manage</Link>
-            </li>
-            <li>
-              <Icon name="brands" /> {brands.filter((b) => b.visible).length} of {brands.length} brands showing
-              <Link to="/admin/brands">Manage</Link>
-            </li>
-            <li>
-              <Icon name="megaphone" /> Announcement bar
-              <Link to="/admin/announcement">Edit</Link>
-            </li>
-          </ul>
-        </Card>
-        <Card title="Latest subscribers" className="adm-span-2">
-          {subscribers.length ? (
-            <ul className="adm-simplelist">
-              {subscribers.slice(0, 5).map((s) => (
-                <li key={s.email}>
-                  <span>{s.email}</span>
-                  <time dateTime={s.at}>{timeAgo(s.at)}</time>
-                </li>
-              ))}
+      <div className="welcome-panel">
+        <h2>Welcome to CannaBuddy!</h2>
+        <p className="about-description">Here’s how to look after your shop.</p>
+        <div className="welcome-panel-column-container">
+          <div className="welcome-panel-column">
+            <h3>Get started</h3>
+            <Link to="/admin/products/new" className="button button-primary button-hero">
+              Add a new product
+            </Link>
+            <p className="hide-if-no-customize">or, <Link to="/admin/products">edit the products you have</Link></p>
+          </div>
+          <div className="welcome-panel-column">
+            <h3>Next steps</h3>
+            <ul>
+              <li>
+                <Link to="/admin/products" className="welcome-icon">
+                  <Icon name="products" size={16} /> Change a price or photo
+                </Link>
+              </li>
+              <li>
+                <Link to="/admin/announcement" className="welcome-icon">
+                  <Icon name="megaphone" size={16} /> Edit the banner at the top
+                </Link>
+              </li>
+              <li>
+                <a href="/" target="_blank" rel="noreferrer" className="welcome-icon">
+                  <Icon name="external" size={16} /> View your site
+                </a>
+              </li>
             </ul>
-          ) : (
-            <EmptyState icon="mail" title="No subscribers yet">
-              Sign-ups from the footer form on the storefront appear here.
-            </EmptyState>
-          )}
-        </Card>
+          </div>
+          <div className="welcome-panel-column">
+            <h3>More actions</h3>
+            <ul>
+              <li>
+                <Link to="/admin/slides" className="welcome-icon">
+                  <Icon name="slides" size={16} /> Change the big banner photos
+                </Link>
+              </li>
+              <li>
+                <Link to="/admin/subscribers" className="welcome-icon">
+                  <Icon name="mail" size={16} /> See newsletter sign-ups
+                </Link>
+              </li>
+              <li>
+                <Link to="/admin/settings" className="welcome-icon">
+                  <Icon name="settings" size={16} /> Change your password
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="cb-dashboard-columns">
+        <div className="postbox">
+          <div className="postbox-header">
+            <h2>At a Glance</h2>
+          </div>
+          <div className="inside">
+            <ul className="cb-glance">
+              <li>
+                <Link to="/admin/products">
+                  <Icon name="products" size={18} /> {products.length} Products
+                </Link>
+              </li>
+              <li>
+                <Link to="/admin/slides">
+                  <Icon name="slides" size={18} /> {slides.length} Hero slides
+                </Link>
+              </li>
+              <li>
+                <Link to="/admin/brands">
+                  <Icon name="brands" size={18} /> {brands.length} Brands
+                </Link>
+              </li>
+              <li>
+                <Link to="/admin/subscribers">
+                  <Icon name="mail" size={18} /> {subscribers.length} Subscriber{subscribers.length === 1 ? '' : 's'}
+                </Link>
+              </li>
+            </ul>
+            <p className="cb-glance__note">
+              {visible} of {products.length} products are shown on the home page
+              {outOfStock > 0 && (
+                <>
+                  {' · '}
+                  <Link to="/admin/products?filter=outofstock">{outOfStock} out of stock</Link>
+                </>
+              )}
+              .
+            </p>
+          </div>
+        </div>
+
+        <div className="postbox">
+          <div className="postbox-header">
+            <h2>Activity</h2>
+          </div>
+          <div className="inside">
+            <ActivityChart data={daily} />
+            <h3>Most added to cart</h3>
+            {topProducts.length ? (
+              <ul className="cb-toplist">
+                {topProducts.map(({ product, name, count }) => (
+                  <li key={product?.id || name}>
+                    {product?.image ? <img src={product.image} alt="" /> : <span className="cb-thumb-ph" />}
+                    <span className="cb-toplist__name">{product?.name || name}</span>
+                    <span className="cb-toplist__count">{count}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="description">Nothing yet. When shoppers click “Add to cart” on your site, it shows up here.</p>
+            )}
+          </div>
+        </div>
+
+        <div className="postbox">
+          <div className="postbox-header">
+            <h2>Newsletter sign-ups</h2>
+          </div>
+          <div className="inside">
+            {subscribers.length ? (
+              <ul className="cb-simplelist">
+                {subscribers.slice(0, 5).map((s) => (
+                  <li key={s.email}>
+                    <a href={`mailto:${s.email}`}>{s.email}</a>
+                    <time dateTime={s.at}>{timeAgo(s.at)}</time>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="description">No sign-ups yet. They come from the form at the bottom of your site.</p>
+            )}
+            <p>
+              <Link to="/admin/subscribers">See all sign-ups</Link>
+            </p>
+          </div>
+        </div>
       </div>
     </>
   )

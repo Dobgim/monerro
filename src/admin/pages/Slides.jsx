@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { move, remove, setState, upsert, useSiteState } from '../../store/siteStore'
+import Icon from '../components/Icon'
 import ImageField from '../components/ImageField'
-import { Badge, Button, ConfirmDialog, EmptyState, IconButton, Modal, PageHeader, TextInput, Toggle, useSave } from '../components/ui'
+import { Button, ConfirmDialog, EmptyRow, FormRow, FormTable, Modal, PageHeader, RowAction, Toggle, useSave } from '../components/ui'
 
 const EMPTY = { image: '', alt: '', title: '', caption: '', captionMobile: [], href: 'https://cannabuddy.com/shop/', ariaLabel: '', visible: true, width: 1600, height: 680 }
 
@@ -13,7 +14,7 @@ function SlideDialog({ slide, onClose }) {
 
   const submit = () => {
     if (!draft.image) {
-      setError('Add a banner image.')
+      setError('Please add a banner photo.')
       return
     }
     const { mobileText, ...rest } = draft
@@ -24,7 +25,7 @@ function SlideDialog({ slide, onClose }) {
       captionMobile: mobileText.trim() ? [mobileText.trim()] : null,
       ariaLabel: draft.ariaLabel || draft.caption || draft.alt,
     }
-    if (save(upsert('slides', next), slide?.id ? 'Slide saved' : 'Slide added')) onClose()
+    if (save(upsert('slides', next), slide?.id ? 'Slide updated.' : 'Slide added.')) onClose()
   }
 
   return (
@@ -36,20 +37,28 @@ function SlideDialog({ slide, onClose }) {
       footer={
         <>
           <Button onClick={onClose}>Cancel</Button>
-          <Button variant="primary" icon="check" onClick={submit}>
-            {slide?.id ? 'Save slide' : 'Add slide'}
+          <Button variant="primary" onClick={submit}>
+            {slide?.id ? 'Update slide' : 'Add slide'}
           </Button>
         </>
       }
     >
-      <ImageField label="Banner image" value={draft.image} onChange={(image) => set({ image })} maxWidth={2400} aspect="1600 / 680" fit="cover" />
-      {error && <p className="adm-field__error">{error}</p>}
-      <div className="adm-row">
-        <TextInput label="Caption (desktop)" value={draft.caption || ''} onChange={(e) => set({ caption: e.target.value })} hint="Leave empty for no caption." />
-        <TextInput label="Caption (phones)" value={draft.mobileText} onChange={(e) => set({ mobileText: e.target.value })} hint="A shorter version for small screens." />
-      </div>
-      <TextInput label="Link" type="url" value={draft.href} onChange={(e) => set({ href: e.target.value })} />
-      <TextInput label="Image description (alt text)" value={draft.alt} onChange={(e) => set({ alt: e.target.value })} />
+      <ImageField label="Banner photo" value={draft.image} onChange={(image) => set({ image })} maxWidth={2400} aspect="1600 / 680" fit="cover" setLabel="Set banner photo" />
+      {error && <p className="field-error">{error}</p>}
+      <FormTable>
+        <FormRow label="Caption" description="The white text shown over the banner. Leave empty for no caption.">
+          <input type="text" className="large-text" value={draft.caption || ''} onChange={(e) => set({ caption: e.target.value })} />
+        </FormRow>
+        <FormRow label="Short caption" description="A shorter version used on phones.">
+          <input type="text" className="large-text" value={draft.mobileText} onChange={(e) => set({ mobileText: e.target.value })} />
+        </FormRow>
+        <FormRow label="Link" description="Where shoppers go when they click the banner.">
+          <input type="url" className="large-text" value={draft.href} onChange={(e) => set({ href: e.target.value })} />
+        </FormRow>
+        <FormRow label="Photo description" description="Read aloud by screen readers.">
+          <input type="text" className="large-text" value={draft.alt} onChange={(e) => set({ alt: e.target.value })} />
+        </FormRow>
+      </FormTable>
     </Modal>
   )
 }
@@ -60,58 +69,87 @@ export default function Slides() {
   const [editing, setEditing] = useState(null)
   const [toDelete, setToDelete] = useState(null)
 
-  const setVisible = (id, visible) => save(setState((s) => ({ ...s, slides: s.slides.map((x) => (x.id === id ? { ...x, visible } : x)) })))
+  const setVisible = (id, visible) =>
+    save(setState((s) => ({ ...s, slides: s.slides.map((x) => (x.id === id ? { ...x, visible } : x)) })), visible ? 'Slide is now showing.' : 'Slide hidden.')
 
   return (
     <>
       <PageHeader
-        title="Hero slides"
-        description="The banner carousel at the top of the home page. Slides rotate every 4 seconds, in this order."
-        actions={
-          <Button variant="primary" icon="plus" onClick={() => setEditing({})}>
-            Add slide
-          </Button>
+        title="Hero Slides"
+        action={
+          <button type="button" className="page-title-action" onClick={() => setEditing({})}>
+            Add New
+          </button>
         }
+        description="The big banner photos at the top of the home page. They change every 4 seconds, in this order."
       />
-      {slides.length ? (
-        <ol className="adm-slides">
+
+      <table className="wp-list-table widefat fixed striped">
+        <thead>
+          <tr>
+            <th scope="col" className="column-banner">
+              <span className="screen-reader-text">Photo</span>
+            </th>
+            <th scope="col" className="column-primary">
+              Caption
+            </th>
+            <th scope="col">Link</th>
+            <th scope="col" className="column-visible">
+              Showing
+            </th>
+            <th scope="col" className="column-order">
+              Order
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {slides.length === 0 && <EmptyRow colSpan={5}>No slides yet. The banner is hidden until you add one.</EmptyRow>}
           {slides.map((s, i) => (
-            <li key={s.id} className={`adm-card adm-slide${s.visible ? '' : ' is-muted'}`}>
-              <div className="adm-slide__img">
+            <tr key={s.id}>
+              <td className="column-banner">
                 <img src={s.image} alt="" loading="lazy" />
-                <span className="adm-slide__num">{i + 1}</span>
-              </div>
-              <div className="adm-slide__body">
-                <div>
-                  <strong>{s.caption || <em>No caption</em>}</strong>
-                  <a href={s.href} target="_blank" rel="noreferrer">
-                    {s.href.replace(/^https?:\/\//, '')}
-                  </a>
+              </td>
+              <td className="column-primary has-row-actions">
+                <strong>
+                  <button type="button" className="row-title button-link" onClick={() => setEditing(s)}>
+                    {s.caption || `Slide ${i + 1}`}
+                  </button>
+                </strong>
+                {!s.visible && <span className="post-state"> — Hidden</span>}
+                <div className="row-actions">
+                  <RowAction onClick={() => setEditing(s)}>Edit</RowAction> |{' '}
+                  <RowAction danger onClick={() => setToDelete(s)}>
+                    Delete
+                  </RowAction>
                 </div>
-                <div className="adm-slide__actions">
-                  {s.visible ? <Badge tone="success">Showing</Badge> : <Badge>Hidden</Badge>}
-                  <Toggle checked={s.visible} onChange={(v) => setVisible(s.id, v)} label={<span className="sr-only">Show slide {i + 1}</span>} />
-                  <IconButton icon="up" label="Move earlier" disabled={i === 0} onClick={() => save(move('slides', s.id, -1))} />
-                  <IconButton icon="down" label="Move later" disabled={i === slides.length - 1} onClick={() => save(move('slides', s.id, 1))} />
-                  <IconButton icon="edit" label="Edit slide" onClick={() => setEditing(s)} />
-                  <IconButton icon="trash" label="Delete slide" variant="danger" onClick={() => setToDelete(s)} />
-                </div>
-              </div>
-            </li>
+              </td>
+              <td data-colname="Link" className="column-link">
+                <a href={s.href} target="_blank" rel="noreferrer">
+                  {s.href.replace(/^https?:\/\/(www\.)?/, '')}
+                </a>
+              </td>
+              <td data-colname="Showing">
+                <Toggle checked={s.visible} onChange={(v) => setVisible(s.id, v)} label={`Show slide ${i + 1}`} />
+              </td>
+              <td data-colname="Order" className="column-order">
+                <button type="button" className="button button-small" disabled={i === 0} aria-label="Move up" onClick={() => save(move('slides', s.id, -1))}>
+                  <Icon name="up" size={14} />
+                </button>
+                <button type="button" className="button button-small" disabled={i === slides.length - 1} aria-label="Move down" onClick={() => save(move('slides', s.id, 1))}>
+                  <Icon name="down" size={14} />
+                </button>
+              </td>
+            </tr>
           ))}
-        </ol>
-      ) : (
-        <EmptyState icon="slides" title="No slides">
-          The hero banner is hidden until you add a slide.
-        </EmptyState>
-      )}
+        </tbody>
+      </table>
 
       {editing && <SlideDialog slide={editing} onClose={() => setEditing(null)} />}
       <ConfirmDialog
         open={Boolean(toDelete)}
-        title="Delete slide?"
-        message="This slide will be removed from the hero banner."
-        onConfirm={() => save(remove('slides', toDelete.id), 'Slide deleted')}
+        title="Delete slide"
+        message="This slide will be removed from the banner."
+        onConfirm={() => save(remove('slides', toDelete.id), 'Slide deleted.')}
         onClose={() => setToDelete(null)}
       />
     </>

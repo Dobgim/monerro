@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { signIn } from '../auth'
-import { Button, TextInput } from '../components/ui'
 
+// Modelled on the WordPress login screen (wp-login.php)
 export default function Login() {
-  const [email, setEmail] = useState('')
+  const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
+  const [remember, setRemember] = useState(false)
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
 
@@ -12,34 +13,51 @@ export default function Login() {
     e.preventDefault()
     setBusy(true)
     setError('')
-    const ok = await signIn(email, password)
+    const ok = await signIn(login, password, remember)
     setBusy(false)
-    if (!ok) setError('That email and password don’t match.')
+    if (!ok) setError(login.trim() ? 'The username or password you entered is incorrect.' : 'Please enter your username.')
   }
 
   return (
-    <div className="adm-login">
-      <form className="adm-login__card" onSubmit={submit}>
-        <img src="/assets/images/2025/10/CannaBuddy-Logomark.svg" alt="" width="54" height="49" />
-        <h1>CannaBuddy admin</h1>
-        <p>Sign in to manage the storefront.</p>
-        <TextInput label="Email" type="email" autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <TextInput
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          error={error}
-          required
-        />
-        <Button variant="primary" type="submit" disabled={busy} className="adm-btn--block">
-          {busy ? 'Signing in…' : 'Sign in'}
-        </Button>
-        <a className="adm-login__back" href="/">
-          ← Back to the store
+    <div className="wp-login">
+      <h1 className="wp-login__logo">
+        <a href="/">
+          <img src="/assets/images/2025/10/CannaBuddy-Logomark.svg" alt="CannaBuddy" width="64" height="58" />
+          <span>CannaBuddy</span>
         </a>
+      </h1>
+
+      {error && (
+        <div className="notice notice-error login-message">
+          <p>
+            <strong>Error:</strong> {error}
+          </p>
+        </div>
+      )}
+
+      <form className="wp-login__form" onSubmit={submit}>
+        <p>
+          <label htmlFor="user_login">Username or Email Address</label>
+          <input id="user_login" className="input" type="text" autoComplete="username" autoCapitalize="off" value={login} onChange={(e) => setLogin(e.target.value)} />
+        </p>
+        <p>
+          <label htmlFor="user_pass">Password</label>
+          <input id="user_pass" className="input" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </p>
+        <p className="forgetmenot">
+          <input id="rememberme" type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} />
+          <label htmlFor="rememberme">Remember Me</label>
+        </p>
+        <p className="submit">
+          <button type="submit" className="button button-primary button-large" disabled={busy}>
+            {busy ? 'Logging in…' : 'Log In'}
+          </button>
+        </p>
       </form>
+
+      <p className="wp-login__nav">
+        <a href="/">← Go to CannaBuddy</a>
+      </p>
     </div>
   )
 }

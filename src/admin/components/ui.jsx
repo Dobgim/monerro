@@ -1,142 +1,160 @@
 import { createContext, useCallback, useContext, useEffect, useId, useRef, useState } from 'react'
 import Icon from './Icon'
 
+// WordPress-style building blocks: buttons, postboxes, form tables, notices, modals.
+
 export function Button({ variant = 'secondary', size, icon, children, className = '', ...props }) {
+  const classes = ['button', variant === 'primary' && 'button-primary', variant === 'link-delete' && 'button-link-delete', size === 'large' && 'button-large', className]
   return (
-    <button type="button" className={`adm-btn adm-btn--${variant}${size ? ` adm-btn--${size}` : ''} ${className}`} {...props}>
-      {icon && <Icon name={icon} size={size === 'sm' ? 15 : 17} />}
+    <button type="button" className={classes.filter(Boolean).join(' ')} {...props}>
+      {icon && <Icon name={icon} size={16} />}
       {children && <span>{children}</span>}
     </button>
   )
 }
 
-export function IconButton({ icon, label, variant = 'ghost', ...props }) {
+export function RowAction({ children, danger, ...props }) {
   return (
-    <button type="button" className={`adm-iconbtn adm-iconbtn--${variant}`} aria-label={label} title={label} {...props}>
-      <Icon name={icon} size={17} />
+    <span className={danger ? 'trash' : undefined}>
+      <button type="button" className="button-link" {...props}>
+        {children}
+      </button>
+    </span>
+  )
+}
+
+/** Page title + "Add New" action, like every WordPress list screen. */
+export function PageHeader({ title, action, description, children }) {
+  return (
+    <>
+      <h1 className="wp-heading-inline">{title}</h1>
+      {action}
+      <hr className="wp-header-end" />
+      {description && <p className="wp-description">{description}</p>}
+      {children}
+    </>
+  )
+}
+
+/** A WordPress metabox. `collapsible` gives it the little toggle arrow. */
+export function Postbox({ title, children, id, collapsible = false, defaultOpen = true, className = '' }) {
+  const [open, setOpen] = useState(defaultOpen)
+  const closed = collapsible && !open
+  return (
+    <div className={`postbox${closed ? ' closed' : ''} ${className}`} id={id}>
+      <div className="postbox-header">
+        <h2>{title}</h2>
+        {collapsible && (
+          <button type="button" className="handlediv" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+            <span className="screen-reader-text">Toggle panel: {title}</span>
+            <Icon name={open ? 'up' : 'down'} size={16} />
+          </button>
+        )}
+      </div>
+      {!closed && <div className="inside">{children}</div>}
+    </div>
+  )
+}
+
+/** Label + field row used inside settings screens (WordPress .form-table). */
+export function FormRow({ label, htmlFor, description, children }) {
+  return (
+    <tr>
+      <th scope="row">{htmlFor ? <label htmlFor={htmlFor}>{label}</label> : label}</th>
+      <td>
+        {children}
+        {description && <p className="description">{description}</p>}
+      </td>
+    </tr>
+  )
+}
+
+export function FormTable({ children }) {
+  return (
+    <table className="form-table" role="presentation">
+      <tbody>{children}</tbody>
+    </table>
+  )
+}
+
+export function TextInput({ label, description, error, className = 'regular-text', wide, ...props }) {
+  const id = useId()
+  return (
+    <FormRow label={label} htmlFor={id} description={description}>
+      <input id={id} type="text" className={wide ? 'large-text' : className} {...props} />
+      {error && <p className="field-error">{error}</p>}
+    </FormRow>
+  )
+}
+
+export function TextAreaRow({ label, description, rows = 3, ...props }) {
+  const id = useId()
+  return (
+    <FormRow label={label} htmlFor={id} description={description}>
+      <textarea id={id} rows={rows} className="large-text" {...props} />
+    </FormRow>
+  )
+}
+
+export function SelectRow({ label, description, options, ...props }) {
+  const id = useId()
+  return (
+    <FormRow label={label} htmlFor={id} description={description}>
+      <select id={id} {...props}>
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>
+            {o.label}
+          </option>
+        ))}
+      </select>
+    </FormRow>
+  )
+}
+
+export function CheckboxRow({ label, checked, onChange, description }) {
+  const id = useId()
+  return (
+    <FormRow label={label}>
+      <label className="checkbox-label" htmlFor={id}>
+        <input id={id} type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} />
+        {description}
+      </label>
+    </FormRow>
+  )
+}
+
+/** Yes/No switch used in list tables. */
+export function Toggle({ checked, onChange, label }) {
+  return (
+    <button type="button" role="switch" aria-checked={checked} aria-label={label} className={`cb-switch${checked ? ' is-on' : ''}`} onClick={() => onChange(!checked)}>
+      <span />
     </button>
   )
 }
 
-export function Field({ label, hint, error, children, className = '' }) {
+export function StatusBadge({ tone = 'neutral', children }) {
+  return <span className={`cb-badge cb-badge--${tone}`}>{children}</span>
+}
+
+export function EmptyRow({ colSpan, children }) {
+  return (
+    <tr className="no-items">
+      <td className="colspanchange" colSpan={colSpan}>
+        {children}
+      </td>
+    </tr>
+  )
+}
+
+export function SearchBox({ label, value, onChange }) {
   const id = useId()
   return (
-    <div className={`adm-field ${className}`}>
-      {label && <label htmlFor={id}>{label}</label>}
-      {typeof children === 'function' ? children(id) : children}
-      {error ? <p className="adm-field__error">{error}</p> : hint && <p className="adm-field__hint">{hint}</p>}
-    </div>
-  )
-}
-
-export function TextInput({ label, hint, error, className, ...props }) {
-  return (
-    <Field label={label} hint={hint} error={error} className={className}>
-      {(id) => <input id={id} className="adm-input" {...props} />}
-    </Field>
-  )
-}
-
-export function TextArea({ label, hint, className, ...props }) {
-  return (
-    <Field label={label} hint={hint} className={className}>
-      {(id) => <textarea id={id} className="adm-input adm-textarea" {...props} />}
-    </Field>
-  )
-}
-
-export function Select({ label, hint, options, className, ...props }) {
-  return (
-    <Field label={label} hint={hint} className={className}>
-      {(id) => (
-        <select id={id} className="adm-input adm-select" {...props}>
-          {options.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-      )}
-    </Field>
-  )
-}
-
-export function Toggle({ checked, onChange, label, description }) {
-  const id = useId()
-  return (
-    <div className="adm-toggle">
-      <button
-        id={id}
-        type="button"
-        role="switch"
-        aria-checked={checked}
-        className={`adm-switch${checked ? ' is-on' : ''}`}
-        onClick={() => onChange(!checked)}
-      >
-        <span />
-      </button>
-      {label && (
-        <label htmlFor={id} className="adm-toggle__text">
-          <span>{label}</span>
-          {description && <small>{description}</small>}
-        </label>
-      )}
-    </div>
-  )
-}
-
-export function Segmented({ value, onChange, options, label }) {
-  return (
-    <div className="adm-field">
-      {label && <span className="adm-field__label">{label}</span>}
-      <div className="adm-segmented" role="radiogroup" aria-label={label}>
-        {options.map((o) => (
-          <button key={o.value} type="button" role="radio" aria-checked={value === o.value} className={value === o.value ? 'is-active' : ''} onClick={() => onChange(o.value)}>
-            {o.label}
-          </button>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-export function Badge({ tone = 'neutral', children }) {
-  return <span className={`adm-badge adm-badge--${tone}`}>{children}</span>
-}
-
-export function PageHeader({ title, description, actions }) {
-  return (
-    <div className="adm-pagehead">
-      <div>
-        <h1>{title}</h1>
-        {description && <p>{description}</p>}
-      </div>
-      {actions && <div className="adm-pagehead__actions">{actions}</div>}
-    </div>
-  )
-}
-
-export function Card({ title, actions, children, className = '', padded = true }) {
-  return (
-    <section className={`adm-card ${className}`}>
-      {(title || actions) && (
-        <header className="adm-card__head">
-          {title && <h2>{title}</h2>}
-          {actions}
-        </header>
-      )}
-      <div className={padded ? 'adm-card__body' : ''}>{children}</div>
-    </section>
-  )
-}
-
-export function EmptyState({ icon = 'search', title, children }) {
-  return (
-    <div className="adm-empty">
-      <Icon name={icon} size={28} />
-      <p className="adm-empty__title">{title}</p>
-      {children && <p>{children}</p>}
-    </div>
+    <p className="search-box">
+      <label className="screen-reader-text" htmlFor={id}>
+        {label}
+      </label>
+      <input id={id} type="search" value={value} onChange={(e) => onChange(e.target.value)} placeholder={label} />
+    </p>
   )
 }
 
@@ -149,7 +167,7 @@ export function Modal({ open, title, onClose, children, footer, wide }) {
   useEffect(() => {
     if (!open) return
     const prev = document.activeElement
-    ref.current?.querySelector('.adm-modal__body input, .adm-modal__body textarea, .adm-modal__body select, button')?.focus()
+    ref.current?.querySelector('.cb-modal__body input, .cb-modal__body textarea, .cb-modal__body select, button')?.focus()
     const onKey = (e) => e.key === 'Escape' && closeRef.current()
     document.addEventListener('keydown', onKey)
     document.body.style.overflow = 'hidden'
@@ -162,20 +180,22 @@ export function Modal({ open, title, onClose, children, footer, wide }) {
 
   if (!open) return null
   return (
-    <div className="adm-modal" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
-      <div ref={ref} className={`adm-modal__dialog${wide ? ' is-wide' : ''}`} role="dialog" aria-modal="true" aria-label={title}>
-        <header className="adm-modal__head">
+    <div className="cb-modal" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
+      <div ref={ref} className={`cb-modal__dialog${wide ? ' is-wide' : ''}`} role="dialog" aria-modal="true" aria-label={title}>
+        <div className="cb-modal__head">
           <h2>{title}</h2>
-          <IconButton icon="close" label="Close" onClick={onClose} />
-        </header>
-        <div className="adm-modal__body">{children}</div>
-        {footer && <footer className="adm-modal__foot">{footer}</footer>}
+          <button type="button" className="cb-modal__close" aria-label="Close dialog" onClick={onClose}>
+            <Icon name="close" size={18} />
+          </button>
+        </div>
+        <div className="cb-modal__body">{children}</div>
+        {footer && <div className="cb-modal__foot">{footer}</div>}
       </div>
     </div>
   )
 }
 
-export function ConfirmDialog({ open, title, message, confirmLabel = 'Delete', onConfirm, onClose, danger = true }) {
+export function ConfirmDialog({ open, title, message, confirmLabel = 'Delete', onConfirm, onClose }) {
   return (
     <Modal
       open={open}
@@ -184,62 +204,60 @@ export function ConfirmDialog({ open, title, message, confirmLabel = 'Delete', o
       footer={
         <>
           <Button onClick={onClose}>Cancel</Button>
-          <Button
-            variant={danger ? 'danger' : 'primary'}
-            onClick={() => {
-              onConfirm()
-              onClose()
-            }}
-          >
+          <Button variant="primary" className="button-delete" onClick={() => { onConfirm(); onClose() }}>
             {confirmLabel}
           </Button>
         </>
       }
     >
-      <p className="adm-confirm">{message}</p>
+      <p>{message}</p>
     </Modal>
   )
 }
 
-// ---- toasts ----------------------------------------------------------------
+// ---- admin notices ---------------------------------------------------------
 
-const ToastContext = createContext(() => {})
+const NoticeContext = createContext(() => {})
 
-export function ToastProvider({ children }) {
-  const [toasts, setToasts] = useState([])
+export function NoticeProvider({ children }) {
+  const [notices, setNotices] = useState([])
   const push = useCallback((message, tone = 'success') => {
     const id = Math.random()
-    setToasts((t) => [...t, { id, message, tone }])
-    setTimeout(() => setToasts((t) => t.filter((x) => x.id !== id)), 3200)
+    setNotices((n) => [...n.filter((x) => x.message !== message), { id, message, tone }])
+    if (tone === 'success') setTimeout(() => setNotices((n) => n.filter((x) => x.id !== id)), 6000)
   }, [])
+  const dismiss = (id) => setNotices((n) => n.filter((x) => x.id !== id))
+
   return (
-    <ToastContext.Provider value={push}>
-      {children}
-      <div className="adm-toasts" role="status" aria-live="polite">
-        {toasts.map((t) => (
-          <div key={t.id} className={`adm-toast adm-toast--${t.tone}`}>
-            <Icon name={t.tone === 'error' ? 'alert' : 'check'} size={16} />
-            {t.message}
+    <NoticeContext.Provider value={push}>
+      <div className="cb-notices" aria-live="polite">
+        {notices.map((n) => (
+          <div key={n.id} className={`notice notice-${n.tone} is-dismissible`}>
+            <p>{n.message}</p>
+            <button type="button" className="notice-dismiss" onClick={() => dismiss(n.id)}>
+              <span className="screen-reader-text">Dismiss this notice.</span>
+            </button>
           </div>
         ))}
       </div>
-    </ToastContext.Provider>
+      {children}
+    </NoticeContext.Provider>
   )
 }
 
-export function useToast() {
-  return useContext(ToastContext)
+export function useNotice() {
+  return useContext(NoticeContext)
 }
 
-// Save helper: runs a store write and reports quota failures to the user
+/** Reports a store write: shows the success notice, or an error if storage is full. */
 export function useSave() {
-  const toast = useToast()
+  const notice = useNotice()
   return useCallback(
     (ok, message) => {
-      if (ok === false) toast('Could not save — browser storage is full. Try smaller images or remove some.', 'error')
-      else if (message) toast(message)
+      if (ok === false) notice('Could not save — this browser’s storage is full. Try a smaller photo, or remove some products.', 'error')
+      else if (message) notice(message)
       return ok !== false
     },
-    [toast],
+    [notice],
   )
 }

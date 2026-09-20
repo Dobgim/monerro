@@ -12,27 +12,46 @@ npm run build    # production build in dist/
 
 ## Admin dashboard — `/admin`
 
-Open http://localhost:5190/admin and sign in with:
+The dashboard is built to look and work like the WordPress admin, so anyone used to WordPress
+already knows where things are: a dark menu on the left, list tables with row actions, an
+"Add New" button, a classic editor with a **Publish** box, and the usual admin notices.
 
-| Email                  | Password        |
-| ---------------------- | --------------- |
-| `admin@cannabuddy.com` | `cannabuddy123` |
+Sign in at http://localhost:5190/admin with:
 
-Change these under **Settings** after your first sign-in.
+| Username | Password        |
+| -------- | --------------- |
+| `admin`  | `cannabuddy123` |
 
-| Section          | What you can do                                                                   |
+(The email address `admin@cannabuddy.com` also works as the username.) Change both under
+**Settings → Your login** after the first sign-in.
+
+### Adding a product (what the client does)
+
+1. **Products → Add New**
+2. Type the product name in the big title box
+3. **Product photo → Upload photo** (any phone or camera photo; it is resized automatically) or
+   **Media Library** to reuse a photo already on the site
+4. Type the price. "One price" is the normal choice; the other options are a price range or a sale price
+5. Click **Publish** — the product appears on the home page straight away
+
+Everything else (button type, star rating, links, alt text) sits in a collapsed **More options**
+panel, so the main screen stays short.
+
+| Screen           | What it does                                                                      |
 | ---------------- | --------------------------------------------------------------------------------- |
-| **Overview**     | Product, sale and stock counts; add-to-cart activity chart (with a table view); most-added products; latest subscribers |
-| **Products**     | Search and filter; add, edit and delete products; reorder the home-page grid; show or hide items; set single, range or sale prices, stars, stock, the Sale badge and the button type; live card preview |
-| **Hero slides**  | Add, edit, reorder, hide and delete banner slides and their captions            |
-| **Brands**       | Add, edit, reorder, hide and delete partner logos                               |
-| **Announcement** | Edit or hide the promo bar at the top of the site                               |
-| **Subscribers**  | Sign-ups from the footer form; search, remove, export as CSV                    |
-| **Settings**     | Change the admin email and password; download or restore a JSON backup; reset to the original content |
+| **Dashboard**    | Welcome panel with shortcuts, At a Glance counts, add-to-cart activity chart, latest sign-ups |
+| **Products**     | List table with search, filters, row actions, ordering, and a Yes/No switch for showing each product on the home page |
+| **Hero Slides**  | The big banner photos and captions, in order                                      |
+| **Brands**       | Partner logos, in order                                                            |
+| **Announcement** | The promo strip at the top of the site, with a live preview                        |
+| **Subscribers**  | Newsletter sign-ups; search, remove, export CSV                                    |
+| **Settings**     | Customer support phone number, username/password, backup & restore, reset to original |
 
-Images can be uploaded (resized in the browser automatically) or picked from the site's existing image library.
-
-**How saving works:** there is no server. Changes are stored in the browser (localStorage) and show up on the storefront immediately, including in other open tabs. So edits live on the computer and browser where they were made; use **Settings → Download backup / Restore** to move them. The sign-in is a client-side gate, **not real security**. Connect a backend (e.g. Supabase or Firebase) before relying on it in production.
+**How saving works:** there is no server. Changes are saved in the browser (localStorage) and show
+on the storefront immediately, including in other open tabs. Edits therefore live on the computer
+and browser where they were made — use **Settings → Download backup / Restore** to move them.
+The sign-in is a client-side gate, **not real security**. Add a backend (e.g. Supabase or Firebase)
+before relying on it in production.
 
 ## How the design is kept identical
 

@@ -1,8 +1,10 @@
 // Site footer: newsletter band + dark footer (links, logo, locations, disclaimers)
+import { useSiteState } from '../../store/siteStore'
 import LogoMark from '../common/LogoMark'
 import NewsletterForm from './NewsletterForm'
 
 export default function Footer() {
+  const contact = useSiteState((s) => s.contact)
   return (
     <footer id="page-footer" className="l-footer">
       <section className="l-section wpb_row us_custom_7ffb2dde height_medium">
@@ -199,9 +201,7 @@ export default function Footer() {
                                 <strong style={{ fontSize: "1.1em" }}>
                                   {"Customer Support: "}
                                 </strong>
-                                <a href="tel:+19803550701" data-ctm-watch-id="1" data-ctm-tracked="1" data-observe="1" data-observer-id="0">
-                                  (980) 355-0701
-                                </a>
+                                <a href={contact.phoneHref}>{contact.phone}</a>
                               </p>
                             </div>
                           </div>

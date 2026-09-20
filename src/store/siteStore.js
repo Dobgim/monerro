@@ -58,9 +58,15 @@ function buildDefaults() {
     ),
     slides: heroSlides.map((s) => ({ ...s, visible: true })),
     brands: brands.map((b, i) => ({ ...b, id: `brand-${i}`, visible: true })),
+    contact: {
+      // shown as "Customer Support" in the footer; editable in Admin → Settings
+      phone: '(510) 394-2813',
+      phoneHref: 'tel:+15103942813',
+    },
     subscribers: [],
     cartEvents: [],
     admin: {
+      username: 'admin',
       email: 'admin@cannabuddy.com',
       // SHA-256 of the default password "cannabuddy123" — change it in Settings
       passwordHash: '3c2b93bca2df4c1e16b4e40cb0638078cfd921ebb033293e3ade19153fa43d16',
@@ -73,7 +79,8 @@ function load() {
   const defaults = buildDefaults()
   try {
     const saved = JSON.parse(localStorage.getItem(KEY))
-    return saved ? { ...defaults, ...saved } : defaults
+    // admin is merged (not replaced) so data saved by older versions still gains new fields
+    return saved ? { ...defaults, ...saved, admin: { ...defaults.admin, ...saved.admin }, contact: { ...defaults.contact, ...saved.contact } } : defaults
   } catch {
     return defaults
   }

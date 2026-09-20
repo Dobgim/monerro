@@ -3,7 +3,7 @@ import { useSiteState } from '../../store/siteStore'
 import Icon from './Icon'
 import { Button, Modal } from './ui'
 
-// Resize + re-encode an uploaded file so it fits comfortably in browser storage.
+// Resize + re-encode an uploaded photo so it fits comfortably in browser storage.
 function compressImage(file, maxWidth, quality = 0.85) {
   return new Promise((resolve, reject) => {
     const url = URL.createObjectURL(file)
@@ -27,7 +27,7 @@ function compressImage(file, maxWidth, quality = 0.85) {
   })
 }
 
-// Every image the site already ships with, for the "Choose from library" picker
+// Every photo already on the site, for the "Media Library" picker
 function useLibrary() {
   const state = useSiteState()
   return useMemo(() => {
@@ -39,7 +39,7 @@ function useLibrary() {
   }, [state])
 }
 
-export default function ImageField({ label, value, onChange, maxWidth = 1200, aspect = '1 / 1', fit = 'contain' }) {
+export default function ImageField({ label, value, onChange, maxWidth = 1200, aspect = '1 / 1', fit = 'contain', setLabel = 'Set product photo' }) {
   const input = useRef(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
@@ -50,7 +50,7 @@ export default function ImageField({ label, value, onChange, maxWidth = 1200, as
   const onFile = async (file) => {
     if (!file) return
     if (!file.type.startsWith('image/')) {
-      setError('Please choose an image file.')
+      setError('That file isn’t a photo. Please choose a JPG, PNG or WebP image.')
       return
     }
     setBusy(true)
@@ -58,7 +58,7 @@ export default function ImageField({ label, value, onChange, maxWidth = 1200, as
     try {
       onChange(await compressImage(file, maxWidth))
     } catch {
-      setError('That image could not be read.')
+      setError('That photo could not be read. Please try another one.')
     } finally {
       setBusy(false)
     }
@@ -67,46 +67,50 @@ export default function ImageField({ label, value, onChange, maxWidth = 1200, as
   const shown = library.filter((src) => src.toLowerCase().includes(filter.toLowerCase()))
 
   return (
-    <div className="adm-field">
-      {label && <span className="adm-field__label">{label}</span>}
+    <div className="cb-imagefield">
+      {label && <p className="cb-imagefield__label">{label}</p>}
       <div
-        className="adm-imagefield"
+        className="cb-imagefield__drop"
         onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => {
           e.preventDefault()
           onFile(e.dataTransfer.files[0])
         }}
       >
-        <div className="adm-imagefield__preview" style={{ aspectRatio: aspect }}>
-          {value ? <img src={value} alt="" style={{ objectFit: fit }} /> : <Icon name="image" size={30} />}
-          {busy && <div className="adm-imagefield__busy">Optimising…</div>}
-        </div>
-        <div className="adm-imagefield__actions">
-          <Button size="sm" icon="upload" onClick={() => input.current.click()}>
-            Upload
-          </Button>
-          <Button size="sm" icon="image" onClick={() => setLibraryOpen(true)}>
-            Library
-          </Button>
+        {value ? (
+          <div className="cb-imagefield__preview" style={{ aspectRatio: aspect }}>
+            <img src={value} alt="" style={{ objectFit: fit }} />
+          </div>
+        ) : (
+          <button type="button" className="cb-imagefield__empty" style={{ aspectRatio: aspect }} onClick={() => input.current.click()}>
+            <Icon name="image" size={26} />
+            <span>{setLabel}</span>
+            <small>Click to choose, or drag a photo here</small>
+          </button>
+        )}
+        {busy && <p className="description">Optimising photo…</p>}
+        <p className="cb-imagefield__actions">
+          <Button onClick={() => input.current.click()}>Upload photo</Button>
+          <Button onClick={() => setLibraryOpen(true)}>Media Library</Button>
           {value && (
-            <Button size="sm" variant="ghost" icon="trash" onClick={() => onChange('')}>
-              Remove
-            </Button>
+            <button type="button" className="button-link submitdelete" onClick={() => onChange('')}>
+              Remove photo
+            </button>
           )}
-          <p className="adm-field__hint">Drop an image here, or upload. Large images are resized to {maxWidth}px automatically.</p>
-        </div>
+        </p>
+        <p className="description">Large photos are resized to {maxWidth}px automatically, so any phone or camera photo is fine.</p>
         <input ref={input} type="file" accept="image/*" hidden onChange={(e) => onFile(e.target.files[0])} />
       </div>
-      {error && <p className="adm-field__error">{error}</p>}
+      {error && <p className="field-error">{error}</p>}
 
-      <Modal open={libraryOpen} title="Image library" onClose={() => setLibraryOpen(false)} wide>
-        <input className="adm-input" placeholder="Filter by file name…" value={filter} onChange={(e) => setFilter(e.target.value)} />
-        <div className="adm-library">
+      <Modal open={libraryOpen} title="Media Library" onClose={() => setLibraryOpen(false)} wide>
+        <input type="search" className="large-text" placeholder="Search photos by file name…" value={filter} onChange={(e) => setFilter(e.target.value)} />
+        <div className="cb-library">
           {shown.map((src) => (
             <button
               key={src}
               type="button"
-              className={`adm-library__item${src === value ? ' is-selected' : ''}`}
+              className={`cb-library__item${src === value ? ' is-selected' : ''}`}
               onClick={() => {
                 onChange(src)
                 setLibraryOpen(false)
@@ -116,6 +120,7 @@ export default function ImageField({ label, value, onChange, maxWidth = 1200, as
               <img src={src} alt="" loading="lazy" />
             </button>
           ))}
+          {shown.length === 0 && <p className="description">No photos match “{filter}”.</p>}
         </div>
       </Modal>
     </div>

@@ -1,8 +1,8 @@
 import { useSyncExternalStore } from 'react'
 import { getState } from '../store/siteStore'
 
-// Client-side sign-in for the demo dashboard. There is no server, so this keeps casual
-// visitors out of /admin but is NOT real security — anyone can read or clear localStorage.
+// Sign-in for the dashboard. There is no server, so this keeps casual visitors out of
+// /admin but is NOT real security — anyone can read or clear browser storage.
 const SESSION_KEY = 'cannabuddy-admin-session'
 const listeners = new Set()
 
@@ -13,38 +13,44 @@ export async function sha256(text) {
 
 function readSession() {
   try {
-    return sessionStorage.getItem(SESSION_KEY)
+    return localStorage.getItem(SESSION_KEY) || sessionStorage.getItem(SESSION_KEY)
   } catch {
     return null
   }
 }
 
-export async function signIn(email, password) {
+let session = readSession()
+
+function announce() {
+  listeners.forEach((l) => l())
+}
+
+// Accepts either the username or the email address, like WordPress does.
+export async function signIn(login, password, remember = false) {
   const { admin } = getState()
-  const ok = email.trim().toLowerCase() === admin.email.toLowerCase() && (await sha256(password)) === admin.passwordHash
-  if (ok) {
-    try {
-      sessionStorage.setItem(SESSION_KEY, admin.email)
-    } catch {
-      // session storage blocked — stays signed in until reload
-    }
-    session = admin.email
-    listeners.forEach((l) => l())
+  const id = login.trim().toLowerCase()
+  const known = id === admin.username.toLowerCase() || id === admin.email.toLowerCase()
+  if (!known || (await sha256(password)) !== admin.passwordHash) return false
+  try {
+    ;(remember ? localStorage : sessionStorage).setItem(SESSION_KEY, admin.username)
+  } catch {
+    // storage blocked — stays signed in until reload
   }
-  return ok
+  session = admin.username
+  announce()
+  return true
 }
 
 export function signOut() {
   try {
+    localStorage.removeItem(SESSION_KEY)
     sessionStorage.removeItem(SESSION_KEY)
   } catch {
     // ignore
   }
   session = null
-  listeners.forEach((l) => l())
+  announce()
 }
-
-let session = readSession()
 
 export function useSession() {
   return useSyncExternalStore(

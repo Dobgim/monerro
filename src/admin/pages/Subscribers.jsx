@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { setState, useSiteState } from '../../store/siteStore'
-import { Button, ConfirmDialog, EmptyState, IconButton, PageHeader, useSave } from '../components/ui'
-import Icon from '../components/Icon'
+import { ConfirmDialog, EmptyRow, PageHeader, RowAction, SearchBox, useSave } from '../components/ui'
 import { downloadFile, formatDate } from '../format'
 
 export default function Subscribers() {
@@ -20,63 +19,52 @@ export default function Subscribers() {
     <>
       <PageHeader
         title="Subscribers"
-        description="People who signed up with the newsletter form in the footer."
-        actions={
-          <Button icon="download" onClick={exportCsv} disabled={!subscribers.length}>
+        action={
+          <button type="button" className="page-title-action" onClick={exportCsv} disabled={!subscribers.length}>
             Export CSV
-          </Button>
+          </button>
         }
+        description="People who signed up with the newsletter form at the bottom of your site."
       />
-      {subscribers.length ? (
-        <>
-          <div className="adm-toolbar">
-            <label className="adm-search">
-              <Icon name="search" size={16} />
-              <input type="search" placeholder="Search emails…" value={query} onChange={(e) => setQuery(e.target.value)} aria-label="Search subscribers" />
-            </label>
-          </div>
-          <div className="adm-card">
-            <table className="adm-table">
-              <thead>
-                <tr>
-                  <th>Email</th>
-                  <th>Subscribed</th>
-                  <th className="actions">
-                    <span className="sr-only">Actions</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {shown.map((s) => (
-                  <tr key={s.email}>
-                    <td>
-                      <a href={`mailto:${s.email}`}>{s.email}</a>
-                    </td>
-                    <td data-label="Subscribed">{formatDate(s.at)}</td>
-                    <td className="actions">
-<div className="adm-rowactions">
-                      <IconButton icon="trash" variant="danger" label={`Remove ${s.email}`} onClick={() => setToDelete(s)} />
-</div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </>
-      ) : (
-        <div className="adm-card">
-          <EmptyState icon="mail" title="No subscribers yet">
-            Sign-ups from the storefront’s footer form will appear here.
-          </EmptyState>
-        </div>
-      )}
+      {subscribers.length > 0 && <SearchBox label="Search subscribers" value={query} onChange={setQuery} />}
+
+      <table className="wp-list-table widefat fixed striped">
+        <thead>
+          <tr>
+            <th scope="col" className="column-primary">
+              Email
+            </th>
+            <th scope="col">Signed up</th>
+          </tr>
+        </thead>
+        <tbody>
+          {shown.length === 0 && <EmptyRow colSpan={2}>No sign-ups yet.</EmptyRow>}
+          {shown.map((s) => (
+            <tr key={s.email}>
+              <td className="column-primary has-row-actions">
+                <strong>
+                  <a href={`mailto:${s.email}`} className="row-title">
+                    {s.email}
+                  </a>
+                </strong>
+                <div className="row-actions">
+                  <RowAction danger onClick={() => setToDelete(s)}>
+                    Remove
+                  </RowAction>
+                </div>
+              </td>
+              <td data-colname="Signed up">{formatDate(s.at)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       <ConfirmDialog
         open={Boolean(toDelete)}
-        title="Remove subscriber?"
+        title="Remove subscriber"
         message={toDelete && `${toDelete.email} will be removed from the list.`}
         confirmLabel="Remove"
-        onConfirm={() => save(setState((st) => ({ ...st, subscribers: st.subscribers.filter((x) => x.email !== toDelete.email) })), 'Subscriber removed')}
+        onConfirm={() => save(setState((st) => ({ ...st, subscribers: st.subscribers.filter((x) => x.email !== toDelete.email) })), 'Subscriber removed.')}
         onClose={() => setToDelete(null)}
       />
     </>

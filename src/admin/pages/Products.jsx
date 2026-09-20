@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { move, remove, setState, useSiteState } from '../../store/siteStore'
-import { Badge, Button, ConfirmDialog, EmptyState, IconButton, PageHeader, Toggle, useSave } from '../components/ui'
 import Icon from '../components/Icon'
+import { ConfirmDialog, EmptyRow, PageHeader, RowAction, SearchBox, StatusBadge, Toggle, useSave } from '../components/ui'
 import { formatPrice } from '../format'
 
 const FILTERS = [
@@ -26,117 +26,127 @@ export default function Products() {
   const [params, setParams] = useSearchParams()
   const [query, setQuery] = useState('')
   const [toDelete, setToDelete] = useState(null)
-  const navigate = useNavigate()
   const save = useSave()
   const filter = matches[params.get('filter')] ? params.get('filter') : 'all'
 
   const q = query.trim().toLowerCase()
   const shown = products.filter((p) => matches[filter](p) && (!q || p.name.toLowerCase().includes(q)))
-  const reorderable = filter === 'all' && !q
+  const sortable = filter === 'all' && !q
 
   const setVisible = (id, visible) =>
-    save(setState((s) => ({ ...s, products: s.products.map((p) => (p.id === id ? { ...p, visible } : p)) })), visible ? 'Now showing on the home page' : 'Hidden from the home page')
+    save(
+      setState((s) => ({ ...s, products: s.products.map((p) => (p.id === id ? { ...p, visible } : p)) })),
+      visible ? 'Product is now shown on the home page.' : 'Product hidden from the home page.',
+    )
 
   return (
     <>
       <PageHeader
         title="Products"
-        description="The “Featured Cannabis Products” grid. Order here is the order on the page: 3, 3, then 4 per row."
-        actions={
-          <Button variant="primary" icon="plus" onClick={() => navigate('/admin/products/new')}>
-            Add product
-          </Button>
+        action={
+          <Link to="/admin/products/new" className="page-title-action">
+            Add New
+          </Link>
         }
+        description="These are the products in the “Featured Cannabis Products” section of the home page. They appear in the order below."
       />
 
-      <div className="adm-toolbar">
-        <label className="adm-search">
-          <Icon name="search" size={16} />
-          <input type="search" placeholder="Search products…" value={query} onChange={(e) => setQuery(e.target.value)} aria-label="Search products" />
-        </label>
-        <div className="adm-chips" role="tablist" aria-label="Filter products">
-          {FILTERS.map((f) => (
-            <button
-              key={f.value}
-              type="button"
-              role="tab"
-              aria-selected={filter === f.value}
-              className={filter === f.value ? 'is-active' : ''}
-              onClick={() => setParams(f.value === 'all' ? {} : { filter: f.value })}
-            >
-              {f.label}
-              <em>{products.filter(matches[f.value]).length}</em>
+      <ul className="subsubsub">
+        {FILTERS.map((f, i) => (
+          <li key={f.value}>
+            <button type="button" className={`button-link${filter === f.value ? ' current' : ''}`} onClick={() => setParams(f.value === 'all' ? {} : { filter: f.value })}>
+              {f.label} <span className="count">({products.filter(matches[f.value]).length})</span>
             </button>
-          ))}
-        </div>
-      </div>
+            {i < FILTERS.length - 1 && ' | '}
+          </li>
+        ))}
+      </ul>
+      <SearchBox label="Search products" value={query} onChange={setQuery} />
 
-      <div className="adm-card">
-        {shown.length ? (
-          <table className="adm-table adm-table--products">
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Status</th>
-                <th>On home page</th>
-                <th className="actions">
-                  <span className="sr-only">Actions</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {shown.map((p, i) => (
-                <tr key={p.id} className={p.visible ? '' : 'is-muted'}>
-                  <td>
-                    <Link to={`/admin/products/${p.id}`} className="adm-product">
-                      {p.image ? <img src={p.image} alt="" loading="lazy" /> : <span className="adm-thumb-ph" />}
-                      <span>
-                        <strong>{p.name}</strong>
-                        {p.rating != null && (
-                          <small>
-                            ★ {Number(p.rating).toFixed(2)}
-                          </small>
-                        )}
-                      </span>
-                    </Link>
-                  </td>
-                  <td data-label="Price">{formatPrice(p.price)}</td>
-                  <td data-label="Status">
-                    <div className="adm-badges">
-                      {p.stock === 'outofstock' ? <Badge tone="danger">Out of stock</Badge> : <Badge tone="success">In stock</Badge>}
-                      {(p.onSale || p.price?.type === 'sale') && <Badge tone="accent">Sale</Badge>}
-                    </div>
-                  </td>
-                  <td data-label="On home page">
-                    <Toggle checked={p.visible} onChange={(v) => setVisible(p.id, v)} label={<span className="sr-only">Show {p.name} on home page</span>} />
-                  </td>
-                  <td className="actions">
-<div className="adm-rowactions">
-                    {reorderable && (
-                      <>
-                        <IconButton icon="up" label="Move up" disabled={i === 0} onClick={() => save(move('products', p.id, -1))} />
-                        <IconButton icon="down" label="Move down" disabled={i === shown.length - 1} onClick={() => save(move('products', p.id, 1))} />
-                      </>
-                    )}
-                    <IconButton icon="edit" label={`Edit ${p.name}`} onClick={() => navigate(`/admin/products/${p.id}`)} />
-                    <IconButton icon="trash" label={`Delete ${p.name}`} variant="danger" onClick={() => setToDelete(p)} />
-</div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <EmptyState title="No products match">Try a different search or filter.</EmptyState>
-        )}
-      </div>
+      <table className="wp-list-table widefat fixed striped table-view-list products">
+        <thead>
+          <tr>
+            <th scope="col" className="column-thumb">
+              <span className="screen-reader-text">Photo</span>
+            </th>
+            <th scope="col" className="column-primary">
+              Product
+            </th>
+            <th scope="col" className="column-price">
+              Price
+            </th>
+            <th scope="col" className="column-stock">
+              Stock
+            </th>
+            <th scope="col" className="column-visible">
+              On home page
+            </th>
+            <th scope="col" className="column-order">
+              Order
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {shown.length === 0 && <EmptyRow colSpan={6}>No products found.</EmptyRow>}
+          {shown.map((p, i) => (
+            <tr key={p.id}>
+              <td className="column-thumb">
+                {p.image ? <img src={p.image} alt="" loading="lazy" /> : <span className="cb-thumb-ph" />}
+              </td>
+              <td className="column-primary has-row-actions">
+                <strong>
+                  <Link to={`/admin/products/${p.id}`} className="row-title">
+                    {p.name}
+                  </Link>
+                </strong>
+                {!p.visible && <span className="post-state"> — Hidden</span>}
+                <div className="row-actions">
+                  <span className="edit">
+                    <Link to={`/admin/products/${p.id}`}>Edit</Link>
+                  </span>{' '}
+                  |{' '}
+                  <span className="view">
+                    <a href={p.href} target="_blank" rel="noreferrer">
+                      View
+                    </a>
+                  </span>{' '}
+                  |{' '}
+                  <RowAction danger onClick={() => setToDelete(p)}>
+                    Delete
+                  </RowAction>
+                </div>
+              </td>
+              <td data-colname="Price">
+                {formatPrice(p.price)}
+                {(p.onSale || p.price?.type === 'sale') && <StatusBadge tone="accent">Sale</StatusBadge>}
+              </td>
+              <td data-colname="Stock">
+                {p.stock === 'outofstock' ? <StatusBadge tone="danger">Out of stock</StatusBadge> : <StatusBadge tone="success">In stock</StatusBadge>}
+              </td>
+              <td data-colname="On home page">
+                <Toggle checked={p.visible} onChange={(v) => setVisible(p.id, v)} label={`Show ${p.name} on the home page`} />
+              </td>
+              <td data-colname="Order" className="column-order">
+                <button type="button" className="button button-small" disabled={!sortable || i === 0} aria-label="Move up" onClick={() => save(move('products', p.id, -1))}>
+                  <Icon name="up" size={14} />
+                </button>
+                <button type="button" className="button button-small" disabled={!sortable || i === shown.length - 1} aria-label="Move down" onClick={() => save(move('products', p.id, 1))}>
+                  <Icon name="down" size={14} />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="displaying-num">
+        {shown.length} item{shown.length === 1 ? '' : 's'}
+      </p>
 
       <ConfirmDialog
         open={Boolean(toDelete)}
-        title="Delete product?"
-        message={toDelete && `“${toDelete.name}” will be removed from the catalog and the home page. You can restore the original catalog from Settings.`}
-        onConfirm={() => save(remove('products', toDelete.id), 'Product deleted')}
+        title="Delete product"
+        message={toDelete && `“${toDelete.name}” will be removed from the home page. You can restore the original products from Settings.`}
+        onConfirm={() => save(remove('products', toDelete.id), 'Product deleted.')}
         onClose={() => setToDelete(null)}
       />
     </>
