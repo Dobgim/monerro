@@ -115,7 +115,7 @@ Every image is stored locally under `public/assets/images/`. The saved page used
 
 ## Notes
 
-- Links still point to the real `cannabuddy.com` pages. Only the home page is rebuilt here.
+- Pages: home, `/shop/` (with search), `/product/<slug>/`, `/cart/`. Other sections (categories, blog, wholesale…) show a "coming soon" page until they are built.
 - The third-party widgets (AgeChecker age gate, Klaviyo sign-up, analytics) are not included. A simple sign-up form takes Klaviyo's place.
 
 ## Still to replace (brand assets)
@@ -127,5 +127,5 @@ and should be swapped before the site goes live:
 - **House-brand product photos and names** — e.g. "CannaBuddy THCa Crumble", "CannaBuddy Delta 9 THC Seltzer",
   "CannaBuddy Natural Hemp Rolling Papers". Rename them and replace the photos in Products → Edit.
 - **The "CannaBuddy" tile in Brands** — remove it, or replace it with your own supplier list.
-- **Shop addresses in the footer** — the Charlotte and Matthews addresses, phone numbers and email
-  addresses are still the other company's. Only the customer support number is yours.
+- **Shop addresses in the footer** — the Charlotte and Matthews street addresses and hours are still the
+  other company's (their phone numbers and emails have been removed).
