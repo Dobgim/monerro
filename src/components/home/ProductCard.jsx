@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useCart } from '../../context/CartContext'
 import { productClassName, resolveButton } from '../../store/siteStore'
 import { productPath } from '../../lib/links'
+import { galleryOf } from '../../lib/gallery'
 
 function Amount({ value }) {
   return (
@@ -73,6 +74,7 @@ export default function ProductCard({ product, first, last, eager }) {
   const [state, setState] = useState('idle') // idle | loading | added
   const button = resolveButton(product)
   const path = productPath(product)
+  const second = galleryOf(product)[1]
 
   const onAdd = (e) => {
     if (!button.ajax) return // variable/bundle products link through to the product page
@@ -85,7 +87,7 @@ export default function ProductCard({ product, first, last, eager }) {
     }, 400)
   }
 
-  const cls = [productClassName(product), first && 'first', last && 'last'].filter(Boolean).join(' ')
+  const cls = [productClassName(product), first && 'first', last && 'last', second && 'cb-has-hover-img'].filter(Boolean).join(' ')
   const btnCls = [button.className, state === 'loading' && 'loading', state === 'added' && 'added'].filter(Boolean).join(' ')
 
   return (
@@ -100,6 +102,8 @@ export default function ProductCard({ product, first, last, eager }) {
           loading={eager ? 'eager' : 'lazy'}
           className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
         />
+        {/* second gallery photo fades in on hover */}
+        {second && <img src={second} alt="" width="300" height="300" loading="lazy" className="cb-card-hover-img" aria-hidden="true" />}
         <h2 className="woocommerce-loop-product__title">{product.name}</h2>
         {product.rating != null && <StarRating rating={Number(product.rating)} />}{' '}
         <Price price={product.price} />

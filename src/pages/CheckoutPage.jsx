@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { planText, planUnitPrice } from '../lib/subscription'
 import { useCart } from '../context/CartContext'
 import { useSiteState } from '../store/siteStore'
 import usePageTitle from '../hooks/usePageTitle'
-import { productPath, unitPrice } from '../lib/links'
+import { productPath } from '../lib/links'
 import { enabledMethods } from '../lib/payments'
 import { checkoutMessage, money, whatsappUrl } from '../lib/whatsapp'
 import { Section, Separator } from '../components/common/Section'
@@ -31,7 +32,7 @@ export default function CheckoutPage() {
   usePageTitle('Checkout')
 
   const lines = items.map((item) => ({ item, product: products.find((p) => p.id === item.id) }))
-  const subtotal = lines.reduce((sum, { item, product }) => sum + (product ? unitPrice(product.price) * item.qty : 0), 0)
+  const subtotal = lines.reduce((sum, { item, product }) => sum + (product ? planUnitPrice(product, item.plan) * item.qty : 0), 0)
   const hasRange = lines.some(({ product }) => product?.price?.type === 'range')
   const method = methods.find((m) => m.id === methodId)
   const set = (patch) => {
@@ -54,7 +55,7 @@ export default function CheckoutPage() {
       saveOrder({
         id: Date.now(),
         date: new Date().toISOString(),
-        items: lines.map(({ item, product }) => ({ name: product?.name || item.name, qty: item.qty, image: product?.image || '' })),
+        items: lines.map(({ item, product }) => ({ name: product?.name || item.name, qty: item.qty, image: product?.image || '', plan: item.plan ? planText(item.plan) : '' })),
         total: subtotal,
         fromPrice: hasRange,
         method: method.label,
@@ -168,26 +169,27 @@ export default function CheckoutPage() {
           <h2>Your order</h2>
           <ul className="cb-summary">
             {lines.map(({ item, product }) => (
-              <li key={item.id}>
+              <li key={item.key}>
                 {product && <img src={product.image} alt="" />}
                 <div className="cb-summary__info">
                   {product ? <a href={productPath(product)}>{product.name}</a> : item.name}
+                  <small className="cb-plan">{planText(item.plan)}</small>
                   <div className="cb-summary__qty">
-                    <button type="button" aria-label={`One fewer ${item.name}`} onClick={() => setQty(item.id, item.qty - 1)}>
+                    <button type="button" aria-label={`One fewer ${item.name}`} onClick={() => setQty(item.key, item.qty - 1)}>
                       −
                     </button>
                     <span>{item.qty}</span>
-                    <button type="button" aria-label={`One more ${item.name}`} onClick={() => setQty(item.id, item.qty + 1)}>
+                    <button type="button" aria-label={`One more ${item.name}`} onClick={() => setQty(item.key, item.qty + 1)}>
                       +
                     </button>
-                    <button type="button" className="cb-summary__remove" onClick={() => removeItem(item.id)}>
+                    <button type="button" className="cb-summary__remove" onClick={() => removeItem(item.key)}>
                       Remove
                     </button>
                   </div>
                 </div>
                 <span className="cb-summary__price">
                   {product?.price?.type === 'range' && <small>from </small>}
-                  {product ? money(unitPrice(product.price) * item.qty) : ''}
+                  {product ? money(planUnitPrice(product, item.plan) * item.qty) : ''}
                 </span>
               </li>
             ))}

@@ -42,10 +42,11 @@ export function Postbox({ title, children, id, collapsible = false, defaultOpen 
   const closed = collapsible && !open
   return (
     <div className={`postbox${closed ? ' closed' : ''} ${className}`} id={id}>
-      <div className="postbox-header">
+      {/* like WordPress, the whole header opens and closes a collapsible box */}
+      <div className={`postbox-header${collapsible ? ' is-toggle' : ''}`} onClick={collapsible ? () => setOpen((o) => !o) : undefined}>
         <h2>{title}</h2>
         {collapsible && (
-          <button type="button" className="handlediv" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+          <button type="button" className="handlediv" aria-expanded={open}>
             <span className="screen-reader-text">Toggle panel: {title}</span>
             <Icon name={open ? 'up' : 'down'} size={16} />
           </button>

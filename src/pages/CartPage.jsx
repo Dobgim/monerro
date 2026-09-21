@@ -1,7 +1,8 @@
 import { useCart } from '../context/CartContext'
+import { planText, planUnitPrice } from '../lib/subscription'
 import { useSiteState } from '../store/siteStore'
 import usePageTitle from '../hooks/usePageTitle'
-import { productPath, unitPrice } from '../lib/links'
+import { productPath } from '../lib/links'
 import { Section, Separator } from '../components/common/Section'
 
 export default function CartPage() {
@@ -10,7 +11,7 @@ export default function CartPage() {
   usePageTitle('Cart')
 
   const lines = items.map((item) => ({ item, product: products.find((p) => p.id === item.id) }))
-  const subtotal = lines.reduce((sum, { item, product }) => sum + (product ? unitPrice(product.price) * item.qty : 0), 0)
+  const subtotal = lines.reduce((sum, { item, product }) => sum + (product ? planUnitPrice(product, item.plan) * item.qty : 0), 0)
 
   return (
     <Section className="height_medium cb-page cb-cart">
@@ -36,29 +37,32 @@ export default function CartPage() {
             </thead>
             <tbody>
               {lines.map(({ item, product }) => {
-                const price = product ? unitPrice(product.price) : 0
+                const price = product ? planUnitPrice(product, item.plan) : 0
                 return (
-                  <tr key={item.id}>
+                  <tr key={item.key}>
                     <td className="cb-cart__thumb">{product && <img src={product.image} alt="" />}</td>
-                    <td data-label="Product">{product ? <a href={productPath(product)}>{product.name}</a> : item.name}</td>
+                    <td data-label="Product">
+                      {product ? <a href={productPath(product)}>{product.name}</a> : item.name}
+                      <small className="cb-plan">{planText(item.plan)}</small>
+                    </td>
                     <td data-label="Price">
                       ${price.toFixed(2)}
                       {product?.price?.type === 'range' && <small> (from)</small>}
                     </td>
                     <td data-label="Quantity">
                       <div className="cb-qty">
-                        <button type="button" aria-label={`One fewer ${item.name}`} onClick={() => setQty(item.id, item.qty - 1)}>
+                        <button type="button" aria-label={`One fewer ${item.name}`} onClick={() => setQty(item.key, item.qty - 1)}>
                           −
                         </button>
                         <span aria-live="polite">{item.qty}</span>
-                        <button type="button" aria-label={`One more ${item.name}`} onClick={() => setQty(item.id, item.qty + 1)}>
+                        <button type="button" aria-label={`One more ${item.name}`} onClick={() => setQty(item.key, item.qty + 1)}>
                           +
                         </button>
                       </div>
                     </td>
                     <td data-label="Total">${(price * item.qty).toFixed(2)}</td>
                     <td>
-                      <button type="button" className="cb-cart__remove" aria-label={`Remove ${item.name}`} onClick={() => removeItem(item.id)}>
+                      <button type="button" className="cb-cart__remove" aria-label={`Remove ${item.name}`} onClick={() => removeItem(item.key)}>
                         ×
                       </button>
                     </td>

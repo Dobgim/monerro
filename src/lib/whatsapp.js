@@ -1,4 +1,4 @@
-import { unitPrice } from './links'
+import { planText, planUnitPrice } from './subscription'
 
 // WhatsApp "click to chat": https://wa.me/<number>?text=<message>
 // The number must be digits only, with the country code and no "+".
@@ -9,8 +9,8 @@ export function whatsappUrl(number, text) {
 
 export const money = (n) => `$${n.toFixed(2)}`
 
-function priceLabel(product, qty) {
-  const each = unitPrice(product.price)
+function priceLabel(product, qty, plan) {
+  const each = planUnitPrice(product, plan)
   const from = product.price?.type === 'range' ? 'from ' : ''
   return qty > 1 ? `${from}${money(each)} each = ${from}${money(each * qty)}` : `${from}${money(each)}`
 }
@@ -21,7 +21,7 @@ function priceLabel(product, qty) {
  */
 export function checkoutMessage({ lines, subtotal, customer, method }) {
   const hasRange = lines.some(({ product }) => product?.price?.type === 'range')
-  const items = lines.map(({ item, product }) => `• ${item.qty} × ${product ? product.name : item.name}${product ? ` — ${priceLabel(product, item.qty)}` : ''}`)
+  const items = lines.map(({ item, product }) => `• ${item.qty} × ${product ? product.name : item.name}${product ? ` — ${priceLabel(product, item.qty, item.plan)}` : ''}${item.plan ? `\n   ↻ ${planText(item.plan)}` : ''}`)
   const payLine = method.account
     ? `I’ll pay by ${method.label} to: ${method.account}`
     : `I’ll pay by ${method.label} — please send me your ${method.label} details.`

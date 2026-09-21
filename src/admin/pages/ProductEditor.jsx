@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { BUTTON_KINDS, remove, resolveButton, upsert, useSiteState } from '../../store/siteStore'
 import ImageField from '../components/ImageField'
+import GalleryField from '../components/GalleryField'
+import { extraPhotos } from '../../lib/gallery'
 import { CANNABINOIDS, EFFECTS, TYPES, deriveCategories } from '../../lib/catalog'
 import { Button, ConfirmDialog, FormRow, FormTable, Postbox, useSave } from '../components/ui'
 
@@ -16,6 +18,13 @@ const EMPTY = {
   visible: true,
   buttonKind: 'add',
   description: '',
+  shortDescription: '',
+  profile: '',
+  suggestedUse: '',
+  ingredients: '',
+  coaUrl: '',
+  reviews: [],
+  gallery: [],
   cannabinoids: [],
   types: [],
   effects: [],
@@ -87,7 +96,7 @@ export default function ProductEditor() {
   const save = useSave()
   const [draft, setDraft] = useState(() =>
     existing
-      ? { ...(Array.isArray(existing.types) ? {} : deriveCategories(existing)), ...existing, price: { ...EMPTY.price, ...existing.price } }
+      ? { ...(Array.isArray(existing.types) ? {} : deriveCategories(existing)), ...existing, gallery: extraPhotos(existing), price: { ...EMPTY.price, ...existing.price } }
       : EMPTY,
   )
   const [errors, setErrors] = useState({})
@@ -135,6 +144,7 @@ export default function ProductEditor() {
       rating: draft.rating === '' || draft.rating == null ? null : Number(draft.rating),
       onSale: pr.type === 'sale' || draft.onSale,
       price,
+      reviews: (draft.reviews || []).filter((r) => (r.text || '').trim() || (r.name || '').trim()),
       id: draft.id ?? Date.now(),
     }
     if (!product.cannabinoids.length && !product.types.length && !product.effects.length) Object.assign(product, deriveCategories(product))
@@ -187,6 +197,17 @@ export default function ProductEditor() {
                 placeholder="Tell shoppers about this product: strength, flavour, effects, how to use it…"
               />
               <p className="description">Shown on the product’s own page. Leave a blank line between paragraphs.</p>
+            </Postbox>
+
+            <Postbox title="Short description">
+              <textarea
+                className="large-text"
+                rows={2}
+                value={draft.shortDescription || ''}
+                onChange={(e) => set({ shortDescription: e.target.value })}
+                placeholder="One or two lines shown next to the photo, e.g. “Potent THCa crumble with a sweet, earthy Trainwreck taste.”"
+              />
+              <p className="description">Leave empty to use the first paragraph of the description.</p>
             </Postbox>
 
             <Postbox title="Price">
@@ -281,6 +302,53 @@ export default function ProductEditor() {
               ))}
             </Postbox>
 
+            <Postbox title="Product details (Additional information tab)" collapsible defaultOpen={false}>
+              <p className="description">Optional. Anything you fill in here appears in the “Additional information” tab on the product page.</p>
+              <FormTable>
+                <FormRow label="Cannabinoid profile" description="One per line, like “THCa: 88.5%”.">
+                  <textarea className="large-text" rows={4} value={draft.profile || ''} onChange={(e) => set({ profile: e.target.value })} placeholder={'THCa: 88.5%\nDelta 9 THC: 0.2%\nTotal cannabinoids: 91%'} />
+                </FormRow>
+                <FormRow label="Suggested use">
+                  <textarea className="large-text" rows={2} value={draft.suggestedUse || ''} onChange={(e) => set({ suggestedUse: e.target.value })} />
+                </FormRow>
+                <FormRow label="Ingredients">
+                  <textarea className="large-text" rows={2} value={draft.ingredients || ''} onChange={(e) => set({ ingredients: e.target.value })} />
+                </FormRow>
+                <FormRow label="Lab results (COA) link" description="A link to the lab report PDF or page.">
+                  <input type="url" className="large-text" value={draft.coaUrl || ''} onChange={(e) => set({ coaUrl: e.target.value })} placeholder="https://" />
+                </FormRow>
+              </FormTable>
+            </Postbox>
+
+            <Postbox title="Reviews" collapsible defaultOpen={false}>
+              <p className="description">Customers send reviews to you on WhatsApp. Paste the ones you want to show here.</p>
+              {(draft.reviews || []).map((r, i) => {
+                const setReview = (patch) => set({ reviews: draft.reviews.map((x, j) => (j === i ? { ...x, ...patch } : x)) })
+                return (
+                  <div key={i} className="cb-review-edit">
+                    <div className="cb-review-edit__row">
+                      <input type="text" value={r.name || ''} onChange={(e) => setReview({ name: e.target.value })} placeholder="Customer name" aria-label="Customer name" />
+                      <select value={r.rating || 5} onChange={(e) => setReview({ rating: Number(e.target.value) })} aria-label="Stars">
+                        {[5, 4, 3, 2, 1].map((n) => (
+                          <option key={n} value={n}>
+                            {'★'.repeat(n)} ({n})
+                          </option>
+                        ))}
+                      </select>
+                      <input type="text" value={r.date || ''} onChange={(e) => setReview({ date: e.target.value })} placeholder="Date, e.g. March 3, 2026" aria-label="Date" />
+                      <button type="button" className="button-link submitdelete" onClick={() => set({ reviews: draft.reviews.filter((_, j) => j !== i) })}>
+                        Remove
+                      </button>
+                    </div>
+                    <textarea className="large-text" rows={2} value={r.text || ''} onChange={(e) => setReview({ text: e.target.value })} placeholder="What the customer said" aria-label="Review text" />
+                  </div>
+                )
+              })}
+              <Button type="button" onClick={() => set({ reviews: [...(draft.reviews || []), { name: '', rating: 5, date: '', text: '' }] })}>
+                Add review
+              </Button>
+            </Postbox>
+
             <Postbox title="More options" collapsible defaultOpen={false}>
               <p className="description">You can leave these as they are. They only change small details on the product card.</p>
               <FormTable>
@@ -361,6 +429,10 @@ export default function ProductEditor() {
                 {errors.image && <p className="field-error">{errors.image}</p>}
               </div>
             </div>
+
+            <Postbox title="Product gallery">
+              <GalleryField images={(draft.gallery || []).filter((g) => g !== draft.image)} onChange={(gallery) => set({ gallery })} />
+            </Postbox>
 
             <Postbox title="How it will look">
               <Preview product={draft} />

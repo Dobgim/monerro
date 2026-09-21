@@ -4,7 +4,7 @@ import Icon from './Icon'
 import { Button, Modal } from './ui'
 
 // Resize + re-encode an uploaded photo so it fits comfortably in browser storage.
-function compressImage(file, maxWidth, quality = 0.85) {
+export function compressImage(file, maxWidth, quality = 0.85) {
   return new Promise((resolve, reject) => {
     const url = URL.createObjectURL(file)
     const img = new Image()
@@ -28,7 +28,7 @@ function compressImage(file, maxWidth, quality = 0.85) {
 }
 
 // Every photo already on the site, for the "Media Library" picker
-function useLibrary() {
+export function useLibrary() {
   const state = useSiteState()
   return useMemo(() => {
     const set = new Set()
