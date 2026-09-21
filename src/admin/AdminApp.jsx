@@ -12,6 +12,7 @@ import Slides from './pages/Slides'
 import Brands from './pages/Brands'
 import Announcement from './pages/Announcement'
 import Subscribers from './pages/Subscribers'
+import Orders from './pages/Orders'
 import Settings from './pages/Settings'
 
 export default function AdminApp() {
@@ -29,13 +30,18 @@ export default function AdminApp() {
 
   return (
     <NoticeProvider>
-      {session ? (
+      {session === undefined ? (
+        <div className="wp-login">
+          <p className="wp-login__loading">Loading…</p>
+        </div>
+      ) : session ? (
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Overview />} />
             <Route path="products" element={<Products />} />
             <Route path="products/new" element={<ProductEditor />} />
             <Route path="products/:id" element={<ProductEditor />} />
+            <Route path="orders" element={<Orders />} />
             <Route path="slides" element={<Slides />} />
             <Route path="brands" element={<Brands />} />
             <Route path="announcement" element={<Announcement />} />

@@ -9,6 +9,7 @@ import { checkoutMessage, money, whatsappUrl } from '../lib/whatsapp'
 import { Section, Separator } from '../components/common/Section'
 import WhatsAppIcon from '../components/common/WhatsAppIcon'
 import { saveOrder } from '../lib/orders'
+import { submitOrder } from '../store/siteStore'
 
 const EMPTY_CUSTOMER = { name: '', phone: '', fulfilment: 'delivery', address: '', note: '' }
 
@@ -50,6 +51,14 @@ export default function CheckoutPage() {
       document.querySelector('.cb-checkout .is-invalid')?.scrollIntoView({ block: 'center', behavior: 'smooth' })
       return
     }
+    // the shop sees it under Admin → Orders (the WhatsApp message still opens either way)
+    if (!sent)
+      submitOrder({
+        customer: { name: customer.name.trim(), phone: customer.phone.trim(), fulfilment: customer.fulfilment, address: customer.fulfilment === 'delivery' ? customer.address.trim() : '', note: customer.note.trim() },
+        items: lines.map(({ item, product }) => ({ id: item.id, name: product?.name || item.name, qty: item.qty, each: product ? planUnitPrice(product, item.plan) : null, plan: item.plan ? planText(item.plan) : '', image: product?.image || '' })),
+        total: Math.round(subtotal * 100) / 100,
+        payment: method.label,
+      })
     // keep a copy on this device so it shows under My Account
     if (!sent)
       saveOrder({

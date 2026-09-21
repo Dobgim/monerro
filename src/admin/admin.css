@@ -366,3 +366,33 @@ tr:hover .row-actions, tr:focus-within .row-actions { visibility: visible; }
 .cb-review-edit__row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
 .cb-review-edit__row input[type='text'] { flex: 1 1 160px; min-width: 0; }
 .postbox-header.is-toggle { cursor: pointer; user-select: none; }
+
+/* live-save indicator in the admin bar */
+.cb-sync { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; white-space: nowrap; cursor: default; }
+.cb-sync__dot { width: 8px; height: 8px; border-radius: 50%; background: #68de7c; flex: none; }
+.cb-sync.is-busy .cb-sync__dot { background: #f0b849; animation: cb-pulse 1s ease-in-out infinite; }
+.cb-sync.is-error { color: #ffabaf !important; }
+.cb-sync.is-error .cb-sync__dot { background: #d63638; }
+@keyframes cb-pulse { 50% { opacity: 0.3; } }
+@media (max-width: 600px) { .cb-sync { font-size: 12px; } }
+
+.wp-login__loading { text-align: center; color: #50575e; margin-top: 30vh; }
+
+/* orders */
+.subsubsub { list-style: none; margin: 8px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px; font-size: 13px; color: #646970; }
+.subsubsub .button-link { color: #2271b1; }
+.subsubsub .button-link.current { color: #000; font-weight: 600; }
+.subsubsub .count { color: #50575e; font-weight: 400; }
+.cb-orders .row-title { font-weight: 600; font-size: 14px; text-align: left; }
+.cb-order--new td:first-child { border-left: 4px solid #d63638; padding-left: 10px !important; }
+.cb-orders .row-actions > * + *::before { content: "|"; color: #a7aaad; margin: 0 6px; }
+.cb-order__sub, .cb-order__time { color: #646970; font-size: 12px; }
+.cb-order-status { min-width: 120px; }
+.cb-order-status.is-new { border-color: #d63638; }
+.cb-order-status.is-paid { border-color: #2271b1; }
+.cb-order-status.is-completed { border-color: #00a32a; }
+.cb-order__details td { background: #f6f7f7; }
+.cb-order__items { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 6px; }
+.cb-order__items li { display: flex; align-items: center; gap: 10px; }
+.cb-order__items img { object-fit: contain; background: #fff; border: 1px solid #dcdcde; border-radius: 3px; }
+.cb-order__price { margin-left: auto; font-weight: 600; }

@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useId, useRef, useState } from 'react'
 import Icon from './Icon'
+import { whenSaved } from '../../store/siteStore'
 
 // WordPress-style building blocks: buttons, postboxes, form tables, notices, modals.
 
@@ -250,14 +251,24 @@ export function useNotice() {
   return useContext(NoticeContext)
 }
 
-/** Reports a store write: shows the success notice, or an error if storage is full. */
+/**
+ * Reports a store write. The change shows at once; the success notice waits until the
+ * live database has confirmed it, and an error notice appears if it didn't go through.
+ * Pass `false` (with an optional message) to report a failure straight away.
+ */
 export function useSave() {
   const notice = useNotice()
   return useCallback(
     (ok, message) => {
-      if (ok === false) notice('Could not save — this browser’s storage is full. Try a smaller photo, or remove some products.', 'error')
-      else if (message) notice(message)
-      return ok !== false
+      if (ok === false) {
+        notice(message || 'Could not save. Please try again.', 'error')
+        return false
+      }
+      whenSaved().then((error) => {
+        if (error) notice(`Not saved to the live site — ${error}. Please try again.`, 'error')
+        else if (message) notice(message)
+      })
+      return true
     },
     [notice],
   )

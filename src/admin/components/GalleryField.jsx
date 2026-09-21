@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { compressImage, useLibrary } from './ImageField'
+import { uploadAndRemember, useLibrary } from './ImageField'
 import Icon from './Icon'
 import { Button, Modal } from './ui'
 
@@ -23,9 +23,9 @@ export default function GalleryField({ images, onChange, maxWidth = 1200 }) {
     const added = []
     for (const f of list) {
       try {
-        added.push(await compressImage(f, maxWidth))
-      } catch {
-        setError('One of the photos could not be read and was skipped.')
+        added.push(await uploadAndRemember(f, maxWidth))
+      } catch (e) {
+        setError(e.message === 'Unsupported image' ? 'One of the photos could not be read and was skipped.' : `A photo could not be uploaded — ${e.message}.`)
       }
       setBusy((n) => n - 1)
     }
@@ -77,7 +77,7 @@ export default function GalleryField({ images, onChange, maxWidth = 1200 }) {
           <Button onClick={() => input.current.click()}>Add photos</Button>
           <Button onClick={() => { setPicked([]); setLibraryOpen(true) }}>Media Library</Button>
         </p>
-        <p className="description">{busy ? `Optimising ${busy} photo${busy === 1 ? '' : 's'}…` : 'You can select several photos at once, or drag them here.'}</p>
+        <p className="description">{busy ? `Uploading ${busy} photo${busy === 1 ? '' : 's'}…` : 'You can select several photos at once, or drag them here.'}</p>
       </div>
       <input ref={input} type="file" accept="image/*" multiple hidden onChange={(e) => { addFiles(e.target.files); e.target.value = '' }} />
       {error && <p className="field-error">{error}</p>}

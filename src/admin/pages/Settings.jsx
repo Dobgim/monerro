@@ -1,49 +1,52 @@
 import { useRef, useState } from 'react'
 import { getState, importState, resetState, setState, useSiteState } from '../../store/siteStore'
-import { sha256 } from '../auth'
+import { updateAccount, useSession } from '../auth'
 import { Button, ConfirmDialog, FormRow, FormTable, PageHeader, Postbox, useNotice, useSave } from '../components/ui'
 import { downloadFile } from '../format'
 import { PAYMENT_METHODS } from '../../lib/payments'
 
 function AccountSection() {
-  const admin = useSiteState((s) => s.admin)
-  const save = useSave()
-  const [username, setUsername] = useState(admin.username)
-  const [email, setEmail] = useState(admin.email)
+  const user = useSession()
+  const notice = useNotice()
+  const [username, setUsername] = useState(user.username)
   const [current, setCurrent] = useState('')
   const [next, setNext] = useState('')
   const [confirm, setConfirm] = useState('')
   const [errors, setErrors] = useState({})
+  const [busy, setBusy] = useState(false)
 
   const submit = async (e) => {
     e.preventDefault()
     const errs = {}
-    if ((await sha256(current)) !== admin.passwordHash) errs.current = 'That is not your current password.'
-    if (!username.trim()) errs.username = 'Please enter a username.'
-    if (!/^\S+@\S+\.\S+$/.test(email)) errs.email = 'Please enter a valid email address.'
+    if (!current) errs.current = 'Enter your current password to confirm the change.'
+    if (!/^[A-Za-z0-9._-]{3,40}$/.test(username.trim())) errs.username = 'Use 3–40 letters, numbers, dots, dashes or underscores.'
     if (next && next.length < 8) errs.next = 'Use at least 8 characters.'
     if (next !== confirm) errs.confirm = 'The two passwords don’t match.'
     setErrors(errs)
     if (Object.keys(errs).length) return
-    const passwordHash = next ? await sha256(next) : admin.passwordHash
-    if (save(setState((s) => ({ ...s, admin: { username: username.trim(), email: email.trim(), passwordHash } })), 'Profile updated.')) {
-      setCurrent('')
-      setNext('')
-      setConfirm('')
+    setBusy(true)
+    const problem = await updateAccount({ current, username: username.trim(), password: next })
+    setBusy(false)
+    if (problem) {
+      setErrors(problem.includes('current password') ? { current: problem } : problem.includes('username') ? { username: problem } : { next: problem })
+      return
     }
+    notice(next ? 'Profile updated. Use your new password next time you log in.' : 'Profile updated.')
+    setCurrent('')
+    setNext('')
+    setConfirm('')
   }
 
   return (
     <form onSubmit={submit} noValidate>
       <h2>Your login</h2>
       <FormTable>
-        <FormRow label="Username">
-          <input type="text" className="regular-text" value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" />
+        <FormRow label="Username" description="You can log in with this or your email address.">
+          <input type="text" className="regular-text" value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" autoCapitalize="off" />
           {errors.username && <p className="field-error">{errors.username}</p>}
         </FormRow>
         <FormRow label="Email">
-          <input type="email" className="regular-text" value={email} onChange={(e) => setEmail(e.target.value)} />
-          {errors.email && <p className="field-error">{errors.email}</p>}
+          <input type="email" className="regular-text" value={user.email} readOnly disabled />
         </FormRow>
         <FormRow label="New password" description="Leave empty to keep your current password.">
           <input type="password" className="regular-text" value={next} onChange={(e) => setNext(e.target.value)} autoComplete="new-password" />
@@ -59,8 +62,8 @@ function AccountSection() {
         </FormRow>
       </FormTable>
       <p className="submit">
-        <Button variant="primary" type="submit">
-          Update Profile
+        <Button variant="primary" type="submit" disabled={busy}>
+          {busy ? 'Saving…' : 'Update Profile'}
         </Button>
       </p>
     </form>
@@ -242,9 +245,10 @@ export default function Settings() {
   const save = useSave()
   const file = useRef(null)
   const [confirmReset, setConfirmReset] = useState(false)
+  const [restoring, setRestoring] = useState(false)
 
   const exportJson = () => {
-    const { admin: _admin, ...data } = getState()
+    const { subscribers: _s, cartEvents: _c, orders: _o, media: _m, ...data } = getState()
     downloadFile(`cannabuddyhub-backup-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(data, null, 2), 'application/json')
   }
 
@@ -254,10 +258,12 @@ export default function Settings() {
       const data = JSON.parse(await f.text())
       if (!Array.isArray(data.products) || !Array.isArray(data.slides) || !Array.isArray(data.brands)) throw new Error('shape')
       const { admin: _ignored, ...rest } = data
-      save(importState({ ...rest, admin: getState().admin }), 'Backup restored.')
-    } catch {
-      notice('That file is not a CannaBuddyHub backup.', 'error')
+      setRestoring(true)
+      save(await importState(rest), 'Backup restored to the live site.')
+    } catch (e) {
+      notice(e.message === 'shape' || e instanceof SyntaxError ? 'That file is not a CannaBuddyHub backup.' : `The backup could not be restored — ${e.message}.`, 'error')
     } finally {
+      setRestoring(false)
       file.current.value = ''
     }
   }
@@ -272,16 +278,18 @@ export default function Settings() {
 
       <Postbox title="Backup">
         <p className="description">
-          Your changes are saved in this browser on this computer. Download a backup to keep a copy, or to move your changes to another computer.
+          Everything you change is saved to the live site straight away, from any computer or phone. Download a backup now and then to keep your own copy.
         </p>
         <p>
-          <Button onClick={exportJson}>Download backup</Button> <Button onClick={() => file.current.click()}>Restore from backup</Button>
+          <Button onClick={exportJson}>Download backup</Button> <Button onClick={() => file.current.click()} disabled={restoring}>
+            {restoring ? 'Restoring…' : 'Restore from backup'}
+          </Button>
           <input ref={file} type="file" accept="application/json,.json" hidden onChange={(e) => importJson(e.target.files[0])} />
         </p>
       </Postbox>
 
       <Postbox title="Start over">
-        <p className="description">Put every product, slide, brand and the announcement back the way the site was delivered. Sign-ups and cart activity are cleared too.</p>
+        <p className="description">Put every product, slide, brand and the announcement back the way the site was delivered. Sign-ups and cart activity are cleared too. Orders and uploaded photos are kept.</p>
         <p>
           <button type="button" className="button button-delete" onClick={() => setConfirmReset(true)}>
             Reset everything
@@ -292,11 +300,11 @@ export default function Settings() {
       <ConfirmDialog
         open={confirmReset}
         title="Reset everything"
-        message="This cannot be undone unless you downloaded a backup first. Your login goes back to the original username and password too."
+        message="This changes the live site for every visitor and cannot be undone unless you downloaded a backup first. Your login stays the same."
         confirmLabel="Reset everything"
-        onConfirm={() => {
-          resetState()
-          notice('Everything has been reset to the original site content.')
+        onConfirm={async () => {
+          const problem = await resetState()
+          notice(problem ? `Reset did not finish — ${problem}. Please try again.` : 'Everything has been reset to the original site content.', problem ? 'error' : 'success')
         }}
         onClose={() => setConfirmReset(false)}
       />

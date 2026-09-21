@@ -1,37 +1,21 @@
 import { useMemo, useRef, useState } from 'react'
-import { useSiteState } from '../../store/siteStore'
+import { addMedia, useSiteState } from '../../store/siteStore'
+import { uploadPhoto } from '../../lib/media'
 import Icon from './Icon'
 import { Button, Modal } from './ui'
 
-// Resize + re-encode an uploaded photo so it fits comfortably in browser storage.
-export function compressImage(file, maxWidth, quality = 0.85) {
-  return new Promise((resolve, reject) => {
-    const url = URL.createObjectURL(file)
-    const img = new Image()
-    img.onload = () => {
-      const scale = Math.min(1, maxWidth / img.naturalWidth)
-      const canvas = document.createElement('canvas')
-      canvas.width = Math.round(img.naturalWidth * scale)
-      canvas.height = Math.round(img.naturalHeight * scale)
-      const ctx = canvas.getContext('2d')
-      ctx.imageSmoothingQuality = 'high'
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-      URL.revokeObjectURL(url)
-      resolve(canvas.toDataURL('image/webp', quality))
-    }
-    img.onerror = () => {
-      URL.revokeObjectURL(url)
-      reject(new Error('Unsupported image'))
-    }
-    img.src = url
-  })
+/** Resize a photo, upload it to the live site and add it to the Media Library. Resolves to its URL. */
+export async function uploadAndRemember(file, maxWidth) {
+  const url = await uploadPhoto(file, maxWidth)
+  addMedia(url)
+  return url
 }
 
-// Every photo already on the site, for the "Media Library" picker
+// Every photo already on the site plus everything uploaded, for the "Media Library" picker
 export function useLibrary() {
   const state = useSiteState()
   return useMemo(() => {
-    const set = new Set()
+    const set = new Set(state.media)
     state.products.forEach((p) => p.image && set.add(p.image))
     state.slides.forEach((s) => s.image && set.add(s.image))
     state.brands.forEach((b) => b.image && set.add(b.image))
@@ -56,9 +40,9 @@ export default function ImageField({ label, value, onChange, maxWidth = 1200, as
     setBusy(true)
     setError('')
     try {
-      onChange(await compressImage(file, maxWidth))
-    } catch {
-      setError('That photo could not be read. Please try another one.')
+      onChange(await uploadAndRemember(file, maxWidth))
+    } catch (e) {
+      setError(e.message === 'Unsupported image' ? 'That photo could not be read. Please try another one.' : `The photo could not be uploaded — ${e.message}. Please try again.`)
     } finally {
       setBusy(false)
     }
@@ -88,7 +72,7 @@ export default function ImageField({ label, value, onChange, maxWidth = 1200, as
             <small>Click to choose, or drag a photo here</small>
           </button>
         )}
-        {busy && <p className="description">Optimising photo…</p>}
+        {busy && <p className="description">Uploading photo…</p>}
         <p className="cb-imagefield__actions">
           <Button onClick={() => input.current.click()}>Upload photo</Button>
           <Button onClick={() => setLibraryOpen(true)}>Media Library</Button>

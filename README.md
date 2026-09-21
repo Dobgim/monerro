@@ -27,7 +27,7 @@ Sign in at http://localhost:5190/admin with:
 | -------- | --------------- |
 | `admin`  | `cannabuddy123` |
 
-(The email address `admin@cannabuddyhub.com` also works as the username.) Change both under
+(The email address `admin@cannabuddyhub.com` also works as the username.) Change the password under
 **Settings → Your login** after the first sign-in.
 
 ### Adding a product (what the client does)
@@ -49,14 +49,39 @@ panel, so the main screen stays short.
 | **Hero Slides**  | The big banner photos and captions, in order                                      |
 | **Brands**       | Partner logos, in order                                                            |
 | **Announcement** | The promo strip at the top of the site, with a live preview                        |
+| **Orders**       | Every checkout order (items, customer, payment choice); mark New → Paid → Completed, message the customer on WhatsApp, export CSV |
 | **Subscribers**  | Newsletter sign-ups; search, remove, export CSV                                    |
 | **Settings**     | Customer support phone, WhatsApp number for orders, payment methods & account details, username/password, backup & restore, reset |
 
-**How saving works:** there is no server. Changes are saved in the browser (localStorage) and show
-on the storefront immediately, including in other open tabs. Edits therefore live on the computer
-and browser where they were made — use **Settings → Download backup / Restore** to move them.
-The sign-in is a client-side gate, **not real security**. Add a backend (e.g. Supabase or Firebase)
-before relying on it in production.
+**How saving works:** everything is stored in a live **Supabase** database, so the client can
+manage the shop from any phone or computer. Each change shows on the site at once, and every
+open copy of the storefront updates by itself within about a second (Supabase Realtime).
+The admin bar shows **Saving… / All changes saved**. Photos uploaded in the admin are resized
+in the browser and stored in the Supabase Storage bucket `media`.
+
+| Table / bucket                  | Who can read           | Who can write                          |
+| ------------------------------- | ---------------------- | -------------------------------------- |
+| `products`, `slides`, `brands`, `settings` | everyone     | the admin only                         |
+| `subscribers`, `cart_events`, `orders` | the admin only  | shoppers can add; the admin can change |
+| `admins`                        | the admin              | —                                      |
+| storage bucket `media`          | everyone (public URLs) | the admin only                         |
+
+Sign-in uses Supabase Auth, and public sign-ups are turned off. Only accounts listed in the
+`admins` table can change anything, and the database itself checks this on every write
+(row-level security), so the rules hold even if someone bypasses the website.
+
+### Supabase setup
+
+- Connection settings are in `.env` (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`). The anon key
+  is public by design. **Never** put the `service_role` key or a personal access token in the
+  repo. When deploying (e.g. on Vercel), you can also set these two variables in the host's settings.
+- `supabase/schema.sql`: tables, security rules, realtime and the `media` bucket. It is safe
+  to re-run in the Supabase SQL editor.
+- `supabase/seed.sql`: the delivered content (30 products, 4 slides, 40 brands, settings).
+  It only adds rows that are missing.
+- To add another admin: create the user under **Authentication → Users** in Supabase, then run
+  `insert into admins (user_id, username) select id, 'name' from auth.users where email = '…';`
+- Forgotten password: set a new one for the user under **Authentication → Users** in Supabase.
 
 ## Ordering: checkout page + WhatsApp
 

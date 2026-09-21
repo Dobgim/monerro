@@ -13,9 +13,9 @@ export default function Login() {
     e.preventDefault()
     setBusy(true)
     setError('')
-    const ok = await signIn(login, password, remember)
+    const problem = await signIn(login, password, remember)
     setBusy(false)
-    if (!ok) setError(login.trim() ? 'The username or password you entered is incorrect.' : 'Please enter your username.')
+    if (problem) setError(problem)
   }
 
   return (
