@@ -50,13 +50,20 @@ panel, so the main screen stays short.
 | **Brands**       | Partner logos, in order                                                            |
 | **Announcement** | The promo strip at the top of the site, with a live preview                        |
 | **Subscribers**  | Newsletter sign-ups; search, remove, export CSV                                    |
-| **Settings**     | Customer support phone number, username/password, backup & restore, reset to original |
+| **Settings**     | Customer support phone, WhatsApp number for orders, username/password, backup & restore, reset to original |
 
 **How saving works:** there is no server. Changes are saved in the browser (localStorage) and show
 on the storefront immediately, including in other open tabs. Edits therefore live on the computer
 and browser where they were made — use **Settings → Download backup / Restore** to move them.
 The sign-in is a client-side gate, **not real security**. Add a backend (e.g. Supabase or Firebase)
 before relying on it in production.
+
+## Ordering (WhatsApp checkout)
+
+There is no card payment on the site. When a shopper clicks **Proceed to checkout on WhatsApp** in the
+cart (or **Buy on WhatsApp** on a product page), WhatsApp opens a chat with the shop's number with the
+order already written — items, quantities, prices and subtotal — and they just press Send.
+The number is set in **Admin → Settings → WhatsApp number for orders** (default `15103942813`).
 
 ## How the design is kept identical
 

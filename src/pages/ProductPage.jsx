@@ -8,6 +8,8 @@ import { productPath, productSlug } from '../lib/links'
 import { Section, Separator } from '../components/common/Section'
 import ProductCard from '../components/home/ProductCard'
 import ComingSoonPage from './ComingSoonPage'
+import WhatsAppIcon from '../components/common/WhatsAppIcon'
+import { productMessage, whatsappUrl } from '../lib/whatsapp'
 
 function PriceLine({ price }) {
   if (!price) return null
@@ -99,6 +101,12 @@ export default function ProductPage() {
                   <span className="w-btn-label">{added ? 'Added — add another' : 'Add to cart'}</span>
                 </button>
               )}
+              {inStock && (
+                <a className="cb-whatsapp-btn cb-whatsapp-btn--small" href={whatsappUrl(phone.whatsapp, productMessage(product))} target="_blank" rel="noopener noreferrer">
+                  <WhatsAppIcon size={18} />
+                  Buy on WhatsApp
+                </a>
+              )}
               {added && (
                 <a className="cb-product__viewcart" href="/cart/">
                   View cart →
@@ -106,7 +114,7 @@ export default function ProductPage() {
               )}
             </div>
             <p className="cb-product__call">
-              Order by phone: <a href={phone.phoneHref}>{phone.phone}</a>
+              Or call us: <a href={phone.phoneHref}>{phone.phone}</a>
             </p>
           </div>
         </div>

@@ -62,6 +62,8 @@ function buildDefaults() {
       // shown as "Customer Support" in the footer; editable in Admin → Settings
       phone: '(510) 394-2813',
       phoneHref: 'tel:+15103942813',
+      // orders are sent here from the cart's "Proceed to checkout" button
+      whatsapp: '15103942813',
     },
     subscribers: [],
     cartEvents: [],

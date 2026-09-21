@@ -70,14 +70,25 @@ function ContactSection() {
   const contact = useSiteState((s) => s.contact)
   const save = useSave()
   const [phone, setPhone] = useState(contact.phone)
-  const dirty = phone.trim() !== contact.phone
+  const [whatsapp, setWhatsapp] = useState(contact.whatsapp || '')
+  const [error, setError] = useState('')
+  const waDigits = whatsapp.replace(/\D/g, '')
+  const dirty = phone.trim() !== contact.phone || waDigits !== (contact.whatsapp || '')
 
   const submit = (e) => {
     e.preventDefault()
+    if (waDigits.length < 8) {
+      setError('Enter the full WhatsApp number with the country code, for example 1 510 394 2813.')
+      return
+    }
+    setError('')
     const digits = phone.replace(/[^\d+]/g, '')
     save(
-      setState((s) => ({ ...s, contact: { phone: phone.trim(), phoneHref: `tel:${digits.startsWith('+') ? digits : `+1${digits}`}` } })),
-      'Phone number saved. It now shows in the footer of your site.',
+      setState((s) => ({
+        ...s,
+        contact: { ...s.contact, phone: phone.trim(), phoneHref: `tel:${digits.startsWith('+') ? digits : `+1${digits}`}`, whatsapp: waDigits },
+      })),
+      'Contact details saved.',
     )
   }
 
@@ -88,10 +99,24 @@ function ContactSection() {
         <FormRow label="Customer support phone" description="Shown in the footer of every page. Shoppers on a phone can tap it to call.">
           <input type="tel" className="regular-text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="(510) 394-2813" />
         </FormRow>
+        <FormRow
+          label="WhatsApp number for orders"
+          description="When a shopper clicks “Proceed to checkout”, WhatsApp opens a chat to this number with their order already typed. Include the country code (1 for the USA)."
+        >
+          <input type="tel" className="regular-text" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} placeholder="1 510 394 2813" />
+          {error && <p className="field-error">{error}</p>}
+          {waDigits.length >= 8 && (
+            <p className="description">
+              <a href={`https://wa.me/${waDigits}`} target="_blank" rel="noopener noreferrer">
+                Test this number in WhatsApp
+              </a>
+            </p>
+          )}
+        </FormRow>
       </FormTable>
       <p className="submit">
         <Button variant="primary" type="submit" disabled={!dirty}>
-          Save phone number
+          Save contact details
         </Button>
       </p>
     </form>
