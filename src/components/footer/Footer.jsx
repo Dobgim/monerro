@@ -3,8 +3,12 @@ import { useSiteState } from '../../store/siteStore'
 import LogoMark from '../common/LogoMark'
 import NewsletterForm from './NewsletterForm'
 
+// split multi-line addresses on line breaks
+const RE_LINES = new RegExp('[' + String.fromCharCode(13, 10) + ']+')
+
 export default function Footer() {
   const contact = useSiteState((s) => s.contact)
+  const locations = useSiteState((s) => s.locations)
   return (
     <footer id="page-footer" className="l-footer">
       <section className="l-section wpb_row us_custom_7ffb2dde height_medium">
@@ -202,91 +206,35 @@ export default function Footer() {
                               </p>
                             </div>
                           </div>
-                          <div className="w-separator size_small" />
-                          <div className="wpb_text_column">
-                            <div className="wpb_wrapper">
-                              <div style={{ color: "#e5e1d7" }}>
-                                <a href="https://cannabuddyhub.com/locations/charlotte/">
-                                  <strong style={{ fontSize: "1.1em" }}>
-                                    CannaBuddyHub Cannabis Dispensary – Charlotte
-                                  </strong>
-                                </a>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  5371 E Independence Blvd
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  Suite A
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  Charlotte
-                                </span>
-                                {", "}
-                                <span>
-                                  {"NC "}
-                                </span>
-                                <span>
-                                  28212
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  <strong style={{ fontSize: "1.1em" }}>
-                                    {"Hours: "}
-                                  </strong>
-                                  11:00 AM to 8:00 PM daily.
-                                </span>
+                          {locations.map((loc) => (
+                            <div key={loc.id}>
+                              <div className="w-separator size_small" />
+                              <div className="wpb_text_column">
+                                <div className="wpb_wrapper">
+                                  <div style={{ color: "#e5e1d7" }}>
+                                    <a href={`/locations/#${loc.id}`}>
+                                      <strong style={{ fontSize: "1.1em" }}>CannaBuddyHub Cannabis Dispensary – {loc.name}</strong>
+                                    </a>
+                                    {loc.address.split(RE_LINES).map((line) => (
+                                      <span key={line}>
+                                        <br />
+                                        <span style={{ marginLeft: "1em" }}>{line}</span>
+                                      </span>
+                                    ))}
+                                    {loc.hours && (
+                                      <>
+                                        <br />
+                                        <span style={{ marginLeft: "1em", display: "inline-block" }}>
+                                          <strong style={{ fontSize: "1.1em" }}>{"Hours: "}</strong>
+                                          {loc.hours}
+                                        </span>
+                                      </>
+                                    )}
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div className="w-separator size_small" />
-                          <div className="wpb_text_column">
-                            <div className="wpb_wrapper">
-                              <div style={{ color: "#e5e1d7" }}>
-                                <a href="https://cannabuddyhub.com/locations/matthews/">
-                                  <strong style={{ fontSize: "1.1em" }}>
-                                    CannaBuddyHub Cannabis Dispensary – Matthews
-                                  </strong>
-                                </a>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  215 N Ames Street
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  Suite 1000
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  Matthews
-                                </span>
-                                {", "}
-                                <span>
-                                  NC
-                                </span>
-                                {" "}
-                                <span>
-                                  28105
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em", display: "inline-block" }}>
-                                  <strong style={{ fontSize: "1.1em" }}>
-                                    {"Hours: "}
-                                  </strong>
-                                  Sun: 2pm – 8p, Mon thru Wed: 4pm – 8pm, Thu: 4pm – 9pm, Fri: 2pm – 10pm, Sat: 12pm – 10pm
-                                </span>
-                              </div>
-                            </div>
-                          </div>
+                          ))}
                         </div>
                       </div>
                     </div>

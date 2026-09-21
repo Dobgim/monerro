@@ -7,6 +7,7 @@ import { enabledMethods } from '../lib/payments'
 import { checkoutMessage, money, whatsappUrl } from '../lib/whatsapp'
 import { Section, Separator } from '../components/common/Section'
 import WhatsAppIcon from '../components/common/WhatsAppIcon'
+import { saveOrder } from '../lib/orders'
 
 const EMPTY_CUSTOMER = { name: '', phone: '', fulfilment: 'delivery', address: '', note: '' }
 
@@ -48,6 +49,18 @@ export default function CheckoutPage() {
       document.querySelector('.cb-checkout .is-invalid')?.scrollIntoView({ block: 'center', behavior: 'smooth' })
       return
     }
+    // keep a copy on this device so it shows under My Account
+    if (!sent)
+      saveOrder({
+        id: Date.now(),
+        date: new Date().toISOString(),
+        items: lines.map(({ item, product }) => ({ name: product?.name || item.name, qty: item.qty, image: product?.image || '' })),
+        total: subtotal,
+        fromPrice: hasRange,
+        method: method.label,
+        fulfilment: customer.fulfilment,
+        href,
+      })
     setSent(true)
   }
 

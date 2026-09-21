@@ -346,3 +346,7 @@ tr:hover .row-actions, tr:focus-within .row-actions { visibility: visible; }
   .column-thumb img, .cb-thumb-ph, .column-banner img { width: 100%; height: auto; max-width: 160px; }
   .adm-table--compact, .adm-table--compact tbody, .adm-table--compact tr, .adm-table--compact td { display: revert; }
 }
+
+/* product categories checkboxes */
+.cb-catgroup { border: 0; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px 12px; }
+.cb-catgroup legend { font-weight: 600; font-size: 13px; margin-bottom: 6px; grid-column: 1 / -1; }

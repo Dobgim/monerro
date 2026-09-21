@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { BUTTON_KINDS, remove, resolveButton, upsert, useSiteState } from '../../store/siteStore'
 import ImageField from '../components/ImageField'
+import { CANNABINOIDS, EFFECTS, TYPES, deriveCategories } from '../../lib/catalog'
 import { Button, ConfirmDialog, FormRow, FormTable, Postbox, useSave } from '../components/ui'
 
 const EMPTY = {
@@ -15,6 +16,9 @@ const EMPTY = {
   visible: true,
   buttonKind: 'add',
   description: '',
+  cannabinoids: [],
+  types: [],
+  effects: [],
   price: { type: 'single', prefix: null, amount: '', min: '', max: '', regular: '', sale: '', subscribeDiscount: '15%' },
 }
 
@@ -81,7 +85,11 @@ export default function ProductEditor() {
   const isNew = !id
   const navigate = useNavigate()
   const save = useSave()
-  const [draft, setDraft] = useState(() => (existing ? { ...existing, price: { ...EMPTY.price, ...existing.price } } : EMPTY))
+  const [draft, setDraft] = useState(() =>
+    existing
+      ? { ...(Array.isArray(existing.types) ? {} : deriveCategories(existing)), ...existing, price: { ...EMPTY.price, ...existing.price } }
+      : EMPTY,
+  )
   const [errors, setErrors] = useState({})
   const [confirmDelete, setConfirmDelete] = useState(false)
 
@@ -129,6 +137,7 @@ export default function ProductEditor() {
       price,
       id: draft.id ?? Date.now(),
     }
+    if (!product.cannabinoids.length && !product.types.length && !product.effects.length) Object.assign(product, deriveCategories(product))
     if (save(upsert('products', product), isNew ? 'Product published. It is now on the home page.' : 'Product updated.')) navigate('/admin/products')
   }
 
@@ -247,6 +256,29 @@ export default function ProductEditor() {
                   </label>
                 </FormRow>
               </FormTable>
+            </Postbox>
+
+            <Postbox title="Categories">
+              <p className="description">Tick where this product should appear in the menus (Shop by Cannabinoid, Type and Effect). Leave everything unticked and we’ll choose from the product name.</p>
+              {[
+                ['cannabinoids', 'Cannabinoid', CANNABINOIDS],
+                ['types', 'Product type', TYPES],
+                ['effects', 'Effect', EFFECTS],
+              ].map(([field, label, options]) => (
+                <fieldset key={field} className="cb-catgroup">
+                  <legend>{label}</legend>
+                  {options.map((o) => (
+                    <label key={o.slug} className="checkbox-label">
+                      <input
+                        type="checkbox"
+                        checked={(draft[field] || []).includes(o.slug)}
+                        onChange={(e) => set({ [field]: e.target.checked ? [...(draft[field] || []), o.slug] : (draft[field] || []).filter((s) => s !== o.slug) })}
+                      />
+                      {o.label}
+                    </label>
+                  ))}
+                </fieldset>
+              ))}
             </Postbox>
 
             <Postbox title="More options" collapsible defaultOpen={false}>

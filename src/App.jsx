@@ -9,7 +9,7 @@ import ShopPage from './pages/ShopPage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
 import CheckoutPage from './pages/CheckoutPage'
-import ComingSoonPage from './pages/ComingSoonPage'
+import ContentRouter from './pages/ContentRouter'
 
 // Every link on the site (menus, product cards, footer, banners) is plain markup copied from
 // the original theme. This turns clicks on links to our own pages into instant in-app
@@ -60,7 +60,7 @@ export default function App() {
             <Route path="product/:slug" element={<ProductPage />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="checkout" element={<CheckoutPage />} />
-            <Route path="*" element={<ComingSoonPage />} />
+            <Route path="*" element={<ContentRouter />} />
           </Routes>
         </main>
       </div>

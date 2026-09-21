@@ -9,6 +9,7 @@ import { defaultPayments } from '../lib/payments'
 // and a `storage` listener keeps other open tabs (e.g. the storefront) in sync.
 
 const KEY = 'cannabuddy-site-v1'
+const NL = String.fromCharCode(10) // line break inside multi-line addresses
 const listeners = new Set()
 
 export function buttonKindOf(button) {
@@ -67,6 +68,21 @@ function buildDefaults() {
       whatsapp: '15103942813',
     },
     payments: defaultPayments(),
+    // shown on the Locations page and in the footer; editable in Admin → Settings
+    locations: [
+      {
+        id: 'charlotte',
+        name: 'Charlotte',
+        address: '5371 E Independence Blvd' + NL + 'Suite A' + NL + 'Charlotte, NC 28212',
+        hours: '11:00 AM to 8:00 PM daily',
+      },
+      {
+        id: 'matthews',
+        name: 'Matthews',
+        address: '215 N Ames Street' + NL + 'Suite 1000' + NL + 'Matthews, NC 28105',
+        hours: 'Sun: 2pm – 8pm, Mon–Wed: 4pm – 8pm, Thu: 4pm – 9pm, Fri: 2pm – 10pm, Sat: 12pm – 10pm',
+      },
+    ],
     subscribers: [],
     cartEvents: [],
     admin: {

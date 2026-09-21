@@ -185,6 +185,58 @@ function PaymentsSection() {
   )
 }
 
+function LocationsSection() {
+  const saved = useSiteState((s) => s.locations)
+  const save = useSave()
+  const [draft, setDraft] = useState(saved)
+  const dirty = JSON.stringify(draft) !== JSON.stringify(saved)
+  const update = (i, patch) => setDraft((d) => d.map((l, j) => (j === i ? { ...l, ...patch } : l)))
+
+  const submit = (e) => {
+    e.preventDefault()
+    const cleaned = draft
+      .filter((l) => l.name.trim() && l.address.trim())
+      .map((l) => ({ ...l, name: l.name.trim(), address: l.address.trim(), hours: l.hours.trim(), id: l.id || l.name.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-') }))
+    if (save(setState((s) => ({ ...s, locations: cleaned })), 'Store locations saved.')) setDraft(cleaned)
+  }
+
+  return (
+    <form onSubmit={submit}>
+      <h2>Store locations</h2>
+      <p className="description">Shown on the Locations page and in the footer. Remove them all if you only sell online.</p>
+      {draft.map((loc, i) => (
+        <div className="postbox" key={loc.id || i}>
+          <div className="postbox-header">
+            <h2>{loc.name || 'New location'}</h2>
+            <button type="button" className="button-link submitdelete" style={{ marginRight: 12 }} onClick={() => setDraft((d) => d.filter((_, j) => j !== i))}>
+              Remove
+            </button>
+          </div>
+          <div className="inside">
+            <FormTable>
+              <FormRow label="Name" description="For example the city or neighbourhood.">
+                <input type="text" className="regular-text" value={loc.name} onChange={(e) => update(i, { name: e.target.value })} />
+              </FormRow>
+              <FormRow label="Address" description="One line per row, as it should appear.">
+                <textarea rows={3} className="regular-text" value={loc.address} onChange={(e) => update(i, { address: e.target.value })} />
+              </FormRow>
+              <FormRow label="Opening hours">
+                <input type="text" className="large-text" value={loc.hours} onChange={(e) => update(i, { hours: e.target.value })} />
+              </FormRow>
+            </FormTable>
+          </div>
+        </div>
+      ))}
+      <p className="submit">
+        <Button onClick={() => setDraft((d) => [...d, { id: '', name: '', address: '', hours: '' }])}>Add a location</Button>
+        <Button variant="primary" type="submit" disabled={!dirty}>
+          Save locations
+        </Button>
+      </p>
+    </form>
+  )
+}
+
 export default function Settings() {
   const notice = useNotice()
   const save = useSave()
@@ -215,6 +267,7 @@ export default function Settings() {
       <PageHeader title="Settings" />
       <ContactSection />
       <PaymentsSection />
+      <LocationsSection />
       <AccountSection />
 
       <Postbox title="Backup">
