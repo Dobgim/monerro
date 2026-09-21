@@ -237,28 +237,6 @@ export default function Footer() {
                                 {" "}
                                 <span style={{ marginLeft: "1em" }}>
                                   <strong style={{ fontSize: "1.1em" }}>
-                                    {"Phone: "}
-                                  </strong>
-                                  <a href="tel:9805009790">
-                                    <span>
-                                      (980) 500-9790
-                                    </span>
-                                  </a>
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  <strong style={{ fontSize: "1.1em" }}>
-                                    {"Email: "}
-                                  </strong>
-                                  <a href="mailto:hellocharlotte@cannabuddyhub.com">
-                                    hellocharlotte@cannabuddyhub.com
-                                  </a>
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  <strong style={{ fontSize: "1.1em" }}>
                                     {"Hours: "}
                                   </strong>
                                   11:00 AM to 8:00 PM daily.
@@ -297,28 +275,6 @@ export default function Footer() {
                                 {" "}
                                 <span>
                                   28105
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  <strong style={{ fontSize: "1.1em" }}>
-                                    {"Phone: "}
-                                  </strong>
-                                  <a href="tel:7042662630">
-                                    <span>
-                                      (704) 266-2630
-                                    </span>
-                                  </a>
-                                </span>
-                                <br />
-                                {" "}
-                                <span style={{ marginLeft: "1em" }}>
-                                  <strong style={{ fontSize: "1.1em" }}>
-                                    {"Email: "}
-                                  </strong>
-                                  <a href="mailto:helloamesstreet@cannabuddyhub.com">
-                                    helloamesstreet@cannabuddyhub.com
-                                  </a>
                                 </span>
                                 <br />
                                 {" "}

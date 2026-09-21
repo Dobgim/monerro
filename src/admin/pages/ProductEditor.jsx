@@ -14,6 +14,7 @@ const EMPTY = {
   stock: 'instock',
   visible: true,
   buttonKind: 'add',
+  description: '',
   price: { type: 'single', prefix: null, amount: '', min: '', max: '', regular: '', sale: '', subscribeDiscount: '15%' },
 }
 
@@ -167,6 +168,17 @@ export default function ProductEditor() {
               />
               {errors.name && <p className="field-error">{errors.name}</p>}
             </div>
+
+            <Postbox title="Description">
+              <textarea
+                className="large-text"
+                rows={6}
+                value={draft.description || ''}
+                onChange={(e) => set({ description: e.target.value })}
+                placeholder="Tell shoppers about this product: strength, flavour, effects, how to use it…"
+              />
+              <p className="description">Shown on the product’s own page. Leave a blank line between paragraphs.</p>
+            </Postbox>
 
             <Postbox title="Price">
               <fieldset className="cb-radios">

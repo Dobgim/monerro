@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useCart } from '../../context/CartContext'
 import { productClassName, resolveButton } from '../../store/siteStore'
+import { productPath } from '../../lib/links'
 
 function Amount({ value }) {
   return (
@@ -71,6 +72,7 @@ export default function ProductCard({ product, first, last, eager }) {
   const { addToCart } = useCart()
   const [state, setState] = useState('idle') // idle | loading | added
   const button = resolveButton(product)
+  const path = productPath(product)
 
   const onAdd = (e) => {
     if (!button.ajax) return // variable/bundle products link through to the product page
@@ -88,7 +90,7 @@ export default function ProductCard({ product, first, last, eager }) {
 
   return (
     <li className={cls}>
-      <a href={product.href} className="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+      <a href={path} className="woocommerce-LoopProduct-link woocommerce-loop-product__link">
         {product.onSale && <span className="onsale">Sale!</span>}
         <img
           src={product.image}
@@ -103,7 +105,7 @@ export default function ProductCard({ product, first, last, eager }) {
         <Price price={product.price} />
       </a>
       <a
-        href={button.href}
+        href={button.ajax ? button.href : path}
         data-quantity="1"
         className={btnCls}
         data-product_id={product.id}

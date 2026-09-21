@@ -4,6 +4,7 @@ import { move, remove, setState, useSiteState } from '../../store/siteStore'
 import Icon from '../components/Icon'
 import { ConfirmDialog, EmptyRow, PageHeader, RowAction, SearchBox, StatusBadge, Toggle, useSave } from '../components/ui'
 import { formatPrice } from '../format'
+import { productPath } from '../../lib/links'
 
 const FILTERS = [
   { value: 'all', label: 'All' },
@@ -106,7 +107,7 @@ export default function Products() {
                   </span>{' '}
                   |{' '}
                   <span className="view">
-                    <a href={p.href} target="_blank" rel="noreferrer">
+                    <a href={productPath(p)} target="_blank" rel="noreferrer">
                       View
                     </a>
                   </span>{' '}

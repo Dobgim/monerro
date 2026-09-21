@@ -39,9 +39,14 @@ export function CartProvider({ children }) {
     timer.current = setTimeout(() => setLastAdded(null), 3000)
   }, [])
 
+  const setQty = useCallback((id, qty) => {
+    setItems((prev) => (qty <= 0 ? prev.filter((i) => i.id !== id) : prev.map((i) => (i.id === id ? { ...i, qty } : i))))
+  }, [])
+  const removeItem = useCallback((id) => setItems((prev) => prev.filter((i) => i.id !== id)), [])
+
   const count = items.reduce((n, i) => n + i.qty, 0)
 
-  return <CartContext.Provider value={{ items, count, addToCart, lastAdded }}>{children}</CartContext.Provider>
+  return <CartContext.Provider value={{ items, count, addToCart, setQty, removeItem, lastAdded }}>{children}</CartContext.Provider>
 }
 
 export function useCart() {
