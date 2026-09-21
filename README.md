@@ -50,7 +50,7 @@ panel, so the main screen stays short.
 | **Brands**       | Partner logos, in order                                                            |
 | **Announcement** | The promo strip at the top of the site, with a live preview                        |
 | **Subscribers**  | Newsletter sign-ups; search, remove, export CSV                                    |
-| **Settings**     | Customer support phone, WhatsApp number for orders, username/password, backup & restore, reset to original |
+| **Settings**     | Customer support phone, WhatsApp number for orders, payment methods & account details, username/password, backup & restore, reset |
 
 **How saving works:** there is no server. Changes are saved in the browser (localStorage) and show
 on the storefront immediately, including in other open tabs. Edits therefore live on the computer
@@ -58,12 +58,18 @@ and browser where they were made — use **Settings → Download backup / Restor
 The sign-in is a client-side gate, **not real security**. Add a backend (e.g. Supabase or Firebase)
 before relying on it in production.
 
-## Ordering (WhatsApp checkout)
+## Ordering: checkout page + WhatsApp
 
-There is no card payment on the site. When a shopper clicks **Proceed to checkout on WhatsApp** in the
-cart (or **Buy on WhatsApp** on a product page), WhatsApp opens a chat with the shop's number with the
-order already written — items, quantities, prices and subtotal — and they just press Send.
-The number is set in **Admin → Settings → WhatsApp number for orders** (default `15103942813`).
+1. The shopper clicks **Proceed to checkout** on a product page or in the cart.
+2. The **Checkout** page (`/checkout/`) lists the order and asks for their name, optional phone,
+   delivery address or pickup, and a payment method: **PayPal, Venmo, Zelle, Bitcoin or Cash App**.
+3. **Pay on WhatsApp** opens a chat with the shop's WhatsApp number, with the whole order, the total,
+   the chosen payment method and the customer's details already written. They press Send.
+
+Nothing is charged on the website. In **Admin → Settings** the shop owner sets the WhatsApp number,
+turns each payment method on or off, and enters where each payment should go (PayPal email, Venmo
+username, Zelle email/phone, BTC wallet address, $Cashtag). Filled-in details appear on the checkout
+page and in the message; empty ones tell the customer the details will follow on WhatsApp.
 
 ## How the design is kept identical
 
@@ -115,7 +121,7 @@ Every image is stored locally under `public/assets/images/`. The saved page used
 
 ## Notes
 
-- Pages: home, `/shop/` (with search), `/product/<slug>/`, `/cart/`. Other sections (categories, blog, wholesale…) show a "coming soon" page until they are built.
+- Pages: home, `/shop/` (with search), `/product/<slug>/`, `/cart/`, `/checkout/`. Other sections (categories, blog, wholesale…) show a "coming soon" page until they are built.
 - The third-party widgets (AgeChecker age gate, Klaviyo sign-up, analytics) are not included. A simple sign-up form takes Klaviyo's place.
 
 ## Still to replace (brand assets)

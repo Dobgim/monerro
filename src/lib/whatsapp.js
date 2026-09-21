@@ -7,7 +7,7 @@ export function whatsappUrl(number, text) {
   return `https://wa.me/${digits}?text=${encodeURIComponent(text)}`
 }
 
-const money = (n) => `$${n.toFixed(2)}`
+export const money = (n) => `$${n.toFixed(2)}`
 
 function priceLabel(product, qty) {
   const each = unitPrice(product.price)
@@ -15,26 +15,33 @@ function priceLabel(product, qty) {
   return qty > 1 ? `${from}${money(each)} each = ${from}${money(each * qty)}` : `${from}${money(each)}`
 }
 
-/** The order text the customer sends us on WhatsApp. */
-export function orderMessage(lines, subtotal) {
+/**
+ * The order the customer sends from the checkout page.
+ * lines: [{ item, product }], customer: { name, phone, fulfilment, address, note }, method: payment method with account
+ */
+export function checkoutMessage({ lines, subtotal, customer, method }) {
   const hasRange = lines.some(({ product }) => product?.price?.type === 'range')
   const items = lines.map(({ item, product }) => `• ${item.qty} × ${product ? product.name : item.name}${product ? ` — ${priceLabel(product, item.qty)}` : ''}`)
+  const payLine = method.account
+    ? `I’ll pay by ${method.label} to: ${method.account}`
+    : `I’ll pay by ${method.label} — please send me your ${method.label} details.`
+
   return [
     'Hi CannaBuddyHub! I’d like to place this order:',
     '',
     ...items,
     '',
-    `Subtotal: ${hasRange ? 'from ' : ''}${money(subtotal)}`,
-    hasRange ? '(Some items come in different sizes — please confirm the size and price.)' : null,
+    `Total: ${hasRange ? 'from ' : ''}${money(subtotal)}`,
+    hasRange ? '(Some items come in different sizes — please confirm the size and final price.)' : null,
     '',
-    'My name:',
-    'Delivery address or pickup:',
+    `💳 Payment: ${method.label}`,
+    payLine,
+    '',
+    `Name: ${customer.name}`,
+    customer.phone ? `Phone: ${customer.phone}` : null,
+    customer.fulfilment === 'delivery' ? `Delivery to: ${customer.address}` : 'Pickup: I’ll collect the order',
+    customer.note ? `Note: ${customer.note}` : null,
   ]
     .filter((line) => line !== null)
     .join('\n')
-}
-
-/** Message for buying a single product straight from its page. */
-export function productMessage(product) {
-  return [`Hi CannaBuddyHub! I’d like to buy:`, '', `• 1 × ${product.name}${product.price ? ` — ${priceLabel(product, 1)}` : ''}`, '', 'My name:', 'Delivery address or pickup:'].join('\n')
 }

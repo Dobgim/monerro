@@ -2,6 +2,7 @@ import { useSyncExternalStore } from 'react'
 import featuredProducts from '../data/featuredProducts'
 import heroSlides from '../data/heroSlides'
 import brands from '../data/brands'
+import { defaultPayments } from '../lib/payments'
 
 // Single source of truth for everything the admin dashboard can edit.
 // Defaults come from src/data; edits are saved in localStorage (there is no backend),
@@ -65,6 +66,7 @@ function buildDefaults() {
       // orders are sent here from the cart's "Proceed to checkout" button
       whatsapp: '15103942813',
     },
+    payments: defaultPayments(),
     subscribers: [],
     cartEvents: [],
     admin: {
@@ -82,7 +84,7 @@ function load() {
   try {
     const saved = JSON.parse(localStorage.getItem(KEY))
     // admin is merged (not replaced) so data saved by older versions still gains new fields
-    return saved ? { ...defaults, ...saved, admin: { ...defaults.admin, ...saved.admin }, contact: { ...defaults.contact, ...saved.contact } } : defaults
+    return saved ? { ...defaults, ...saved, admin: { ...defaults.admin, ...saved.admin }, contact: { ...defaults.contact, ...saved.contact }, payments: { ...defaults.payments, ...saved.payments } } : defaults
   } catch {
     return defaults
   }

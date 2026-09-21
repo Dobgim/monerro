@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useSiteState } from '../store/siteStore'
 import menuProducts from '../data/menuProducts'
@@ -8,8 +8,6 @@ import { productPath, productSlug } from '../lib/links'
 import { Section, Separator } from '../components/common/Section'
 import ProductCard from '../components/home/ProductCard'
 import ComingSoonPage from './ComingSoonPage'
-import WhatsAppIcon from '../components/common/WhatsAppIcon'
-import { productMessage, whatsappUrl } from '../lib/whatsapp'
 
 function PriceLine({ price }) {
   if (!price) return null
@@ -39,7 +37,8 @@ export default function ProductPage() {
   const { slug } = useParams()
   const products = useSiteState((s) => s.products)
   const phone = useSiteState((s) => s.contact)
-  const { addToCart } = useCart()
+  const { items, addToCart } = useCart()
+  const navigate = useNavigate()
   const [added, setAdded] = useState(false)
 
   const product = products.find((p) => productSlug(p) === slug) || menuOnly.find((p) => productSlug(p) === slug)
@@ -101,11 +100,18 @@ export default function ProductPage() {
                   <span className="w-btn-label">{added ? 'Added — add another' : 'Add to cart'}</span>
                 </button>
               )}
-              {inStock && (
-                <a className="cb-whatsapp-btn cb-whatsapp-btn--small" href={whatsappUrl(phone.whatsapp, productMessage(product))} target="_blank" rel="noopener noreferrer">
-                  <WhatsAppIcon size={18} />
-                  Buy on WhatsApp
-                </a>
+              {inCatalog && inStock && (
+                <button
+                  type="button"
+                  className="cb-checkout-btn"
+                  onClick={() => {
+                    // make sure this product is in the order, then go to checkout
+                    if (!items.some((i) => i.id === product.id)) addToCart(product)
+                    navigate('/checkout/')
+                  }}
+                >
+                  Proceed to checkout →
+                </button>
               )}
               {added && (
                 <a className="cb-product__viewcart" href="/cart/">

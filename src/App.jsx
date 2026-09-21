@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage'
 import ShopPage from './pages/ShopPage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
+import CheckoutPage from './pages/CheckoutPage'
 import ComingSoonPage from './pages/ComingSoonPage'
 
 // Every link on the site (menus, product cards, footer, banners) is plain markup copied from
@@ -58,6 +59,7 @@ export default function App() {
             <Route path="shop" element={<ShopPage />} />
             <Route path="product/:slug" element={<ProductPage />} />
             <Route path="cart" element={<CartPage />} />
+            <Route path="checkout" element={<CheckoutPage />} />
             <Route path="*" element={<ComingSoonPage />} />
           </Routes>
         </main>

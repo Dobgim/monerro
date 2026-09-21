@@ -3,13 +3,10 @@ import { useSiteState } from '../store/siteStore'
 import usePageTitle from '../hooks/usePageTitle'
 import { productPath, unitPrice } from '../lib/links'
 import { Section, Separator } from '../components/common/Section'
-import WhatsAppIcon from '../components/common/WhatsAppIcon'
-import { orderMessage, whatsappUrl } from '../lib/whatsapp'
 
 export default function CartPage() {
   const { items, setQty, removeItem } = useCart()
   const products = useSiteState((s) => s.products)
-  const contact = useSiteState((s) => s.contact)
   usePageTitle('Cart')
 
   const lines = items.map((item) => ({ item, product: products.find((p) => p.id === item.id) }))
@@ -74,13 +71,11 @@ export default function CartPage() {
             <p>
               Subtotal: <strong>${subtotal.toFixed(2)}</strong>
             </p>
-            <a className="cb-whatsapp-btn" href={whatsappUrl(contact.whatsapp, orderMessage(lines, subtotal))} target="_blank" rel="noopener noreferrer">
-              <WhatsAppIcon />
-              Proceed to checkout on WhatsApp
+            <a className="cb-checkout-btn cb-checkout-btn--block" href="/checkout/">
+              Proceed to checkout →
             </a>
             <p className="cb-cart__note">
-              WhatsApp opens with your order already written — just press Send and we’ll confirm it with you. Prefer to talk?
-              Call <a href={contact.phoneHref}>{contact.phone}</a>.
+              Choose PayPal, Venmo, Zelle, Bitcoin or Cash App on the next page, then send your order to us on WhatsApp.
             </p>
             <p>
               <a href="/shop/">← Continue shopping</a>

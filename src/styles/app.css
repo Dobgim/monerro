@@ -161,3 +161,95 @@
 @media (max-width: 767px) {
   .cb-cart__summary .cb-whatsapp-btn { width: 100%; }
 }
+
+/* "Proceed to checkout" buttons (product page + cart) */
+.cb-checkout-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.9em 1.8em; border: 0; border-radius: 99px; background: #3d3632; color: #fff !important;
+  font: inherit; font-weight: 700; font-size: 1rem; line-height: 1.2; cursor: pointer; text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+}
+.cb-checkout-btn:hover { background: #231f1c; transform: translateY(-1px); }
+.cb-checkout-btn--block { display: flex; width: 100%; margin: 0.75rem 0 0.5rem; }
+
+/* checkout page */
+.cb-checkout h1 { text-align: left; margin: 0; }
+.cb-checkout__grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr); gap: 2rem; align-items: start; }
+.cb-checkout__main { display: flex; flex-direction: column; gap: 1.5rem; }
+.cb-checkout__card { background: #fff; border: 1px solid #e8e2da; border-radius: 14px; padding: 1.5rem; }
+.cb-checkout__card h2 { display: flex; align-items: center; gap: 0.6rem; font-size: 1.3rem; margin: 0 0 1rem; }
+.cb-step { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #ef742a; color: #fff; font-size: 0.9rem; font-weight: 700; }
+.cb-checkout__summary { position: sticky; top: 1.5rem; }
+.cb-muted { color: #6b625c; font-size: 0.92rem; }
+.cb-center { text-align: center; }
+
+.cb-field { margin: 0 0 1rem; border: 0; padding: 0; }
+.cb-field label, .cb-field legend { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem; }
+.cb-field input[type='text'], .cb-field input[type='tel'], .cb-field textarea {
+  width: 100%; padding: 0.7em 0.9em; border: 1px solid #d9d1c7; border-radius: 10px; font: inherit; background: #fff; color: #3d3632;
+}
+.cb-field input:focus, .cb-field textarea:focus { outline: none; border-color: #ef742a; box-shadow: 0 0 0 3px rgb(239 116 42 / 0.18); }
+.cb-field .is-invalid, .cb-paymethods.is-invalid { border-color: #c0392b !important; }
+.cb-error { color: #c0392b; font-size: 0.88rem; margin: 0.35rem 0 0; }
+.cb-toggle-group { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.cb-toggle-group legend { width: 100%; }
+.cb-toggle-group label { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0; padding: 0.6em 1.2em; border: 1px solid #d9d1c7; border-radius: 99px; font-weight: 600; cursor: pointer; }
+.cb-toggle-group label.is-selected { border-color: #ef742a; background: #fff4ec; color: #c4561a; }
+.cb-toggle-group input { accent-color: #ef742a; }
+
+.cb-paymethods { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem; border: 1px solid transparent; border-radius: 12px; }
+.cb-paymethod {
+  position: relative; display: flex; align-items: center; gap: 0.75rem; padding: 0.9rem 1rem;
+  border: 2px solid #e8e2da; border-radius: 12px; cursor: pointer; background: #fff; transition: border-color 0.15s, box-shadow 0.15s;
+}
+.cb-paymethod:hover { border-color: #d0c6ba; }
+.cb-paymethod.is-selected { border-color: #ef742a; box-shadow: 0 0 0 3px rgb(239 116 42 / 0.15); }
+.cb-paymethod input { position: absolute; opacity: 0; pointer-events: none; }
+.cb-paymethod:has(input:focus-visible) { outline: 2px solid #ef742a; outline-offset: 2px; }
+.cb-paymethod__logo { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; color: #fff; font-weight: 800; font-size: 1.15rem; flex-shrink: 0; }
+.cb-paymethod__name { font-weight: 700; font-size: 1rem; }
+.cb-paymethod__check { margin-left: auto; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #d0c6ba; flex-shrink: 0; }
+.cb-paymethod.is-selected .cb-paymethod__check { border-color: #ef742a; background: #ef742a radial-gradient(circle, #fff 0 3px, transparent 4px); }
+.cb-payinfo { margin-top: 1rem; padding: 1rem 1.2rem; border-radius: 12px; background: #faf6f1; }
+.cb-payinfo p { margin: 0 0 0.35rem; }
+.cb-payinfo__account { font-size: 1.15rem; font-weight: 700; word-break: break-all; color: #3d3632; user-select: all; }
+
+.cb-summary { list-style: none; margin: 0; padding: 0; }
+.cb-summary li { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.8rem 0; border-bottom: 1px solid #efe9e1; }
+.cb-summary img { width: 56px; height: 56px; object-fit: contain; border-radius: 8px; background: #faf6f1; flex-shrink: 0; }
+.cb-summary__info { flex: 1; min-width: 0; font-size: 0.95rem; line-height: 1.35; }
+.cb-summary__info a { color: #3d3632; font-weight: 600; }
+.cb-summary__qty { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.4rem; }
+.cb-summary__qty button { width: 26px; height: 26px; border: 1px solid #d9d1c7; border-radius: 50%; background: #fff; cursor: pointer; line-height: 1; color: #3d3632; }
+.cb-summary__qty span { min-width: 18px; text-align: center; font-weight: 600; }
+.cb-summary__qty .cb-summary__remove { width: auto; border: 0; background: none; color: #9a918a; font-size: 0.85rem; margin-left: 0.4rem; border-radius: 0; }
+.cb-summary__qty .cb-summary__remove:hover { color: #c0392b; }
+.cb-summary__price { font-weight: 700; white-space: nowrap; }
+.cb-summary__price small, .cb-summary__total small { font-weight: 400; color: #6b625c; font-size: 0.75em; }
+.cb-summary__total { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0 0.5rem; font-size: 1.1rem; }
+.cb-summary__total strong { font-size: 1.6rem; }
+.cb-whatsapp-btn--block { display: flex; width: 100%; margin: 1rem 0 0.6rem; }
+.cb-sent { background: #eafaf0; color: #1e7a43; border-radius: 10px; padding: 0.8rem 1rem; font-size: 0.92rem; }
+.cb-sent a { color: #1e7a43; text-decoration: underline; }
+
+@media (max-width: 960px) {
+  .cb-checkout__grid { grid-template-columns: 1fr; }
+  .cb-checkout__summary { position: static; }
+}
+@media (max-width: 767px) {
+  .cb-checkout__card { padding: 1.1rem; }
+  .cb-paymethods { grid-template-columns: 1fr 1fr; }
+  .cb-product__actions > * { flex: 1 1 100%; }
+}
+
+/* let checkout columns shrink to the screen instead of growing to their content */
+.cb-checkout__grid > *, .cb-checkout__main > * { min-width: 0; }
+@media (max-width: 960px) {
+  .cb-checkout__grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 767px) {
+  .cb-paymethods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cb-paymethod { padding: 0.75rem; gap: 0.5rem; }
+  .cb-paymethod__logo { width: 32px; height: 32px; font-size: 1rem; }
+  .cb-paymethod__name { font-size: 0.92rem; }
+}

@@ -3,6 +3,7 @@ import { getState, importState, resetState, setState, useSiteState } from '../..
 import { sha256 } from '../auth'
 import { Button, ConfirmDialog, FormRow, FormTable, PageHeader, Postbox, useNotice, useSave } from '../components/ui'
 import { downloadFile } from '../format'
+import { PAYMENT_METHODS } from '../../lib/payments'
 
 function AccountSection() {
   const admin = useSiteState((s) => s.admin)
@@ -123,6 +124,67 @@ function ContactSection() {
   )
 }
 
+function PaymentsSection() {
+  const saved = useSiteState((s) => s.payments)
+  const save = useSave()
+  const [draft, setDraft] = useState(saved)
+  const [error, setError] = useState('')
+  const dirty = JSON.stringify(draft) !== JSON.stringify(saved)
+  const update = (id, patch) => setDraft((d) => ({ ...d, [id]: { ...d[id], ...patch } }))
+
+  const submit = (e) => {
+    e.preventDefault()
+    if (!PAYMENT_METHODS.some((m) => draft[m.id]?.enabled)) {
+      setError('Turn on at least one payment method, or customers can’t check out.')
+      return
+    }
+    setError('')
+    const cleaned = Object.fromEntries(Object.entries(draft).map(([id, v]) => [id, { ...v, account: (v.account || '').trim() }]))
+    save(setState((s) => ({ ...s, payments: cleaned })), 'Payment methods saved.')
+  }
+
+  return (
+    <form onSubmit={submit}>
+      <h2>Payment methods</h2>
+      <p className="description">
+        Customers pick one of these at checkout, then send their order to your WhatsApp. Enter where each payment should go — it is shown on the
+        checkout page and in the WhatsApp message. If you leave one empty, the customer is asked to wait for you to send your details.
+      </p>
+      <FormTable>
+        {PAYMENT_METHODS.map((m) => (
+          <FormRow key={m.id} label={m.label}>
+            <label className="checkbox-label">
+              <input type="checkbox" checked={draft[m.id]?.enabled !== false} onChange={(e) => update(m.id, { enabled: e.target.checked })} />
+              Accept {m.label}
+            </label>
+            {draft[m.id]?.enabled !== false && (
+              <p>
+                <input
+                  type="text"
+                  className="regular-text"
+                  aria-label={m.accountLabel}
+                  placeholder={m.placeholder}
+                  value={draft[m.id]?.account || ''}
+                  onChange={(e) => update(m.id, { account: e.target.value })}
+                />
+                <span className="description" style={{ display: 'block', marginTop: 4 }}>
+                  {m.accountLabel}
+                </span>
+              </p>
+            )}
+          </FormRow>
+        ))}
+      </FormTable>
+      {error && <p className="field-error">{error}</p>}
+      <p className="submit">
+        <Button variant="primary" type="submit" disabled={!dirty}>
+          Save payment methods
+        </Button>
+      </p>
+    </form>
+  )
+}
+
 export default function Settings() {
   const notice = useNotice()
   const save = useSave()
@@ -152,6 +214,7 @@ export default function Settings() {
     <>
       <PageHeader title="Settings" />
       <ContactSection />
+      <PaymentsSection />
       <AccountSection />
 
       <Postbox title="Backup">
