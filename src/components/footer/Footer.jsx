@@ -203,6 +203,12 @@ export default function Footer() {
                                   {"Customer Support: "}
                                 </strong>
                                 <a href={contact.phoneHref}>{contact.phone}</a>
+                                {contact.email && (
+                                  <>
+                                    <br />
+                                    <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                                  </>
+                                )}
                               </p>
                             </div>
                           </div>

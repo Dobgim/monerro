@@ -73,6 +73,7 @@ export function buildDefaults() {
       phoneHref: 'tel:+15103942813',
       // orders are sent here from the cart's "Proceed to checkout" button
       whatsapp: '15103942813',
+      email: 'support@cannabuddyhub.com',
     },
     payments: defaultPayments(),
     // shown on the Locations page and in the footer; editable in Admin → Settings

@@ -75,9 +75,11 @@ function ContactSection() {
   const save = useSave()
   const [phone, setPhone] = useState(contact.phone)
   const [whatsapp, setWhatsapp] = useState(contact.whatsapp || '')
+  const [email, setEmail] = useState(contact.email || '')
   const [error, setError] = useState('')
+  const [emailError, setEmailError] = useState('')
   const waDigits = whatsapp.replace(/\D/g, '')
-  const dirty = phone.trim() !== contact.phone || waDigits !== (contact.whatsapp || '')
+  const dirty = phone.trim() !== contact.phone || waDigits !== (contact.whatsapp || '') || email.trim() !== (contact.email || '')
 
   const submit = (e) => {
     e.preventDefault()
@@ -86,11 +88,16 @@ function ContactSection() {
       return
     }
     setError('')
+    if (email.trim() && !/^\S+@\S+\.\S+$/.test(email.trim())) {
+      setEmailError('Please enter a valid email address, or leave it empty to hide it.')
+      return
+    }
+    setEmailError('')
     const digits = phone.replace(/[^\d+]/g, '')
     save(
       setState((s) => ({
         ...s,
-        contact: { ...s.contact, phone: phone.trim(), phoneHref: `tel:${digits.startsWith('+') ? digits : `+1${digits}`}`, whatsapp: waDigits },
+        contact: { ...s.contact, phone: phone.trim(), phoneHref: `tel:${digits.startsWith('+') ? digits : `+1${digits}`}`, whatsapp: waDigits, email: email.trim() },
       })),
       'Contact details saved.',
     )
@@ -102,6 +109,10 @@ function ContactSection() {
       <FormTable>
         <FormRow label="Customer support phone" description="Shown in the footer of every page. Shoppers on a phone can tap it to call.">
           <input type="tel" className="regular-text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="(510) 394-2813" />
+        </FormRow>
+        <FormRow label="Customer support email" description="Shown in the footer and on the Contact page. Leave empty to hide it.">
+          <input type="email" className="regular-text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="support@cannabuddyhub.com" autoCapitalize="off" />
+          {emailError && <p className="field-error">{emailError}</p>}
         </FormRow>
         <FormRow
           label="WhatsApp number for orders"

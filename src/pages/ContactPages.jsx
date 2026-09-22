@@ -102,6 +102,14 @@ export function ContactPage() {
               </a>
             </p>
           </div>
+          {contact.email && (
+            <div className="cb-contact__method">
+              <h2>Email us</h2>
+              <p>
+                <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              </p>
+            </div>
+          )}
           {locations.length > 0 && (
             <div className="cb-contact__method">
               <h2>Visit us</h2>
